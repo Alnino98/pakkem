@@ -1,5 +1,6 @@
 <?php 
 include 'config.php';
+require 'gmail.php';
 
     function input($data) {
         $data = trim($data);
@@ -21,7 +22,6 @@ include 'config.php';
         $pendidikan=input($_POST["pendidikan"]);
         $sertifikat=input($_POST["sertifikat"]);
         $info_tambahan=input($_POST["info_tambahan"]);
-
 
         //Query input menginput data kedalam tabel pendaftaraan
        
@@ -65,7 +65,9 @@ include 'config.php';
 			 $sql="INSERT INTO pendaftar (nama,instansi,tempat_lahir,tanggal_lahir,gender,nik,email,no_hp,bisa_wa,pendidikan,sertifikat,info_tambahan) values ('$nama','$instansi','$tempat_lahir','$tanggal_lahir','$gender','$nik','$email','$no_hp','$bisa_wa','$pendidikan','$sertifikat','$info_tambahan')";
 				 $hasil=mysqli_query($link,$sql);
 	 		
+
 	 		if ($hasil) {
+	 			send_email($email);
 	 			echo "<script>alert('Selamat $nama, data anda telah kami terima. Cek email Anda, untuk konfirmasi pendaftaran ini.');window.location.href = 'index.php';</script>";
 	 			
 	           
@@ -76,7 +78,7 @@ include 'config.php';
 	        }
 
 			}else{
-			header("location:index.php?alert=gagal_ukuran");
+			echo "<script>alert('Ukuran max 200mb.');window.location.href = 'index.php';</script>";
 			}
 	}
 
