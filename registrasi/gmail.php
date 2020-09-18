@@ -24,7 +24,7 @@ require 'vendor/autoload.php';
             // SMTP::DEBUG_OFF = off (for production use)
             // SMTP::DEBUG_CLIENT = client messages
             // SMTP::DEBUG_SERVER = client and server messages
-           /* $mail->SMTPDebug = SMTP::DEBUG_SERVER;*/
+            //$mail->SMTPDebug = SMTP::DEBUG_SERVER;
 
             //Set the hostname of the mail server
             $mail->Host = 'smtp.gmail.com';
@@ -69,17 +69,17 @@ require 'vendor/autoload.php';
             /*$mail->addAttachment('images/phpmailer_mini.png');
             */
             //send the message, check for errors
-           /* if (!$mail->send()) {
+           if (!$mail->send()) {
                 echo 'Mailer Error: '. $mail->ErrorInfo;
             } else {
-                echo 'Message sent!';
+                // echo 'Message sent!';
                 //Section 2: IMAP
                 //Uncomment these to save your message in the 'Sent Mail' folder.
                 #if (save_mail($mail)) {
                 #    echo "Message saved!";
                 #}
             }
-*/
+
             //Section 2: IMAP
             //IMAP commands requires the PHP IMAP Extension, found at: https://php.net/manual/en/imap.setup.php
             //Function to call which uses the PHP imap_*() functions to save messages: https://php.net/manual/en/book.imap.php

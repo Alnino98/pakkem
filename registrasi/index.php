@@ -110,7 +110,7 @@
                      </div>
                      <!-- NIK -->                        
                      <div class="input-group">
-                        <input class="input--style-1" type="number" placeholder="NIK" name="nik">
+                        <input class="input--style-1" type="text" placeholder="NIK" name="nik">
                      </div>
                      <!-- Email -->
                      <div class="input-group">
@@ -120,7 +120,7 @@
                      <div class="row row-space">
                         <div class="col-2">
                            <div class="input-group">
-                              <input class="input--style-1" type="number" placeholder="NOMER HP" name="no_hp">
+                              <input class="input--style-1" type="text" placeholder="NOMER HP" name="no_hp">
                            </div>
                         </div>
                         <!-- Bisa WA -->

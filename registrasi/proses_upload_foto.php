@@ -2,26 +2,26 @@
 include 'config.php';
 require 'gmail.php';
 
-    function input($data) {
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
-        return $data;
-    }
+function input($data) {
+	$data = trim($data);
+	$data = stripslashes($data);
+	$data = htmlspecialchars($data);
+	return $data;
+}
  if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-        $nama=input($_POST["nama"]);
-        $instansi=input($_POST["instansi"]);
-        $tempat_lahir=input($_POST["tempat_lahir"]);
-        $tanggal_lahir=input($_POST["tanggal_lahir"]);
-        $gender=input($_POST["gender"]);
-        $nik=input($_POST["nik"]);
-        $email=input($_POST["email"]);
-        $no_hp=input($_POST["no_hp"]);
-        $bisa_wa=input($_POST["bisa_wa"]);
-        $pendidikan=input($_POST["pendidikan"]);
-        $sertifikat=input($_POST["sertifikat"]);
-        $info_tambahan=input($_POST["info_tambahan"]);
+	$nama=input($_POST["nama"]);
+	$instansi=input($_POST["instansi"]);
+	$tempat_lahir=input($_POST["tempat_lahir"]);
+	$tanggal_lahir=input($_POST["tanggal_lahir"]);
+	$gender=input($_POST["gender"]);
+	$nik=input($_POST["nik"]);
+	$email=input($_POST["email"]);
+	$no_hp=input($_POST["no_hp"]);
+	$bisa_wa=input($_POST["bisa_wa"]);
+	$pendidikan=input($_POST["pendidikan"]);
+	$sertifikat=input($_POST["sertifikat"]);
+	$info_tambahan=input($_POST["info_tambahan"]);
 
         //Query input menginput data kedalam tabel pendaftaraan
        
@@ -49,6 +49,9 @@ require 'gmail.php';
 	$name_foto = $email.'.'.$ext;
 	$name_sertifikat = $email.'.'.$ext2;
 	$exsertifikat = $name_sertifikat;
+	
+	$qry_foto = "INSERT INTO `foto` (`id`, `foto_upload`, `nama_pemilik`) VALUES (NULL, '$name_foto', '$nama')";
+	$qry_sertif = "INSERT INTO `sertifikat` (`id`, `sertifikat_upload`, `nama_pemilik`, `keterangan`) VALUES (NULL, '$exsertifikat', '$nama2', '$keterangan')";
 
 	if(!in_array($ext,$ekstensi) ) {
 		header("location:index.php?alert=gagal_ekstensi");
@@ -57,29 +60,27 @@ require 'gmail.php';
 		{		
 
 			move_uploaded_file($_FILES['foto_upload']['tmp_name'], 'foto/'.$rand.'_'.$name_foto);
-			mysqli_query($link, "INSERT INTO foto VALUES(NULL,'$name_foto','$nama',NULL)");
+			mysqli_query($link, $qry_foto);
 			//		
 			move_uploaded_file($_FILES['sertifikat_upload']['tmp_name'], 'sertifikat/'.$rand.'_'.$name_sertifikat);
-			mysqli_query($link, "INSERT INTO sertifikat VALUES(NULL,'$exsertifikat','$nama2','$keterangan',NULL)");
-			//
-			 $sql="INSERT INTO pendaftar (nama,instansi,tempat_lahir,tanggal_lahir,gender,nik,email,no_hp,bisa_wa,pendidikan,sertifikat,info_tambahan) values ('$nama','$instansi','$tempat_lahir','$tanggal_lahir','$gender','$nik','$email','$no_hp','$bisa_wa','$pendidikan','$sertifikat','$info_tambahan')";
-				 $hasil=mysqli_query($link,$sql);
-	 		
+			mysqli_query($link, $qry_sertif);
+			
+			
+			$sql="INSERT INTO pendaftar (nama,instansi,tempat_lahir,tanggal_lahir,gender,nik,email,no_hp,bisa_wa,pendidikan,sertifikat,info_tambahan) values ('$nama','$instansi','$tempat_lahir','$tanggal_lahir','$gender','$nik','$email','$no_hp','$bisa_wa','$pendidikan','$sertifikat','$info_tambahan')";
+			$hasil=mysqli_query($link,$sql);
+			send_email($email);
 
 	 		if ($hasil) {
-	 			send_email($email);
-	 			echo "<script>alert('Selamat $nama, data anda telah kami terima. Cek email Anda, untuk konfirmasi pendaftaran ini.');window.location.href = 'index.php';</script>";
-	 			
-	           
+	 			echo "<script>alert('Selamat $email, data anda telah kami terima. Cek email Anda, untuk konfirmasi pendaftaran ini.');window.location.href = 'index.php';</script>";  
 	        }
 
 	        else {
 	            echo "<div class='alert alert-danger'> Pendaftaraan Gagal.</div>";
 	        }
 
-			}else{
-			echo "<script>alert('Ukuran max 200mb.');window.location.href = 'index.php';</script>";
-			}
+		}else{
+			echo "<script>alert('Ukuran max 200kb.');window.location.href = 'index.php';</script>";
+		}
 	}
 
 
