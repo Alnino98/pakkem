@@ -1,0 +1,100 @@
+[02-Mar-2020 08:23:48 UTC] PHP Warning:  Illegal string offset 'form_fields' in /home/pakkem/public_html/wp-content/plugins/everest-forms/includes/fields/class-evf-field-text.php on line 169
+[02-Mar-2020 08:23:48 UTC] PHP Warning:  array_filter() expects parameter 1 to be array, string given in /home/pakkem/public_html/wp-content/plugins/everest-forms/includes/fields/class-evf-field-text.php on line 169
+[02-Mar-2020 08:23:48 UTC] PHP Warning:  Illegal string offset 'form_fields' in /home/pakkem/public_html/wp-content/plugins/everest-forms/includes/fields/class-evf-field-textarea.php on line 131
+[02-Mar-2020 08:23:48 UTC] PHP Warning:  array_filter() expects parameter 1 to be array, string given in /home/pakkem/public_html/wp-content/plugins/everest-forms/includes/fields/class-evf-field-textarea.php on line 131
+[02-Mar-2020 08:25:05 UTC] PHP Warning:  Illegal string offset 'form_fields' in /home/pakkem/public_html/wp-content/plugins/everest-forms/includes/fields/class-evf-field-text.php on line 169
+[02-Mar-2020 08:25:05 UTC] PHP Warning:  array_filter() expects parameter 1 to be array, string given in /home/pakkem/public_html/wp-content/plugins/everest-forms/includes/fields/class-evf-field-text.php on line 169
+[02-Mar-2020 08:25:05 UTC] PHP Warning:  Illegal string offset 'form_fields' in /home/pakkem/public_html/wp-content/plugins/everest-forms/includes/fields/class-evf-field-textarea.php on line 131
+[02-Mar-2020 08:25:05 UTC] PHP Warning:  array_filter() expects parameter 1 to be array, string given in /home/pakkem/public_html/wp-content/plugins/everest-forms/includes/fields/class-evf-field-textarea.php on line 131
+[02-Mar-2020 08:29:03 UTC] PHP Warning:  Illegal string offset 'form_fields' in /home/pakkem/public_html/wp-content/plugins/everest-forms/includes/fields/class-evf-field-text.php on line 169
+[02-Mar-2020 08:29:03 UTC] PHP Warning:  array_filter() expects parameter 1 to be array, string given in /home/pakkem/public_html/wp-content/plugins/everest-forms/includes/fields/class-evf-field-text.php on line 169
+[02-Mar-2020 08:29:03 UTC] PHP Warning:  Illegal string offset 'form_fields' in /home/pakkem/public_html/wp-content/plugins/everest-forms/includes/fields/class-evf-field-textarea.php on line 131
+[02-Mar-2020 08:29:03 UTC] PHP Warning:  array_filter() expects parameter 1 to be array, string given in /home/pakkem/public_html/wp-content/plugins/everest-forms/includes/fields/class-evf-field-textarea.php on line 131
+[02-Mar-2020 08:30:48 UTC] PHP Warning:  Illegal string offset 'form_fields' in /home/pakkem/public_html/wp-content/plugins/everest-forms/includes/fields/class-evf-field-text.php on line 169
+[02-Mar-2020 08:30:48 UTC] PHP Warning:  array_filter() expects parameter 1 to be array, string given in /home/pakkem/public_html/wp-content/plugins/everest-forms/includes/fields/class-evf-field-text.php on line 169
+[02-Mar-2020 08:30:48 UTC] PHP Warning:  Illegal string offset 'form_fields' in /home/pakkem/public_html/wp-content/plugins/everest-forms/includes/fields/class-evf-field-textarea.php on line 131
+[02-Mar-2020 08:30:48 UTC] PHP Warning:  array_filter() expects parameter 1 to be array, string given in /home/pakkem/public_html/wp-content/plugins/everest-forms/includes/fields/class-evf-field-textarea.php on line 131
+[10-Mar-2020 02:29:01 UTC] PHP Warning:  mysqli_query(): (08S01/1053): Server shutdown in progress in /home/pakkem/public_html/wp-includes/wp-db.php on line 2030
+[10-Mar-2020 02:29:01 UTC] PHP Warning:  Error while sending QUERY packet. PID=28174 in /home/pakkem/public_html/wp-includes/wp-db.php on line 2030
+[10-Mar-2020 02:29:01 UTC] WordPress database error Server shutdown in progress for query SELECT option_value FROM wptr_options WHERE option_name = 'elementor_default_generic_fonts' LIMIT 1 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/oceanwp/page.php'), get_header, locate_template, load_template, require_once('/themes/oceanwp/header.php'), wp_head, do_action('wp_head'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, wp_enqueue_scripts, do_action('wp_enqueue_scripts'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, Elementor\Frontend->enqueue_styles, Elementor\Core\Files\CSS\Post->enqueue, Elementor\Core\Files\CSS\Base->enqueue, do_action('elementor/css-file/post/enqueue'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, Elementor\Core\DynamicTags\Manager->after_enqueue_post_css, Elementor\Core\Files\CSS\Post->enqueue, Elementor\Core\Files\CSS\Base->enqueue, Elementor\Core\DynamicTags\Dynamic_CSS->get_meta, Elementor\Core\Files\Base->get_content, Elementor\Core\Files\CSS\Base->parse_content, Elementor\Core\Files\CSS\Post->render_css, Elementor\Core\Files\CSS\Post->render_styles, Elementor\Core\DynamicTags\Dynamic_CSS->add_controls_stack_style_rules, Elementor\Core\Files\CSS\Post->render_styles, Elementor\Core\DynamicTags\Dynamic_CSS->add_controls_stack_style_rules, Elementor\Core\Files\CSS\Post->render_styles, Elementor\Core\Base\Base_Object->get_settings, Elementor\Core\Base\Base_Object->ensure_settings, Elementor\Controls_Stack->get_init_settings, Elementor\Controls_Stack->get_data, Elementor\Controls_Stack->sanitize_settings, Elementor\Controls_Stack->get_controls, Elementor\Widget_Base->get_stack, Elementor\Controls_Stack->get_stack, Elementor\Controls_Stack->init_controls, Elementor\Widget_Heading->_register_controls, Elementor\Controls_Stack->add_group_control, Elementor\Group_Control_Base->add_controls, Elementor\Group_Control_Base->filter_fields, Elementor\Group_Control_Base->get_fields, Elementor\Group_Control_Typography->init_fields, Elementor\Core\Settings\Base\Manager->get_model, Elementor\Core\Settings\Base\Manager->create_model, Elementor\Core\Settings\General\Manager->get_saved_settings, get_option
+[10-Mar-2020 02:29:01 UTC] PHP Warning:  Error while sending QUERY packet. PID=28164 in /home/pakkem/public_html/wp-includes/wp-db.php on line 2030
+[25-May-2020 06:26:14 UTC] PHP Warning:  mysqli_get_server_info(): invalid object or resource mysqli
+ in /home/pakkem/public_html/wp-includes/wp-db.php on line 3619
+[25-May-2020 06:26:14 UTC] PHP Warning:  mysqli_get_server_info(): invalid object or resource mysqli
+ in /home/pakkem/public_html/wp-includes/wp-db.php on line 3619
+[25-May-2020 06:26:14 UTC] PHP Warning:  mysqli_get_server_info(): invalid object or resource mysqli
+ in /home/pakkem/public_html/wp-includes/wp-db.php on line 3619
+[25-May-2020 06:26:14 UTC] PHP Warning:  mysqli_query(): invalid object or resource mysqli
+ in /home/pakkem/public_html/wp-includes/wp-db.php on line 837
+[25-May-2020 06:26:14 UTC] PHP Warning:  mysqli_select_db(): invalid object or resource mysqli
+ in /home/pakkem/public_html/wp-includes/wp-db.php on line 1086
+[25-May-2020 06:26:47 UTC] PHP Warning:  mysqli_get_server_info(): invalid object or resource mysqli
+ in /home/pakkem/public_html/wp-includes/wp-db.php on line 3619
+[25-May-2020 06:26:47 UTC] PHP Warning:  mysqli_get_server_info(): invalid object or resource mysqli
+ in /home/pakkem/public_html/wp-includes/wp-db.php on line 3619
+[25-May-2020 06:26:47 UTC] PHP Warning:  mysqli_get_server_info(): invalid object or resource mysqli
+ in /home/pakkem/public_html/wp-includes/wp-db.php on line 3619
+[25-May-2020 06:26:47 UTC] PHP Warning:  mysqli_query(): invalid object or resource mysqli
+ in /home/pakkem/public_html/wp-includes/wp-db.php on line 837
+[25-May-2020 06:26:47 UTC] PHP Warning:  mysqli_select_db(): invalid object or resource mysqli
+ in /home/pakkem/public_html/wp-includes/wp-db.php on line 1086
+[25-May-2020 06:26:50 UTC] PHP Warning:  mysqli_get_server_info(): invalid object or resource mysqli
+ in /home/pakkem/public_html/wp-includes/wp-db.php on line 3619
+[25-May-2020 06:26:50 UTC] PHP Warning:  mysqli_get_server_info(): invalid object or resource mysqli
+ in /home/pakkem/public_html/wp-includes/wp-db.php on line 3619
+[25-May-2020 06:26:50 UTC] PHP Warning:  mysqli_get_server_info(): invalid object or resource mysqli
+ in /home/pakkem/public_html/wp-includes/wp-db.php on line 3619
+[25-May-2020 06:26:50 UTC] PHP Warning:  mysqli_query(): invalid object or resource mysqli
+ in /home/pakkem/public_html/wp-includes/wp-db.php on line 837
+[25-May-2020 06:26:50 UTC] PHP Warning:  mysqli_select_db(): invalid object or resource mysqli
+ in /home/pakkem/public_html/wp-includes/wp-db.php on line 1086
+[25-May-2020 06:27:32 UTC] PHP Warning:  mysqli_get_server_info(): invalid object or resource mysqli
+ in /home/pakkem/public_html/wp-includes/wp-db.php on line 3619
+[25-May-2020 06:27:32 UTC] PHP Warning:  mysqli_get_server_info(): invalid object or resource mysqli
+ in /home/pakkem/public_html/wp-includes/wp-db.php on line 3619
+[25-May-2020 06:27:32 UTC] PHP Warning:  mysqli_get_server_info(): invalid object or resource mysqli
+ in /home/pakkem/public_html/wp-includes/wp-db.php on line 3619
+[25-May-2020 06:27:32 UTC] PHP Warning:  mysqli_query(): invalid object or resource mysqli
+ in /home/pakkem/public_html/wp-includes/wp-db.php on line 837
+[25-May-2020 06:27:32 UTC] PHP Warning:  mysqli_select_db(): invalid object or resource mysqli
+ in /home/pakkem/public_html/wp-includes/wp-db.php on line 1086
+[25-May-2020 06:27:34 UTC] PHP Warning:  mysqli_get_server_info(): invalid object or resource mysqli
+ in /home/pakkem/public_html/wp-includes/wp-db.php on line 3619
+[25-May-2020 06:27:34 UTC] PHP Warning:  mysqli_get_server_info(): invalid object or resource mysqli
+ in /home/pakkem/public_html/wp-includes/wp-db.php on line 3619
+[25-May-2020 06:27:34 UTC] PHP Warning:  mysqli_get_server_info(): invalid object or resource mysqli
+ in /home/pakkem/public_html/wp-includes/wp-db.php on line 3619
+[25-May-2020 06:27:34 UTC] PHP Warning:  mysqli_query(): invalid object or resource mysqli
+ in /home/pakkem/public_html/wp-includes/wp-db.php on line 837
+[25-May-2020 06:27:34 UTC] PHP Warning:  mysqli_select_db(): invalid object or resource mysqli
+ in /home/pakkem/public_html/wp-includes/wp-db.php on line 1086
+[25-May-2020 16:03:12 UTC] PHP Warning:  mysqli_get_server_info(): invalid object or resource mysqli
+ in /home/pakkem/public_html/wp-includes/wp-db.php on line 3619
+[25-May-2020 16:03:12 UTC] PHP Warning:  mysqli_get_server_info(): invalid object or resource mysqli
+ in /home/pakkem/public_html/wp-includes/wp-db.php on line 3619
+[25-May-2020 16:03:12 UTC] PHP Warning:  mysqli_get_server_info(): invalid object or resource mysqli
+ in /home/pakkem/public_html/wp-includes/wp-db.php on line 3619
+[25-May-2020 16:03:12 UTC] PHP Warning:  mysqli_query(): invalid object or resource mysqli
+ in /home/pakkem/public_html/wp-includes/wp-db.php on line 837
+[25-May-2020 16:03:12 UTC] PHP Warning:  mysqli_select_db(): invalid object or resource mysqli
+ in /home/pakkem/public_html/wp-includes/wp-db.php on line 1086
+[25-May-2020 16:06:09 UTC] PHP Warning:  mysqli_get_server_info(): invalid object or resource mysqli
+ in /home/pakkem/public_html/wp-includes/wp-db.php on line 3619
+[25-May-2020 16:06:09 UTC] PHP Warning:  mysqli_get_server_info(): invalid object or resource mysqli
+ in /home/pakkem/public_html/wp-includes/wp-db.php on line 3619
+[25-May-2020 16:06:09 UTC] PHP Warning:  mysqli_get_server_info(): invalid object or resource mysqli
+ in /home/pakkem/public_html/wp-includes/wp-db.php on line 3619
+[25-May-2020 16:06:09 UTC] PHP Warning:  mysqli_query(): invalid object or resource mysqli
+ in /home/pakkem/public_html/wp-includes/wp-db.php on line 837
+[25-May-2020 16:06:09 UTC] PHP Warning:  mysqli_select_db(): invalid object or resource mysqli
+ in /home/pakkem/public_html/wp-includes/wp-db.php on line 1086
+[25-May-2020 16:06:13 UTC] PHP Warning:  mysqli_get_server_info(): invalid object or resource mysqli
+ in /home/pakkem/public_html/wp-includes/wp-db.php on line 3619
+[25-May-2020 16:06:13 UTC] PHP Warning:  mysqli_get_server_info(): invalid object or resource mysqli
+ in /home/pakkem/public_html/wp-includes/wp-db.php on line 3619
+[25-May-2020 16:06:13 UTC] PHP Warning:  mysqli_get_server_info(): invalid object or resource mysqli
+ in /home/pakkem/public_html/wp-includes/wp-db.php on line 3619
+[25-May-2020 16:06:13 UTC] PHP Warning:  mysqli_query(): invalid object or resource mysqli
+ in /home/pakkem/public_html/wp-includes/wp-db.php on line 837
+[25-May-2020 16:06:13 UTC] PHP Warning:  mysqli_select_db(): invalid object or resource mysqli
+ in /home/pakkem/public_html/wp-includes/wp-db.php on line 1086

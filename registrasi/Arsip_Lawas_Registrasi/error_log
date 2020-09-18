@@ -1,0 +1,39 @@
+[17-May-2020 23:05:08 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/pakkem/public_html/registrasi/head.php:2) in /home/pakkem/public_html/registrasi/index.php on line 24
+[19-May-2020 00:04:09 Asia/Jakarta] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /home/pakkem/public_html/registrasi/index.php on line 30
+[19-May-2020 00:26:08 Asia/Jakarta] PHP Parse error:  syntax error, unexpected '','' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ')' in /home/pakkem/public_html/registrasi/index.php on line 24
+[19-May-2020 09:26:44 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/pakkem/public_html/registrasi/head.php:2) in /home/pakkem/public_html/registrasi/index.php on line 27
+[19-May-2020 09:33:47 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/pakkem/public_html/registrasi/head.php:2) in /home/pakkem/public_html/registrasi/index.php on line 27
+[25-May-2020 12:56:13 Asia/Jakarta] PHP Warning:  mysqli_error() expects parameter 1 to be mysqli, boolean given in /home/pakkem/public_html/registrasi/config/konek.php on line 3
+[25-May-2020 12:59:21 Asia/Jakarta] PHP Warning:  mysqli_error() expects parameter 1 to be mysqli, boolean given in /home/pakkem/public_html/registrasi/config/konek.php on line 3
+[25-May-2020 12:59:24 Asia/Jakarta] PHP Warning:  mysqli_error() expects parameter 1 to be mysqli, boolean given in /home/pakkem/public_html/registrasi/config/konek.php on line 3
+[25-May-2020 12:59:46 Asia/Jakarta] PHP Warning:  mysqli_error() expects parameter 1 to be mysqli, boolean given in /home/pakkem/public_html/registrasi/config/konek.php on line 3
+[25-May-2020 12:59:47 Asia/Jakarta] PHP Warning:  mysqli_error() expects parameter 1 to be mysqli, boolean given in /home/pakkem/public_html/registrasi/config/konek.php on line 3
+[25-May-2020 12:59:48 Asia/Jakarta] PHP Warning:  mysqli_error() expects parameter 1 to be mysqli, boolean given in /home/pakkem/public_html/registrasi/config/konek.php on line 3
+[25-May-2020 12:59:48 Asia/Jakarta] PHP Warning:  mysqli_error() expects parameter 1 to be mysqli, boolean given in /home/pakkem/public_html/registrasi/config/konek.php on line 3
+[25-May-2020 12:59:48 Asia/Jakarta] PHP Warning:  mysqli_error() expects parameter 1 to be mysqli, boolean given in /home/pakkem/public_html/registrasi/config/konek.php on line 3
+[25-May-2020 13:11:54 Asia/Jakarta] PHP Warning:  mysqli_error() expects parameter 1 to be mysqli, boolean given in /home/pakkem/public_html/registrasi/config/konek.php on line 3
+[25-May-2020 13:22:21 Asia/Jakarta] PHP Warning:  mysqli_error() expects parameter 1 to be mysqli, boolean given in /home/pakkem/public_html/registrasi/config/konek.php on line 3
+[25-May-2020 13:35:34 Asia/Jakarta] PHP Warning:  mysqli_error() expects parameter 1 to be mysqli, boolean given in /home/pakkem/public_html/registrasi/config/konek.php on line 3
+[25-May-2020 13:40:24 Asia/Jakarta] PHP Warning:  mysqli_error() expects parameter 1 to be mysqli, boolean given in /home/pakkem/public_html/registrasi/config/konek.php on line 3
+[25-May-2020 13:40:24 Asia/Jakarta] PHP Warning:  mysqli_error() expects parameter 1 to be mysqli, boolean given in /home/pakkem/public_html/registrasi/config/konek.php on line 3
+[25-May-2020 13:41:29 Asia/Jakarta] PHP Warning:  mysqli_error() expects parameter 1 to be mysqli, boolean given in /home/pakkem/public_html/registrasi/config/konek.php on line 3
+[25-May-2020 13:41:41 Asia/Jakarta] PHP Warning:  mysqli_error() expects parameter 1 to be mysqli, boolean given in /home/pakkem/public_html/registrasi/config/konek.php on line 3
+[25-May-2020 13:41:45 Asia/Jakarta] PHP Warning:  mysqli_error() expects parameter 1 to be mysqli, boolean given in /home/pakkem/public_html/registrasi/config/konek.php on line 3
+[25-May-2020 13:52:48 Asia/Jakarta] PHP Warning:  mysqli_error() expects parameter 1 to be mysqli, boolean given in /home/pakkem/public_html/registrasi/config/konek.php on line 3
+[25-May-2020 13:56:37 Asia/Jakarta] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/pakkem/public_html/registrasi/config/fungsi.php on line 150
+[25-May-2020 13:57:39 Asia/Jakarta] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/pakkem/public_html/registrasi/config/fungsi.php on line 150
+[25-May-2020 13:58:07 Asia/Jakarta] PHP Catchable fatal error:  Object of class mysqli could not be converted to string in /home/pakkem/public_html/registrasi/config/konek.php on line 7
+[25-May-2020 13:58:54 Asia/Jakarta] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home/pakkem/public_html/registrasi/config/konek.php on line 7
+[25-May-2020 13:59:39 Asia/Jakarta] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/pakkem/public_html/registrasi/config/fungsi.php on line 150
+[25-May-2020 14:31:56 Asia/Jakarta] PHP Warning:  mysqli_error() expects parameter 1 to be mysqli, boolean given in /home/pakkem/public_html/registrasi/config/konek.php on line 3
+[25-May-2020 14:33:29 Asia/Jakarta] PHP Parse error:  syntax error, unexpected '<' in /home/pakkem/public_html/registrasi/config/konek.php on line 3
+[25-May-2020 14:36:07 Asia/Jakarta] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/pakkem/public_html/registrasi/config/fungsi.php on line 150
+[25-May-2020 14:37:20 Asia/Jakarta] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/pakkem/public_html/registrasi/config/fungsi.php on line 150
+[25-May-2020 14:38:58 Asia/Jakarta] PHP Warning:  mysqli_close() expects parameter 1 to be mysqli, null given in /home/pakkem/public_html/registrasi/config/konek.php on line 15
+[25-May-2020 14:38:58 Asia/Jakarta] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/pakkem/public_html/registrasi/config/fungsi.php on line 150
+[25-May-2020 14:39:26 Asia/Jakarta] PHP Warning:  mysqli_error() expects parameter 1 to be mysqli, boolean given in /home/pakkem/public_html/registrasi/config/konek.php on line 3
+[25-May-2020 14:40:05 Asia/Jakarta] PHP Fatal error:  Class 'mysqli_connect' not found in /home/pakkem/public_html/registrasi/config/konek.php on line 3
+[25-May-2020 14:44:08 Asia/Jakarta] PHP Warning:  mysqli_error() expects parameter 1 to be mysqli, boolean given in /home/pakkem/public_html/registrasi/config/konek.php on line 3
+[25-May-2020 14:46:01 Asia/Jakarta] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/pakkem/public_html/registrasi/config/fungsi.php on line 150
+[25-May-2020 14:47:28 Asia/Jakarta] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/pakkem/public_html/registrasi/config/fungsi.php on line 150
+[25-May-2020 14:56:49 Asia/Jakarta] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/pakkem/public_html/registrasi/config/fungsi.php on line 150
