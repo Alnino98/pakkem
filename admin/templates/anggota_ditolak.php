@@ -101,7 +101,7 @@
                         <h6 class="collapse-header">Seleksi Anggota Disetujui:</h6>
                         <a class="collapse-item" href="approve.php"><i
                                 class="far fa-thumbs-up"></i>&nbsp;&nbsp;Email Approval</a>
-                        <a class="collapse-item" href="anggota_ditolak.php"><i
+                        <a class="collapse-item" href=""><i
                                 class="far fa-thumbs-down"></i>&nbsp;&nbsp;Anggota Ditolak</a>
                     </div>
                 </div>
@@ -441,7 +441,7 @@
                             <th>Tanggal Daftar</th>
                             <th>Status</th>
                         </tr>
-                        <?= tampilkan('nama', 'email', 'no_hp', 'tgl_daftar', 1); ?>
+                        <?= tampilkan('nama', 'email', 'no_hp', 'tgl_daftar', 2); ?>
                     </table>
 
                 </div>

@@ -90,7 +90,7 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Seleksi Anggota Disetujui:</h6>
 						<a class="collapse-item" href="templates/approve.php"><i class="far fa-thumbs-up"></i>&nbsp;&nbsp;Email Approval</a>
-						<a class="collapse-item" href="404.html"><i class="far fa-thumbs-down"></i>&nbsp;&nbsp;Anggota Ditolak</a>
+						<a class="collapse-item" href="templates/anggota_ditolak.php"><i class="far fa-thumbs-down"></i>&nbsp;&nbsp;Anggota Ditolak</a>
           </div>
         </div>
       </li>
