@@ -163,7 +163,7 @@
                         <a class="collapse-item" href="404.html"><i class="far fa-paper-plane"></i>&nbsp;&nbsp;Kirim
                             Email</a>
                         <h6 class="collapse-header">Whatsapp:</h6>
-                        <a class="collapse-item" href="404.html"><i class="fab fa-whatsapp"></i>&nbsp;&nbsp;Chat WA</a>
+                        <a class="collapse-item" href="https://api.whatsapp.com/send?phone=6289619000501&text=Hallo!!, Saya mengetahui no ini dari website pakkem.org 😊. "><i class="fab fa-whatsapp"></i>&nbsp;&nbsp;Chat WA</a>
                         <h6 class="collapse-header">Diskusi:</h6>
                         <a class="collapse-item" href="404.html"><i class="far fa-comments"></i>&nbsp;&nbsp;Forum</a>
                     </div>
