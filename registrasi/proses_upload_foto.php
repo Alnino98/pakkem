@@ -66,7 +66,7 @@ function input($data) {
 			mysqli_query($link, $qry_sertif);
 			
 			
-			$sql="INSERT INTO pendaftar (nama,instansi,tempat_lahir,tanggal_lahir,gender,nik,email,no_hp,bisa_wa,pendidikan,sertifikat,info_tambahan) values ('$nama','$instansi','$tempat_lahir','$tanggal_lahir','$gender','$nik','$email','$no_hp','$bisa_wa','$pendidikan','$sertifikat','$info_tambahan')";
+			$sql="INSERT INTO pendaftar (nama,instansi,tempat_lahir,tanggal_lahir,gender,nik,email,no_hp,bisa_wa,pendidikan,sertifikat,info_tambahan,status) values ('$nama','$instansi','$tempat_lahir','$tanggal_lahir','$gender','$nik','$email','$no_hp','$bisa_wa','$pendidikan','$sertifikat','$info_tambahan',0)";
 			$hasil=mysqli_query($link,$sql);
 			send_email($email);
 
