@@ -431,6 +431,7 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
+                <!-- Manampilkan data dari database beserta status dan aksi -->
                     <!-- Page Heading -->
                     <h1 class="h3 mb-4 text-gray-800">Daftar Calon Anggota Baru</h1>
                     <table class="table">

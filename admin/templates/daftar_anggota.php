@@ -427,7 +427,7 @@
 
                 </nav>
                 <!-- End of Topbar -->
-
+                <!-- Manampilkan data dari database beserta status anggota -->
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
