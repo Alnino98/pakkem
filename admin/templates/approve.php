@@ -432,7 +432,7 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Daftar Calon Anggota Baru</h1>
+                    <h1 class="h3 mb-4 text-gray-800">Daftar Anggota Teraktivasi</h1>
                     <table class="table">
                         <tr>
                             <th>Nama</th>
@@ -441,7 +441,7 @@
                             <th>Tanggal Daftar</th>
                             <th>Status</th>
                         </tr>
-                        <?= tampilkan('nama', 'email', 'no_hp', 'tgl_daftar', 0); ?>
+                        <?= tampilkan('nama', 'email', 'no_hp', 'tgl_daftar', 1); ?>
                     </table>
 
                 </div>
