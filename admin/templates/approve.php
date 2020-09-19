@@ -435,6 +435,7 @@
                     <h1 class="h3 mb-4 text-gray-800">Daftar Anggota Diaktivasi</h1>
                     <table class="table">
                         <tr>
+                            <th>No</th>
                             <th>Nama</th>
                             <th>Email</th>
                             <th>Nomor Hp</th>

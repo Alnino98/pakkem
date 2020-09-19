@@ -51,11 +51,31 @@ if(!$_GET){
 function tampilkan($params1,$params2, $params3, $params4, $code){
     include 'config.php';
     $qry = "SELECT * FROM pendaftar";
+    $qry0 = "SELECT * FROM pendaftar WHERE status = 0";
+    $qry1 = "SELECT * FROM pendaftar WHERE status = 1";
+    $qry2 = "SELECT * FROM pendaftar WHERE status = 2";
+
     $show = mysqli_query($link,$qry);
+    $show0 = mysqli_query($link,$qry0);
+    $show1 = mysqli_query($link,$qry1);
+    $show2 = mysqli_query($link,$qry2);
+
+    if($code == 0){
+        $total = mysqli_num_rows($show0);
+        echo "Jumlah anggota : ".$total;
+    }elseif ($code == 1) {
+        $total = mysqli_num_rows($show1);
+        echo "Jumlah anggota : ".$total;
+    }elseif ($code == 2) {
+        $total = mysqli_num_rows($show2);
+        echo "Jumlah anggota : ".$total;
+    }
     // echo "<form action='".persetujuan()."' method='post'>";
+    $i=1;
     while($row = mysqli_fetch_array($show)){
         if($code == 0 && $row['status'] == 0){
             echo "<tr>";
+            echo "<td>".$i++."</td>";
             echo "<td>".$row[$params1]."</td>";
             echo "<td>".$row[$params2]."</td>";
             echo "<td>".$row[$params3]."</td>";
@@ -68,6 +88,7 @@ function tampilkan($params1,$params2, $params3, $params4, $code){
             echo "</tr>";
         }else if($code == 1 && $row['status'] == 1){
             echo "<tr>";
+            echo $i++;
             echo "<td>".$row[$params1]."</td>";
             echo "<td>".$row[$params2]."</td>";
             echo "<td>".$row[$params3]."</td>";
@@ -87,7 +108,6 @@ function tampilkan($params1,$params2, $params3, $params4, $code){
             }
             echo "</tr>";
         }
-
     }
     // echo "</form>";
 }
