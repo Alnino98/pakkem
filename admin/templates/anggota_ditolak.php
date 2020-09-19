@@ -127,7 +127,7 @@
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Anggota Terdaftar:</h6>
-                        <a class="collapse-item" href="404.html"><i
+                        <a class="collapse-item" href="daftar_anggota.php"><i
                                 class="far fa-clipboard"></i>&nbsp;&nbsp;Lists Anggota</a>
                         <a class="collapse-item" href="404.html"><i
                                 class="fas fa-chart-line"></i>&nbsp;&nbsp;Grafik Anggota</a>
@@ -432,7 +432,7 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Daftar Anggota Teraktivasi</h1>
+                    <h1 class="h3 mb-4 text-gray-800">Daftar Anggota Ditolak</h1>
                     <table class="table">
                         <tr>
                             <th>Nama</th>
