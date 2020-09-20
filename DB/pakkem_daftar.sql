@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Sep 20, 2020 at 03:35 PM
+-- Generation Time: Sep 20, 2020 at 04:23 PM
 -- Server version: 8.0.21-0ubuntu0.20.04.4
 -- PHP Version: 7.4.3
 
@@ -59,13 +59,6 @@ CREATE TABLE `foto` (
   `waktu` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `foto`
---
-
-INSERT INTO `foto` (`id`, `foto_upload`, `nama_pemilik`, `email_pemilik`) VALUES
-(23, '261149545_yoggaajipratama@gmail.com.png', 'Yogga Aji Pratama', 'yoggaajipratama@gmail.com');
-
 -- --------------------------------------------------------
 
 --
@@ -90,13 +83,6 @@ CREATE TABLE `pendaftar` (
   `status` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `pendaftar`
---
-
-INSERT INTO `pendaftar` (`id_pendaftar`, `nama`, `instansi`, `tempat_lahir`, `tanggal_lahir`, `gender`, `nik`, `email`, `no_hp`, `bisa_wa`, `pendidikan`, `sertifikat`, `info_tambahan`, `status`) VALUES
-(49, 'Yogga Aji Pratama', 'UIN Sunan Gunung Djati Bandung', 'Bandung', '2020-09-08', 'Laki-laki', '1010101010101010', 'yoggaajipratama@gmail.com', '10101010101010', 'Ya', 'D IV', 'Ya, ada', 'Tidak ada', 0);
-
 -- --------------------------------------------------------
 
 --
@@ -111,13 +97,6 @@ CREATE TABLE `sertifikat` (
   `keterangan` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
   `waktu` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `sertifikat`
---
-
-INSERT INTO `sertifikat` (`id`, `sertifikat_upload`, `nama_pemilik`, `email_pemilik`, `keterangan`) VALUES
-(19, '261149545_yoggaajipratama@gmail.com.png', 'Yogga Aji Pratama', 'yoggaajipratama@gmail.com', 'Sertifikat UIN');
 
 -- --------------------------------------------------------
 
