@@ -46,12 +46,15 @@ function input($data) {
 	$ukuran = $_FILES['foto_upload']['size'];//ukuran foto
 	$ext = pathinfo($filename, PATHINFO_EXTENSION);
 	$ext2 = pathinfo($filesertifikat, PATHINFO_EXTENSION);
-	$name_foto = $email.'.'.$ext;
-	$name_sertifikat = $email.'.'.$ext2;
+	$name_foto = $rand.'_'.$email.'.'.$ext;
+	$name_sertifikat = $rand.'_'.$email.'.'.$ext2;
 	$exsertifikat = $name_sertifikat;
+	$email_foto = $email;
+	$email_sertifikat = $email_foto;
 	
-	$qry_foto = "INSERT INTO `foto` (`id`, `foto_upload`, `nama_pemilik`) VALUES (NULL, '$name_foto', '$nama')";
-	$qry_sertif = "INSERT INTO `sertifikat` (`id`, `sertifikat_upload`, `nama_pemilik`, `keterangan`) VALUES (NULL, '$exsertifikat', '$nama2', '$keterangan')";
+	
+	$qry_foto = "INSERT INTO `foto` (`id`, `foto_upload`, `nama_pemilik`, `email_pemilik`) VALUES (NULL, '$name_foto', '$nama', '$email_foto')";
+	$qry_sertif = "INSERT INTO `sertifikat` (`id`, `sertifikat_upload`, `nama_pemilik`, `email_pemilik`,  `keterangan`) VALUES (NULL, '$exsertifikat', '$nama2', '$email_sertifikat', '$keterangan')";
 
 	if(!in_array($ext,$ekstensi) ) {
 		header("location:index.php?alert=gagal_ekstensi");
@@ -59,10 +62,10 @@ function input($data) {
 		if($ukuran < 1044070 && $ukuran2< 1044070)
 		{		
 
-			move_uploaded_file($_FILES['foto_upload']['tmp_name'], 'foto/'.$rand.'_'.$name_foto);
+			move_uploaded_file($_FILES['foto_upload']['tmp_name'], 'foto/'.$name_foto);
 			mysqli_query($link, $qry_foto);
 			//		
-			move_uploaded_file($_FILES['sertifikat_upload']['tmp_name'], 'sertifikat/'.$rand.'_'.$name_sertifikat);
+			move_uploaded_file($_FILES['sertifikat_upload']['tmp_name'], 'sertifikat/'.$name_sertifikat);
 			mysqli_query($link, $qry_sertif);
 			
 			

@@ -1,5 +1,5 @@
 <?php
-    $link = mysqli_connect('localhost', 'root', '', 'pakkem_daftar');
+    $link = mysqli_connect('localhost', 'admin', 'japan999', 'pakkem_daftar');
     $qry = "SELECT * FROM pendaftar";
     $qry0 = "SELECT * FROM pendaftar WHERE status = 0";
     $qry1 = "SELECT * FROM pendaftar WHERE status = 1";
@@ -18,7 +18,7 @@
         require 'gmail.php';
         $email = $_GET['email'];
         $id = $_GET['id'];
-        echo $v = $_GET['v'];
+        $v = $_GET['v'];
 
         if($v == 1){
             $msg_for = "
@@ -32,9 +32,33 @@
                 </html>
             ";
         // Mengubah nilai status aktivasi di tabel database
-            $qry = "UPDATE `pendaftar` SET `status` = '1' WHERE `id_pendaftar` = $id";
+            // $qry = "UPDATE `pendaftar` SET `status` = '1' WHERE `id_pendaftar` = $id";
+            $qry = "SELECT * FROM pendaftar WHERE `id_pendaftar` = $id";
             $show = mysqli_query($link,$qry);
+            while($row = mysqli_fetch_object($show)){
+                $nama = $row->nama;
+                $instansi = $row->instansi;
+                $tempat_lahir = $row->tempat_lahir;
+                $tanggal_lahir = $row->tanggal_lahir;
+                $gender = $row->gender;
+                $nik = $row->nik;
+                $email = $row->email;
+                $no_hp = $row->no_hp;
+                $bisa_wa = $row->bisa_wa;
+                $pendidikan = $row->pendidikan;
+                $sertifikat = $row->sertifikat;
+                $info_tambahan = $row->info_tambahan;   
+            }
+            $sql = "INSERT INTO `anggota`(`id_pendaftar`, `nama`, `instansi`, `tempat_lahir`, 
+            `tanggal_lahir`, `gender`, `nik`, `email`, `no_hp`, `bisa_wa`, `pendidikan`, 
+            `sertifikat`, `info_tambahan`) VALUES (NULL, '$nama', '$instansi', '$tempat_lahir', '$tanggal_lahir',
+            '$gender', '$nik', '$email', '$no_hp', '$bisa_wa', '$pendidikan', '$sertifikat', '$info_tambahan')";
+
+            $show = mysqli_query($link, $sql);
+
             if($show){
+                $qry = "UPDATE `pendaftar` SET `status` = '1' WHERE `id_pendaftar` = $id";
+                $show = mysqli_query($link,$qry);
                 send_email($email, $msg_for);
                 header("location: calon_member.php");
             }
@@ -93,17 +117,18 @@
                 echo "</tr>";
             }else if($code == 1 && $row['status'] == 1){
                 echo "<tr>";
-                echo $i++;
+                echo "<td>".$i++."</td>";
                 echo "<td>".$row[$params1]."</td>";
                 echo "<td>".$row[$params2]."</td>";
                 echo "<td>".$row[$params3]."</td>";
                 echo "<td>".$row[$params4]."</td>";
                 if($row['status'] == 1){
-                    echo "<td>Terpilih</td>";
+                    echo "<td>Anggota</td>";
                 }
                 echo "</tr>";
             }else if($code == 2 && $row['status'] == 2){
                 echo "<tr>";
+                echo "<td>".$i++."</td>";
                 echo "<td>".$row[$params1]."</td>";
                 echo "<td>".$row[$params2]."</td>";
                 echo "<td>".$row[$params3]."</td>";
@@ -111,6 +136,14 @@
                 if($row['status'] == 2){
                     echo "<td>Ditolak</td>";
                 }
+                echo "</tr>";
+            }else if($code == 3 && $row['status'] == 0){
+                echo "<tr>";
+                echo "<td>".$i++."</td>";
+                echo "<td>".$row[$params1]."</td>";
+                echo "<td>".$row[$params2]."</td>";
+                echo "<td>".$row[$params3]."</td>";
+                echo "<td>".$row[$params4]."</td>";
                 echo "</tr>";
             }
         }

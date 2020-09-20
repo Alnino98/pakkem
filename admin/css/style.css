@@ -1,0 +1,13 @@
+a:hover{
+    text-decoration: none;
+}
+.image{
+    width: 120px;
+}
+.image:hover{
+    border-radius: 0;
+    width: 220px;
+    opacity: 0.3;
+    text-decoration: none;
+    transition: 0.4s;
+}
