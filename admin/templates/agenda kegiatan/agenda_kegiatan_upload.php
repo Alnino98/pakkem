@@ -439,6 +439,7 @@
                             <th>Waktu Agenda</th>
                             <th>Kegiatan</th>
                             <th>Keterangan agenda</th>
+                            <th>Waktu Upload</th>
                             <th>Opsi</th>
                         </tr>
 
@@ -454,6 +455,7 @@
                                     <td><?php echo $d['waktu_agenda']; ?></td>
                                     <td><?php echo $d['kegiatan']; ?></td>
                                     <td><?php echo $d['keterangan_agenda']; ?></td>
+                                    <td><?php echo $d['waktu_upload']; ?></td>
                             
                                     <td>
                                         <a href="edit.php?id_agenda=<?php echo $d['id_agenda']; ?>" type="button" class="btn btn-success">EDIT</a>

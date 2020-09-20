@@ -451,6 +451,7 @@
                                 <td>Keterangan</td>
                                 <td><input type="text" name="keterangan_agenda"></td>
                             </tr>
+
                             <tr>
                                 <td></td>
                                 <td><input type="submit" value="SIMPAN"></td>
