@@ -1,4 +1,3 @@
-<?php require "models/member.php" ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,23 +12,23 @@
     <title>Administrator Dashboard - pakkem.org</title>
 
     <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="../css/sb-admin-2.min.css" rel="stylesheet">
 
     <!-- Favicon-->
-    <link rel="icon" href="assets/favicon.ico" type="image/ico">
-    <link rel="android-chrome" sizes="512x512" href="assets/android-chrome-512x512.png">
-    <link rel="android-chrome" sizes="192x192" href="assets/android-chrome-192x192.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
-    <link rel="favicon" sizes="48x48" href="assets/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
-    <link rel="manifest" href="assets/site.webmanifest">
+    <link rel="icon" href="../assets/favicon.ico" type="image/ico">
+    <link rel="android-chrome" sizes="512x512" href="../assets/android-chrome-512x512.png">
+    <link rel="android-chrome" sizes="192x192" href="../assets/android-chrome-192x192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+    <link rel="favicon" sizes="48x48" href="../assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
+    <link rel="manifest" href="../assets/site.webmanifest">
 
 </head>
 
@@ -42,7 +41,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="admin/index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="../">
                 <div class="sidebar-brand-icon rotate-n-0">
                     <i class=""><img src="https://i.ibb.co/vhKhRrc/icon-pakkem.png" alt="icon-pakkem" width="55"
                             height="55"></i>
@@ -55,7 +54,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="admin/index.html">
+                <a class="nav-link" href="../admin//">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Fitur Kelola</span></a>
             </li>
@@ -78,15 +77,16 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Calon Anggota Baru:</h6>
-                        <a class="collapse-item" href="templates/calon_member.php"><i
+                        <a class="collapse-item" href="calon_member.php"><i
                                 class="fas fa-user-plus"></i>&nbsp;&nbsp;Pendaftar Masuk</a>
-                        <a class="collapse-item" href="404.html"><i class="far fa-image"></i>&nbsp;&nbsp;Foto Masuk</a>
-                        <a class="collapse-item" href="404.html"><i class="far fa-file-alt"></i>&nbsp;&nbsp;Sertifikat
+                        <a class="collapse-item" href=""><i class="far fa-image"></i>&nbsp;&nbsp;Foto
                             Masuk</a>
+                        <a class="collapse-item" href=""><i
+                                class="far fa-file-alt"></i>&nbsp;&nbsp;Sertifikat Masuk</a>
                     </div>
                 </div>
             </li>
-
+            
             <!-- Nav Item - Utilities Collapse Menu / PERSETUJUAN / KIRIM EMAIL -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
@@ -98,9 +98,9 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Seleksi Anggota Disetujui:</h6>
-                        <a class="collapse-item" href="templates/approve.php"><i
+                        <a class="collapse-item" href="approve.php"><i
                                 class="far fa-thumbs-up"></i>&nbsp;&nbsp;Email Approval</a>
-                        <a class="collapse-item" href="templates/anggota_ditolak.php"><i
+                        <a class="collapse-item" href="anggota_ditolak.php"><i
                                 class="far fa-thumbs-down"></i>&nbsp;&nbsp;Anggota Ditolak</a>
                     </div>
                 </div>
@@ -126,14 +126,14 @@
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Anggota Terdaftar:</h6>
-                        <a class="collapse-item" href="templates/daftar_anggota.php"><i
+                        <a class="collapse-item" href="daftar_anggota.php"><i
                                 class="far fa-clipboard"></i>&nbsp;&nbsp;Lists Anggota</a>
-                        <a class="collapse-item" href="404.html"><i class="fas fa-chart-line"></i>&nbsp;&nbsp;Grafik
-                            Anggota</a>
-                        <a class="collapse-item" href="404.html"><i class="fas fa-user-check"></i>&nbsp;&nbsp;Anggota
-                            Aktif</a>
-                        <a class="collapse-item" href="templates/generate_report.php"><i class="far fa-file-pdf"></i>&nbsp;&nbsp;Generate
-                            Report</a>
+                        <a class="collapse-item" href="404.html"><i
+                                class="fas fa-chart-line"></i>&nbsp;&nbsp;Grafik Anggota</a>
+                        <a class="collapse-item" href="404.html"><i
+                                class="fas fa-user-check"></i>&nbsp;&nbsp;Anggota Aktif</a>
+                        <a class="collapse-item" href="404.html"><i
+                                class="far fa-file-pdf"></i>&nbsp;&nbsp;Generate Report</a>
                     </div>
                 </div>
             </li>
@@ -158,14 +158,17 @@
                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Inbox:</h6>
-                        <a class="collapse-item" href="404.html"><i class="fas fa-share"></i>&nbsp;&nbsp;Balas Email</a>
-                        <h6 class="collapse-header">Sebar Email:</h6>
-                        <a class="collapse-item" href="404.html"><i class="far fa-paper-plane"></i>&nbsp;&nbsp;Kirim
+                        <a class="collapse-item" href="404.html"><i class="fas fa-share"></i>&nbsp;&nbsp;Balas
                             Email</a>
+                        <h6 class="collapse-header">Sebar Email:</h6>
+                        <a class="collapse-item" href="404.html"><i
+                                class="far fa-paper-plane"></i>&nbsp;&nbsp;Kirim Email</a>
                         <h6 class="collapse-header">Whatsapp:</h6>
-                        <a class="collapse-item" href="https://api.whatsapp.com/send?phone=6289619000501&text=Hallo!!, Saya mengetahui no ini dari website pakkem.org 😊. "><i class="fab fa-whatsapp"></i>&nbsp;&nbsp;Chat WA</a>
+                        <a class="collapse-item" href="404.html"><i class="fab fa-whatsapp"></i>&nbsp;&nbsp;Chat
+                            WA</a>
                         <h6 class="collapse-header">Diskusi:</h6>
-                        <a class="collapse-item" href="404.html"><i class="far fa-comments"></i>&nbsp;&nbsp;Forum</a>
+                        <a class="collapse-item" href="404.html"><i
+                                class="far fa-comments"></i>&nbsp;&nbsp;Forum</a>
                     </div>
                 </div>
             </li>
@@ -193,11 +196,11 @@
 
                         <h6 class="collapse-header">Informations:</h6>
 
-                        <a class="collapse-item" href="templates/agenda Kegiatan/agenda_kegiatan_upload.php"><i
-                                class="fas fa-upload"></i>&nbsp;&nbsp;Admin Upload</a>
+                        <a class="collapse-item" href="404.html"><i class="fas fa-upload"></i>&nbsp;&nbsp;Admin
+                            Upload</a>
                         <h6 class="collapse-header">Kegiatan:</h6>
-                        <a class="collapse-item" href="templates/agenda Kegiatan/agenda_kegiatan.php"><i
-                                class="fas fa-tasks"></i>&nbsp;&nbsp;Agenda Kegiatan</a>
+                        <a class="collapse-item" href="404.html"><i class="fas fa-tasks"></i>&nbsp;&nbsp;Agenda
+                            Kegiatan</a>
                     </div>
                 </div>
             </li>
@@ -423,172 +426,20 @@
 
                 </nav>
                 <!-- End of Topbar -->
-
+                <!-- Manampilkan data dari database beserta status anggota -->
                 <!-- Begin Page Content -->
-                <div class="container-fluid">
-
-                    <!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
-                    </div>
-
-                    <!-- Content Row -->
-                    <div class="row">
-
-                        <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-primary shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total
-                                                Pendaftar</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= jumlah(0); ?></div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fa fa-users fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-success shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Anggota Diterima</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= jumlah(1); ?></div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fa fa-thumbs-up fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-info shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Anggota
-                                                Aktif</div>
-                                            <div class="row no-gutters align-items-center">
-                                                <div class="col-auto">
-                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
-                                                </div>
-                                                <div class="col">
-                                                    <div class="progress progress-sm mr-2">
-                                                        <div class="progress-bar bg-info" role="progressbar"
-                                                            style="width: 50%" aria-valuenow="50" aria-valuemin="0"
-                                                            aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fa fa-user-o fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Pending Requests Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-warning shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Tunda
-                                                </br>(File Tidak Komplit)</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= jumlah(2); ?></div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fa fa-thumbs-down fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Content Row -->
-
-                    <div class="row">
-                        <!-- Begin Page Content -->
-                        <div class="container-fluid">
-
-                            <!-- Page Heading -->
-                            <h1 class="h3 mb-2 text-gray-800">Grafik Keanggotaan</h1>
-                            <p class="mb-4">Grafik perkembangan jumlah anggota dan aktifitas komunitas PAKKEM.org</p>
-
-                            <!-- Content Row -->
-                            <div class="row">
-
-                                <div class="col-xl-8 col-lg-7">
-
-                                    <!-- Area Chart -->
-                                    <div class="card shadow mb-4">
-                                        <div class="card-header py-3">
-                                            <h6 class="m-0 font-weight-bold text-primary">Jumlah Member Mendaftar Thn.
-                                                <?= $tahun; ?></h6>
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="chart-area">
-                                                <canvas id="lineChart"></canvas>
-                                            </div>
-                                            <hr>
-                                            Info detail member bisa dilihat di
-                                            <code>tabel-anggota/anggota-terdaftar/anggota-aktif</code> di fitur kelola
-                                            Admin.
-                                        </div>
-                                    </div>
-
-                                    <!-- Bar Chart delete-->
-                                </div>
-
-                                <!-- Donut Chart -->
-                                <div class="col-xl-4 col-lg-5">
-                                    <div class="card shadow mb-4">
-                                        <!-- Card Header - Dropdown -->
-                                        <div class="card-header py-3">
-                                            <h6 class="m-0 font-weight-bold text-primary">Rasio Member (%)</h6>
-                                        </div>
-                                        <!-- Card Body -->
-                                        <div class="card-body">
-                                            <div class="chart-pie pt-4">
-                                                <canvas id="myPieChart"></canvas>
-                                            </div>
-                                            <hr>
-                                            Info detail member bisa dilihat di
-                                            <code>tabel-anggota/anggota-terdaftar/anggota-aktif</code> di fitur kelola
-                                            Admin.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <!-- /.container-fluid -->
-
-                    </div>
-
-                    <!-- Content Row -->
-                    <div class="row">
-
-
-                    </div>
-
-                </div>
+<h1 class='tengah'>Cetak laporan PDF <br/> <br/></h1>
+        <br/>
+        <div class="btn btn-info"> <a target="_blank" href="cetak_daftar.php">Cetak Laporan Pendaftar</a></div>
+        <br/>
+        <br/>
+        <div class="btn btn-info"> <a target="_blank" href="cetak_terpilih.php">Cetak Laporan Pendaftar Terpilih</a></div>
+        <br/>
+        <br/>
+        <div class="btn btn-info"> <a target="_blank" href="">Cetak Laporan Pendaftar Ditolak</a></div>
+        <br/>
+        <br/>
+        <div class="btn btn-info"> <a target="_blank" href="">Cetak Laporan Anggota Aktif</a></div>
                 <!-- /.container-fluid -->
 
             </div>
@@ -636,22 +487,21 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+    <script src="../js/sb-admin-2.min.js"></script>
 
     <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
-    <script src="js/Chart.js"></script>
+    <script src="../vendor/chart.js/Chart.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>
+    <script src="../js/demo/chart-area-demo.js"></script>
+    <script src="../js/demo/chart-pie-demo.js"></script>
 
 </body>
 <!-- This templates was made by Mongtuh: Automation Solutions (https://mongtuh.com) -->
