@@ -2,8 +2,8 @@
 /* Database credentials, which using currently */
 
 define('DB_SERVER', 'localhost');
-define('DB_USERNAME', 'root');
-define('DB_PASSWORD', '');
+define('DB_USERNAME', 'admin');
+define('DB_PASSWORD', 'japan999');
 define('DB_NAME', 'pakkem_daftar');
 
 /* Attempt to connect to MySQL database */

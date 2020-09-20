@@ -34,45 +34,6 @@
             </div>
         </div>
 
-<<<<<<< HEAD
-        <!-- Earnings (Monthly) Card Example -->
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-success shadow h-100 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                Anggota Diterima</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= jumlah(1); ?></div>
-                        </div>
-                        <div class="col-auto">
-                            <i class="fa fa-thumbs-up fa-2x text-gray-300"></i>
-                        </div>
-=======
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                    aria-expanded="true" aria-controls="collapsePages">
-                    <i class="far fa-folder-open"></i>
-                    <span>Tabel Anggota</span>
-                </a>
-                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Anggota Terdaftar:</h6>
-                        <a class="collapse-item" href="templates/daftar_anggota.php"><i
-                                class="far fa-clipboard"></i>&nbsp;&nbsp;Lists Anggota</a>
-                        <a class="collapse-item" href="404.html"><i class="fas fa-chart-line"></i>&nbsp;&nbsp;Grafik
-                            Anggota</a>
-                        <a class="collapse-item" href="404.html"><i class="fas fa-user-check"></i>&nbsp;&nbsp;Anggota
-                            Aktif</a>
-                        <a class="collapse-item" href="templates/generate_report.php"><i class="far fa-file-pdf"></i>&nbsp;&nbsp;Generate
-                            Report</a>
->>>>>>> 92fc1c09ef1ff416242d3b030953eeddfb786881
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <!-- Earnings (Monthly) Card Example -->
         <div class="col-xl-3 col-md-6 mb-4">
             <div class="card border-left-info shadow h-100 py-2">
@@ -95,6 +56,23 @@
                         </div>
                         <div class="col-auto">
                             <i class="fa fa-user-o fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-warning shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                Anggota Diterima</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= jumlah(1); ?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fa fa-thumbs-down fa-2x text-gray-300"></i>
                         </div>
                     </div>
                 </div>

@@ -1,6 +1,6 @@
 <?php
     $kategori = $_GET['kategori'];
-    $link = mysqli_connect('localhost', 'root', '', 'pakkem_daftar');
+    $link = mysqli_connect('localhost', 'admin', 'japan999', 'pakkem_daftar');
 
     if($kategori == 1){
         function jumlah(){
