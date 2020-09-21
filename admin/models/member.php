@@ -1,5 +1,5 @@
 <?php
-    $link = mysqli_connect('localhost', 'admin', 'japan999', 'pakkem_daftar');
+    $link = mysqli_connect('localhost', 'pakkem', 'Covid*20', 'pakkem_daftar');
     $qry = "SELECT * FROM pendaftar";
     $qry0 = "SELECT * FROM pendaftar WHERE status = 0";
     $qry1 = "SELECT * FROM pendaftar WHERE status = 1";
