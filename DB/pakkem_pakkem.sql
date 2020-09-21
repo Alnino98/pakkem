@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Sep 19, 2020 at 12:18 PM
+-- Generation Time: Sep 21, 2020 at 11:43 AM
 -- Server version: 8.0.21-0ubuntu0.20.04.4
 -- PHP Version: 7.4.3
 
@@ -42,8 +42,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id_admin`, `username`, `password`, `nama`, `level`) VALUES
-(2, 'admin', 'c8381c161aa89d09ab1905bded539435', 'admin', 'admin'),
-(3, 'user', 'f4063aaaac7ee09398df878716a1b9d1', 'User', 'user');
+(4, 'admin', 'd41d8cd98f00b204e9800998ecf8427e', 'admin', '1');
 
 -- --------------------------------------------------------
 
@@ -210,7 +209,7 @@ ALTER TABLE `pendidikan`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id_admin` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_admin` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `mst_anggota`
