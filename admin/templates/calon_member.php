@@ -6,8 +6,8 @@
 
     <!-- Manampilkan data dari database beserta status dan aksi -->
     <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800">Daftar Pendaftar Masuk    </h1>
-    <table class="table">
+    <h1 class="h3 mb-4 text-gray-800">Pendaftar Masuk    </h1>
+    <table class="small table">
         <tr>
             <th>No</th>
             <th>Nama</th>

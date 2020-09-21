@@ -78,7 +78,7 @@
                         <a class="collapse-item" href="templates/calon_member.php"><i
                                 class="fas fa-user-plus"></i>&nbsp;&nbsp;Pendaftar Masuk</a>
                         <a class="collapse-item" href="templates/foto_calon_member.php"><i class="far fa-image"></i>&nbsp;&nbsp;Foto Masuk</a>
-                        <a class="collapse-item" href="404.html"><i class="far fa-file-alt"></i>&nbsp;&nbsp;Sertifikat
+                        <a class="collapse-item" href="templates/sertifikat_calon_member.php"><i class="far fa-file-alt"></i>&nbsp;&nbsp;Sertifikat
                             Masuk</a>
                     </div>
                 </div>

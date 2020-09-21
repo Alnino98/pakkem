@@ -53,33 +53,38 @@ function input($data) {
 	$email_sertifikat = $email_foto;
 	
 	
-	$qry_foto = "INSERT INTO `foto` (`id`, `foto_upload`, `nama_pemilik`, `email_pemilik`) VALUES (NULL, '$name_foto', '$nama', '$email_foto')";
-	$qry_sertif = "INSERT INTO `sertifikat` (`id`, `sertifikat_upload`, `nama_pemilik`, `email_pemilik`,  `keterangan`) VALUES (NULL, '$exsertifikat', '$nama2', '$email_sertifikat', '$keterangan')";
+	$qry_foto = "INSERT INTO `foto` (`id`, `foto_upload`, `nama_pemilik`, `email_pemilik`, `status`) VALUES (NULL, '$name_foto', '$nama', '$email_foto', 0)";
+	$qry_sertif = "INSERT INTO `sertifikat` (`id`, `sertifikat_upload`, `nama_pemilik`, `email_pemilik`,  `keterangan`, `status`) VALUES (NULL, '$exsertifikat', '$nama2', '$email_sertifikat', '$keterangan', 0)";
 
 	if(!in_array($ext,$ekstensi) ) {
 		header("location:index.php?alert=gagal_ekstensi");
 	}else{
 		if($ukuran < 1044070 && $ukuran2< 1044070)
 		{		
-
-			move_uploaded_file($_FILES['foto_upload']['tmp_name'], 'foto/'.$name_foto);
-			mysqli_query($link, $qry_foto);
-			//		
-			move_uploaded_file($_FILES['sertifikat_upload']['tmp_name'], 'sertifikat/'.$name_sertifikat);
-			mysqli_query($link, $qry_sertif);
-			
-			
 			$sql="INSERT INTO pendaftar (nama,instansi,tempat_lahir,tanggal_lahir,gender,nik,email,no_hp,bisa_wa,pendidikan,sertifikat,info_tambahan,status) values ('$nama','$instansi','$tempat_lahir','$tanggal_lahir','$gender','$nik','$email','$no_hp','$bisa_wa','$pendidikan','$sertifikat','$info_tambahan',0)";
-			$hasil=mysqli_query($link,$sql);
-			send_email($email);
+			$cek_email = "SELECT email FROM pendaftar";
+			$cek=mysqli_query($link,$cek_email);
 
-	 		if ($hasil) {
-	 			echo "<script>alert('Selamat $email, data anda telah kami terima. Cek email Anda, untuk konfirmasi pendaftaran ini.');window.location.href = 'index.php';</script>";  
-	        }
-
-	        else {
-	            echo "<div class='alert alert-danger'> Pendaftaraan Gagal.</div>";
-	        }
+			$jumlah_email = mysqli_num_rows($cek);
+			
+			if($jumlah_email > 1){
+				echo "<script>alert('Mohon maaf email anda telah terdaftar .');window.location.href = 'index.php';</script>";
+			}else{
+				move_uploaded_file($_FILES['foto_upload']['tmp_name'], 'foto/'.$name_foto);
+				mysqli_query($link, $qry_foto);
+				//		
+				move_uploaded_file($_FILES['sertifikat_upload']['tmp_name'], 'sertifikat/'.$name_sertifikat);
+				mysqli_query($link, $qry_sertif);
+				$hasil=mysqli_query($link,$sql);
+				send_email($email);
+				if ($hasil) {
+						echo "<script>alert('Selamat $email, data anda telah kami terima. Cek email Anda, untuk konfirmasi pendaftaran ini.');window.location.href = 'index.php';</script>";  
+				}
+	
+				else {
+					echo "<div class='alert alert-danger'> Pendaftaraan Gagal.</div>";
+				}
+			}
 
 		}else{
 			echo "<script>alert('Ukuran max 200kb.');window.location.href = 'index.php';</script>";

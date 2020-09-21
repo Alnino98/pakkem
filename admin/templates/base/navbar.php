@@ -43,7 +43,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="../">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="../home.php">
                 <div class="sidebar-brand-icon rotate-n-0">
                     <i class=""><img src="https://i.ibb.co/vhKhRrc/icon-pakkem.png" alt="icon-pakkem" width="55"
                             height="55"></i>
@@ -56,7 +56,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="../admin//">
+                <a class="nav-link" href="">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Fitur Kelola</span></a>
             </li>
@@ -83,7 +83,7 @@
                                 class="fas fa-user-plus"></i>&nbsp;&nbsp;Pendaftar Masuk</a>
                         <a class="collapse-item" href="foto_calon_member.php"><i class="far fa-image"></i>&nbsp;&nbsp;Foto
                             Masuk</a>
-                        <a class="collapse-item" href=""><i class="far fa-file-alt"></i>&nbsp;&nbsp;Sertifikat Masuk</a>
+                        <a class="collapse-item" href="sertifikat_calon_member.php"><i class="far fa-file-alt"></i>&nbsp;&nbsp;Sertifikat Masuk</a>
                     </div>
                 </div>
             </li>
@@ -101,7 +101,7 @@
                         <h6 class="collapse-header">Seleksi Anggota Disetujui:</h6>
                         <a class="collapse-item" href="approve.php"><i class="far fa-thumbs-up"></i>&nbsp;&nbsp;Email
                             Approval</a>
-                        <a class="collapse-item" href=""><i class="far fa-thumbs-down"></i>&nbsp;&nbsp;Anggota
+                        <a class="collapse-item" href="anggota_ditolak.php"><i class="far fa-thumbs-down"></i>&nbsp;&nbsp;Anggota
                             Ditolak</a>
                     </div>
                 </div>

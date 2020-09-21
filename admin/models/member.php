@@ -14,7 +14,7 @@
 
     }else{
         // Mengirim email akun teraktivasi atau ditolak
-        require 'config.php';
+        global $link;
         require 'gmail.php';
         $email = $_GET['email'];
         $id = $_GET['id'];
@@ -52,16 +52,16 @@
             $sql = "INSERT INTO `anggota`(`id_pendaftar`, `nama`, `instansi`, `tempat_lahir`, 
             `tanggal_lahir`, `gender`, `nik`, `email`, `no_hp`, `bisa_wa`, `pendidikan`, 
             `sertifikat`, `info_tambahan`) VALUES (NULL, '$nama', '$instansi', '$tempat_lahir', '$tanggal_lahir',
-            '$gender', '$nik', '$email', '$no_hp', '$bisa_wa', '$pendidikan', '$sertifikat', '$info_tambahan')";
+            '$gender', '$nik', '$email', '$no_hp', '$bisa_wa', '$pendidikan', '$sertifikat', '$info_tambahan', 0)";
 
             $show = mysqli_query($link, $sql);
 
-            if($show){
-                $qry = "UPDATE `pendaftar` SET `status` = '1' WHERE `id_pendaftar` = $id";
-                $show = mysqli_query($link,$qry);
-                send_email($email, $msg_for);
-                header("location: calon_member.php");
-            }
+            // if($show){
+            //     $qry2 = "UPDATE `pendaftar` SET `status` = '1' WHERE `id_pendaftar` = $id";
+            //     $show2 = mysqli_query($link,$qry2);
+            //     send_email($email, $msg_for);
+            //     header("location: calon_member.php");
+            // }
         }else if($v == 0){
             $msg_for = "
                 <body>
@@ -96,26 +96,56 @@
         }elseif ($code == 2) {
             $total = mysqli_num_rows($show2);
             echo "Jumlah anggota : ".$total;
+        }elseif ($code == 3) {
+            $total = mysqli_num_rows($show0);
+            echo "Jumlah anggota : ".$total;
         }
 
 
+    // Menampilkan data
     // echo "<form action='".persetujuan()."' method='post'>";
-        $i=1;
+    $i=1;
+    if($code == 0 && $row['status'] == 0){
         while($row = mysqli_fetch_array($show)){
-            if($code == 0 && $row['status'] == 0){
-                echo "<tr>";
-                echo "<td>".$i++."</td>";
-                echo "<td>".$row[$params1]."</td>";
-                echo "<td>".$row[$params2]."</td>";
-                echo "<td>".$row[$params3]."</td>";
-                echo "<td>".$row[$params4]."</td>";
-                if($row['status'] == 0){
-                    echo "<td>Belum diaktivasi</td>";
-                    echo "<td><a href='calon_member.php?id=".$row['id_pendaftar']."&email=".$row[$params2]."&v=1'>Aktivasi</a></td>";
-                    echo "<td><a href='calon_member.php?id=".$row['id_pendaftar']."&email=".$row[$params2]."&v=0'>Tolak</a></td>";
+            echo "<tr>";
+            echo "<td>".$i++."</td>";
+
+            $foto = "SELECT * FROM foto WHERE email_pemilik = '$row[$params2]'";
+            $cek_foto = mysqli_query($link, $foto);
+
+            $sertifikat = "SELECT * FROM sertifikat WHERE email_pemilik = '$row[$params2]'";
+            $cek_sertifikat = mysqli_query($link, $sertifikat);
+            
+            echo "<td>".$row[$params1]."</td>";
+            echo "<td>".$row[$params2]."</td>";
+            echo "<td>".$row[$params4]."</td>";
+
+            while($row_foto = mysqli_fetch_array($cek_foto)){
+                if($row_foto['status'] == 0){
+                    echo "<td>Pending</td>";
+                }else if($row_foto['status'] == 1){
+                    echo "<td>OK</td>";
                 }
-                echo "</tr>";
-            }else if($code == 1 && $row['status'] == 1){
+            }
+
+            while($row_sertifikat = mysqli_fetch_array($cek_sertifikat)){
+                if($row_sertifikat['status'] == 0){
+                    echo "<td>Pending</td>";
+                }else if($row_sertifikat['status'] == 1){
+                    echo "<td>OK</td>";
+                }
+            }
+
+            if($row['status'] == 0){
+                echo "<td>Belum diaktivasi</td>";
+                echo "<td><a href='calon_member.php?id=".$row['id_pendaftar']."&email=".$row[$params2]."&v=1'>Aktivasi</a></td>";
+                echo "<td><a href='calon_member.php?id=".$row['id_pendaftar']."&email=".$row[$params2]."&v=0'>Tolak</a></td>";
+            }
+            echo "</tr>";
+        }
+        
+        }else if($code == 1 && $row['status'] == 1){
+            while($row = mysqli_fetch_array($show)){
                 echo "<tr>";
                 echo "<td>".$i++."</td>";
                 echo "<td>".$row[$params1]."</td>";
@@ -126,7 +156,9 @@
                     echo "<td>Anggota</td>";
                 }
                 echo "</tr>";
-            }else if($code == 2 && $row['status'] == 2){
+            }
+        }else if($code == 2 && $row['status'] == 2){
+            while($row = mysqli_fetch_array($show)){
                 echo "<tr>";
                 echo "<td>".$i++."</td>";
                 echo "<td>".$row[$params1]."</td>";
@@ -137,7 +169,9 @@
                     echo "<td>Ditolak</td>";
                 }
                 echo "</tr>";
-            }else if($code == 3 && $row['status'] == 0){
+            }
+        }else if($code == 3 && $row['status'] == 0){
+            while($row = mysqli_fetch_array($show)){
                 echo "<tr>";
                 echo "<td>".$i++."</td>";
                 echo "<td>".$row[$params1]."</td>";

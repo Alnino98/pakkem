@@ -9,7 +9,7 @@ define('DB_NAME', 'pakkem_daftar');
 /* Attempt to connect to MySQL database */
 
 /* $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME); */
-$link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+$link = mysqli_connect("localhost", "admin", "japan999", "pakkem_daftar");
 
 /* Check connection */
 
