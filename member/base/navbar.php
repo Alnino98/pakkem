@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Administrator Dashboard - pakkem.org</title>
+    <title>Member Dashboard - pakkem.org</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -51,7 +51,7 @@
                     <i class=""><img src="https://i.ibb.co/vhKhRrc/icon-pakkem.png" alt="icon-pakkem" width="55"
                             height="55"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">ADMIN<sup></sup></div>
+                <div class="sidebar-brand-text mx-3">Member<sup></sup></div>
             </a>
 
             <!-- Divider -->
@@ -66,127 +66,6 @@
 
             <!-- Divider -->
             <hr class="sidebar-divider">
-
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Baru Daftar
-            </div>
-
-            <!-- Nav Item - Pages Collapse Menu / AJUAN BARU / ANGGOTA BARU -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-database"></i>
-                    <span>Ajuan Baru</span>
-                </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Calon Anggota Baru:</h6>
-                        <a class="collapse-item" href="templates/calon_member.php"><i
-                                class="fas fa-user-plus"></i>&nbsp;&nbsp;Pendaftar Masuk</a>
-                        <a class="collapse-item" href="templates/foto_calon_member.php"><i class="far fa-image"></i>&nbsp;&nbsp;Foto Masuk</a>
-                        <a class="collapse-item" href="templates/sertifikat_calon_member.php"><i class="far fa-file-alt"></i>&nbsp;&nbsp;Sertifikat
-                            Masuk</a>
-                    </div>
-                </div>
-            </li>
-
-            <!-- Nav Item - Utilities Collapse Menu / PERSETUJUAN / KIRIM EMAIL -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="far fa-address-card"></i>
-                    <span>Persetujuan</span>
-                </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Seleksi Anggota Disetujui:</h6>
-                        <a class="collapse-item" href="templates/approve.php"><i
-                                class="far fa-thumbs-up"></i>&nbsp;&nbsp;Email Approval</a>
-                        <a class="collapse-item" href="templates/anggota_ditolak.php"><i
-                                class="far fa-thumbs-down"></i>&nbsp;&nbsp;Anggota Ditolak</a>
-                    </div>
-                </div>
-            </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <!-- Nav Item - Utilities Collapse Menu / ANGGOTA /  -->
-
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Anggota
-            </div>
-
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                    aria-expanded="true" aria-controls="collapsePages">
-                    <i class="far fa-folder-open"></i>
-                    <span>Tabel Anggota</span>
-                </a>
-                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Anggota Terdaftar:</h6>
-                        <a class="collapse-item" href="templates/daftar_anggota.php"><i
-                                class="far fa-clipboard"></i>&nbsp;&nbsp;Lists Anggota</a>
-                        <a class="collapse-item" href="templates/grafik_anggota.php"><i class="fas fa-chart-line"></i>&nbsp;&nbsp;Grafik
-                            Anggota</a>
-                        <a class="collapse-item" href="404.html"><i class="fas fa-user-check"></i>&nbsp;&nbsp;Anggota
-                            Aktif</a>
-                        <a class="collapse-item" href="404.html"><i class="far fa-file-pdf"></i>&nbsp;&nbsp;Generate
-                            Report</a>
-                    </div>
-                </div>
-            </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <!-- Nav Item - Utilities Collapse Menu / KOMUNIKASI/  -->
-
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Koordinasi Anggota
-            </div>
-
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree"
-                    aria-expanded="true" aria-controls="collapseThree">
-                    <i class="fas fa-bullhorn"></i>
-                    <span>Komunikasi</span>
-                </a>
-                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Inbox:</h6>
-                        <a class="collapse-item" href="404.html"><i class="fas fa-share"></i>&nbsp;&nbsp;Balas Email</a>
-                        <h6 class="collapse-header">Sebar Email:</h6>
-                        <a class="collapse-item" href="404.html"><i class="far fa-paper-plane"></i>&nbsp;&nbsp;Kirim
-                            Email</a>
-                        <h6 class="collapse-header">Whatsapp:</h6>
-                        <a class="collapse-item"
-                            href="https://api.whatsapp.com/send?phone=6289619000501&text=Hallo!!, Saya mengetahui no ini dari website pakkem.org 😊. "><i
-                                class="fab fa-whatsapp"></i>&nbsp;&nbsp;Chat WA</a>
-                        <h6 class="collapse-header">Diskusi:</h6>
-                        <a class="collapse-item" href="404.html"><i class="far fa-comments"></i>&nbsp;&nbsp;Forum</a>
-                    </div>
-                </div>
-            </li>
-
-
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <!-- Nav Item - Utilities Collapse Menu / KOMUNIKASI/  -->
-
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Benefits Anggota
-            </div>
-
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFour"
@@ -207,8 +86,7 @@
                     </div>
                 </div>
             </li>
-
-
+            
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
@@ -235,7 +113,7 @@
                     </button>
 
                     <!-- Topbar Search -->
-                    <form
+                    <!-- <form
                         class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         <div class="input-group">
                             <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
@@ -246,7 +124,7 @@
                                 </button>
                             </div>
                         </div>
-                    </form>
+                    </form> -->
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -398,7 +276,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Administrator</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?= $_SESSION['username'];?></span>
                                 <img class="img-profile rounded-circle"
                                     src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
                             </a>

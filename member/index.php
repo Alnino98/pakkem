@@ -21,7 +21,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login Admin | Pakkem.org</title>
+	<title>Member Admin | Pakkem.org</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -52,7 +52,7 @@
 
 				<form action="" class="login100-form validate-form" method="post">
 					<span class="login100-form-title">
-						Admin Login
+						Member Login
 					</span>
 
 					<div class="wrap-input100 validate-input">
