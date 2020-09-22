@@ -21,7 +21,7 @@
             <?php while($row_cek = mysqli_fetch_array($sql_cek)){ ?>
                 <?php if($row_cek['status'] == 0){ ?>
                 <td>
-                    <a href="detail_vcard.php?id=1&sertifikat=<?= $row['sertifikat_upload']; ?>">
+                    <a href="detail_vcard.php?id=2&sertifikat=<?= $row['sertifikat_upload']; ?>">
                         <img src="../../registrasi/sertifikat/<?= $row['sertifikat_upload']; ?>" alt="sertifikat" class="image p-3">
                     </a>
                 </td>
