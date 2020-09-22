@@ -81,7 +81,7 @@
             $show = mysqli_query($link,$qry);
             if($show){
                 // send_email($email, $msg_for);
-                header("location: calon_member.php");
+                header("location: ../templates/anggota_ditolak.php");
             }
         }
 
@@ -150,7 +150,7 @@
             if($row['status'] == 0){
                 echo "<td>Belum diaktivasi</td>";
                 echo "<td><a href='../models/member.php?id=".$row['id_pendaftar']."&email=".$row[$params2]."&v=1'>Aktivasi</a></td>";
-                echo "<td><a href='../models/member.php?id=".$row['id_pendaftar']."&email=".$row[$params2]."&v=0'>Tolak</a></td>";
+                echo "<td><a href='../models/member.php?id=".$row['id_pendaftar']."&email=".$row[$params2]."&v=0'>Tunda</a></td>";
             }
             echo "</tr>";
         }
@@ -176,7 +176,7 @@
             echo "<td>".$row[$params3]."</td>";
             echo "<td>".$row[$params4]."</td>";
             if($row['status'] == 2){
-                echo "<td>Ditolak</td>";
+                echo "<td>Tunda</td>";
             }
             echo "</tr>";
         }
