@@ -1,3 +1,14 @@
+<?php 
+    include "models/config_admin.php";
+    session_start();
+    if($_SESSION['status'] != "login"){
+        header('location: ../index.php');
+    }
+    if(isset($_POST['logout'])){
+        session_destroy();
+        header("location: ../index.php");
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -415,10 +426,11 @@
                                     Activity Log
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
-                                </a>
+                                <form action="" method="post">
+                                    <button type="submit" name="logout" class="dropdown-item">
+                                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>Logout
+                                    </button>
+                                </form>
                             </div>
                         </li>
 
