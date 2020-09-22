@@ -144,7 +144,7 @@
                             Anggota</a>
                         <a class="collapse-item" href="404.html"><i class="fas fa-user-check"></i>&nbsp;&nbsp;Anggota
                             Aktif</a>
-                        <a class="collapse-item" href="404.html"><i class="far fa-file-pdf"></i>&nbsp;&nbsp;Generate
+                        <a class="collapse-item" href="generate_report.php"><i class="far fa-file-pdf"></i>&nbsp;&nbsp;Generate
                             Report</a>
                     </div>
                 </div>
@@ -176,7 +176,7 @@
                         <a class="collapse-item" href="404.html"><i class="far fa-paper-plane"></i>&nbsp;&nbsp;Kirim
                             Email</a>
                         <h6 class="collapse-header">Whatsapp:</h6>
-                        <a class="collapse-item" href="404.html"><i class="fab fa-whatsapp"></i>&nbsp;&nbsp;Chat
+                        <a class="collapse-item" href="https://api.whatsapp.com/send?phone=6289619000501&text=Hallo, Saya mengetahui no ini dari pakkem.org !!"><i class="fab fa-whatsapp"></i>&nbsp;&nbsp;Chat
                             WA</a>
                         <h6 class="collapse-header">Diskusi:</h6>
                         <a class="collapse-item" href="404.html"><i class="far fa-comments"></i>&nbsp;&nbsp;Forum</a>
@@ -207,10 +207,10 @@
 
                         <h6 class="collapse-header">Informations:</h6>
 
-                        <a class="collapse-item" href="404.html"><i class="fas fa-upload"></i>&nbsp;&nbsp;Admin
+                        <a class="collapse-item" href="agenda_kegiatan_upload.php"><i class="fas fa-upload"></i>&nbsp;&nbsp;Admin
                             Upload</a>
                         <h6 class="collapse-header">Kegiatan:</h6>
-                        <a class="collapse-item" href="404.html"><i class="fas fa-tasks"></i>&nbsp;&nbsp;Agenda
+                        <a class="collapse-item" href="agenda_kegiatan.php"><i class="fas fa-tasks"></i>&nbsp;&nbsp;Agenda
                             Kegiatan</a>
                     </div>
                 </div>

@@ -20,8 +20,4 @@ $sql = mysqli_query($koneksi, $query);
 	if($sql){
 		header("location:agenda_kegiatan_upload.php");
 	}
-
- 
-
- 
 ?>
