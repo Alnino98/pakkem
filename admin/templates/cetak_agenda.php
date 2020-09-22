@@ -3,7 +3,7 @@
 <head>
 	  <link href="../css/style.css" rel="stylesheet">
     <link href="../css/sb-admin-2.min.css" rel="stylesheet">
-	<title>CETAK PRINT DATA Agenda</title>
+	<title>CETAK PRINT DATA AGENDA</title>
 </head>
 <body>
  
@@ -20,7 +20,6 @@ $koneksi = mysqli_connect("localhost","root","","pakkem_agenda");
  <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800">laporan agenda</h1>
     <table class="small table">
         <tr>
             <th>No</th>
@@ -45,7 +44,7 @@ $koneksi = mysqli_connect("localhost","root","","pakkem_agenda");
         }
         ?>
     </table>
-    <td class = "table1">Jumlah Agenda: <?= mysqli_num_rows($data) ?></td>
+    <td>Jumlah Agenda: <?= mysqli_num_rows($data) ?></td>
 	</div>
 	<script>
 		window.print();

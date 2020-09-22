@@ -16,23 +16,25 @@
 	<?php 
 	include 'config.php';
 	?>
+
+<div class="container-fluid">
  
-	<table border="1" style="width: 100% ; border: 1; border-color: black" class="table " >
-<tr>
- <th>No</th>
- <th>Nama</th>
- <th>Instansi</th>
- <th>Tempat Lahir</th>
- <th>Tanggal Lahir</th>
- <th>Jenis Kelamin</th>
- <th>NIK</th>
- <th>Email</th>
- <th>NO Handphone</th>
- <th>Pendidikan</th>
- <th>Sertifikat</th>
- <th>Info Tambahan</th>
- <th>Tanggal Daftar</th>
-</tr>
+	<table class="small table">
+		<tr>
+			 <th>No</th>
+			 <th>Nama</th>
+			 <th>Instansi</th>
+			 <th>Tempat Lahir</th>
+			 <th>Tanggal Lahir</th>
+			 <th>Jenis Kelamin</th>
+			 <th>NIK</th>
+			 <th>Email</th>
+			 <th>NO Handphone</th>
+			 <th>Pendidikan</th>
+			 <th>Sertifikat</th>
+			 <th>Info Tambahan</th>
+			 <th>Tanggal Daftar</th>
+		</tr>
 
 
 		<?php 
@@ -61,7 +63,8 @@
 		?>
 
 	</table>
-			<td class = "table1">Jumlah Pendaftar: <?= mysqli_num_rows($sql) ?></td>
+		<td>Jumlah Pendaftar: <?= mysqli_num_rows($sql) ?></td>
+</div>
 	<script>
 		window.print();
 		printTest();
