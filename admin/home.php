@@ -1,11 +1,13 @@
+<?php require "models/member.php" ?>
 <?php 
     session_start();
     if($_SESSION['status'] != "login"){
         header('location: index.php');
     }
 ?>
-<?php require "models/member.php" ?>
-<?php require "base/navbar.php" ?><!-- Begin Page Content -->
+<?php require "base/navbar.php" ?>
+
+<!-- Begin Page Content -->
 <div class="container-fluid">
 
     <!-- Page Heading -->
@@ -129,7 +131,9 @@
                             </div>
                             <hr>
                             Info detail member bisa dilihat di
-                            <a href="http://localhost/pakkem/admin/templates/daftar_anggota.php">/pakkem/admin/templates/daftar_anggota.php</a> di fitur kelola
+                            <a
+                                href="http://localhost/pakkem/admin/templates/daftar_anggota.php">/pakkem/admin/templates/daftar_anggota.php</a>
+                            di fitur kelola
                             Admin.
                         </div>
                     </div>
@@ -160,18 +164,12 @@
 
         </div>
         <!-- /.container-fluid -->
-
     </div>
-
     <!-- Content Row -->
     <div class="row">
-
-
     </div>
-
 </div>
 <!-- /.container-fluid -->
-
 </div>
 <!-- End of Main Content -->
 <?php require "base/footer.php" ?>

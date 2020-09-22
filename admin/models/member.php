@@ -1,5 +1,5 @@
 <?php
-    $link = mysqli_connect('localhost', 'admin', 'japan999', 'pakkem_daftar');
+    $link = mysqli_connect("localhost", "pakkem", "Covid*20", "pakkem_daftar");
     $qry = "SELECT * FROM pendaftar";
     $qry0 = "SELECT * FROM pendaftar WHERE status = 0";
     $qry1 = "SELECT * FROM pendaftar WHERE status = 1";
@@ -61,8 +61,8 @@
             if($show){
                 $qry2 = "UPDATE `pendaftar` SET `status` = '1' WHERE `id_pendaftar` = $id";
                 $show2 = mysqli_query($link,$qry2);
-                send_email($email, $msg_for);
-                header("location: calon_member.php");
+                //send_email($email, $msg_for);
+                header("location: ../templates/daftar_anggota.php");
             }
 
         }else if($v == 0){
@@ -80,7 +80,7 @@
             $qry = "UPDATE `pendaftar` SET `status` = '2' WHERE `id_pendaftar` = $id";
             $show = mysqli_query($link,$qry);
             if($show){
-                send_email($email, $msg_for);
+                // send_email($email, $msg_for);
                 header("location: calon_member.php");
             }
         }
@@ -149,8 +149,8 @@
 
             if($row['status'] == 0){
                 echo "<td>Belum diaktivasi</td>";
-                echo "<td><a href='calon_member.php?id=".$row['id_pendaftar']."&email=".$row[$params2]."&v=1'>Aktivasi</a></td>";
-                echo "<td><a href='calon_member.php?id=".$row['id_pendaftar']."&email=".$row[$params2]."&v=0'>Tolak</a></td>";
+                echo "<td><a href='../models/member.php?id=".$row['id_pendaftar']."&email=".$row[$params2]."&v=1'>Aktivasi</a></td>";
+                echo "<td><a href='../models/member.php?id=".$row['id_pendaftar']."&email=".$row[$params2]."&v=0'>Tolak</a></td>";
             }
             echo "</tr>";
         }

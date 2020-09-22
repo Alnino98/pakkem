@@ -1,6 +1,5 @@
-<?php require "../models/member.php"; ?>
 <?php require "base/navbar.php"; ?>
-
+<?php require "../models/member.php"; ?>
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
