@@ -1,14 +1,24 @@
-<?php
-include '../models/config.php';
-require_once("dompdf/autoload.inc.php");
-use Dompdf\Dompdf;
-$dompdf = new Dompdf();
-$query = mysqli_query($link,"select * from pendaftar");
-// menghitung data
-$jumlah = mysqli_num_rows($query);
-$html = '<center><h2>Daftar Pendaftar</h2></center><hr/><br/>';
-$html .= '<table border="1" width="100%">
- <tr>
+<!DOCTYPE html>
+<html>
+<head>
+	  <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/sb-admin-2.min.css" rel="stylesheet">
+	<title>CETAK PRINT DATA PENDAFTAR</title>
+</head>
+<body>
+ 
+	<center>
+ 
+		<h2>DATA LAPORAN PENDAFTAR</h2>
+ 
+	</center>
+ 
+	<?php 
+	include 'config.php';
+	?>
+ 
+	<table border="1" style="width: 100% ; border: 1; border-color: black" class="table " >
+<tr>
  <th>No</th>
  <th>Nama</th>
  <th>Instansi</th>
@@ -22,37 +32,42 @@ $html .= '<table border="1" width="100%">
  <th>Sertifikat</th>
  <th>Info Tambahan</th>
  <th>Tanggal Daftar</th>
- </tr>'
- ;
+</tr>
 
- $html .= '<br/><h3>jumlah pendaftar: </h3>'.$jumlah;
 
-$no = 1;
-while($row = mysqli_fetch_array($query))
-{
- $html .= "<tr>
- <td>".$no."</td>
- <td>".$row['nama']."</td>
- <td>".$row['instansi']."</td>
- <td>".$row['tempat_lahir']."</td>
- <td>".$row['tanggal_lahir']."</td>
- <td>".$row['gender']."</td>
- <td>".$row['nik']."</td>
- <td>".$row['email']."</td>
- <td>".$row['no_hp']."</td>
- <td>".$row['pendidikan']."</td>
- <td>".$row['sertifikat']."</td>
- <td>".$row['info_tambahan']."</td>
- <td>".$row['tgl_daftar']."</td>
- </tr>";
- $no++;
-}
-$html .= "</html>";
-$dompdf->loadHtml($html);
-// Setting ukuran dan orientasi kertas
-$dompdf->setPaper('A4', 'landscape');
-// Rendering dari HTML Ke PDF
-$dompdf->render();
-// Melakukan output file Pdf
-$dompdf->stream("laporan_pendaftaran.pdf");
-?>
+		<?php 
+		$no = 1;
+		global $link;
+		$sql = mysqli_query($link,"select * from pendaftar");
+		while($data = mysqli_fetch_array($sql)){
+		?>
+		<tr>
+			<td><?php echo $no++; ?></td>
+			<td><?php echo $data['nama']; ?></td>
+			<td><?php echo $data['instansi']; ?></td>
+			<td><?php echo $data['tempat_lahir']; ?></td>
+			<td><?php echo $data['tanggal_lahir']; ?></td>
+			<td><?php echo $data['gender']; ?></td>
+			<td><?php echo $data['nik']; ?></td>
+			<td><?php echo $data['email']; ?></td>
+			<td><?php echo $data['no_hp']; ?></td>
+			<td><?php echo $data['pendidikan']; ?></td>
+			<td><?php echo $data['sertifikat']; ?></td>
+			<td><?php echo $data['info_tambahan']; ?></td>
+			<td><?php echo $data['tgl_daftar']; ?></td>
+		</tr>
+		<?php 
+		}
+		?>
+
+	</table>
+			<td class = "table1">Jumlah Pendaftar: <?= mysqli_num_rows($sql) ?></td>
+	<script>
+		window.print();
+		printTest();
+	</script>
+ 
+<script src="../js/print.js"></script>
+</body>
+</html>
+
