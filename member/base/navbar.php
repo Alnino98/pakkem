@@ -67,6 +67,28 @@
             <!-- Divider -->
             <hr class="sidebar-divider">
             <!-- Nav Item - Pages Collapse Menu -->
+            <!-- Agenda -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+                    aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-tasks"></i>
+                    <span>Tabel Anggota</span>
+                </a>
+                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Anggota Terdaftar:</h6>
+                        <a class="collapse-item" href="templates/daftar_anggota.php"><i
+                                class="far fa-clipboard"></i>&nbsp;&nbsp;Lists Anggota</a>
+                        <a class="collapse-item" href="templates/grafik_anggota.php"><i class="fas fa-chart-line"></i>&nbsp;&nbsp;Grafik
+                            Anggota</a>
+                        <a class="collapse-item" href="404.html"><i class="fas fa-user-check"></i>&nbsp;&nbsp;Anggota
+                            Aktif</a>
+                        <a class="collapse-item" href="404.html"><i class="far fa-file-pdf"></i>&nbsp;&nbsp;Generate
+                            Report</a>
+                    </div>
+                </div>
+            </li>
+            <!-- Modul -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFour"
                     aria-expanded="true" aria-controls="collapseFour">
@@ -86,7 +108,6 @@
                     </div>
                 </div>
             </li>
-            
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
