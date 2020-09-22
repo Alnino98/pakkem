@@ -1,22 +1,31 @@
 <?php
-	include "models/config_admin.php";
+	include "models/config.php";
+	$pesan = $_GET['pesan'];
 	if(isset($_POST['submit'])){
-		$username = $_POST['username'];
-		$password = $_POST['password'];
-		$password = md5($password);
-		$query = "SELECT * FROM admin WHERE username = '$username' and password = '$password'";
-		$sql = mysqli_query($link, $query);
-		$cek = mysqli_num_rows($sql);
-
-		if($cek > 0){
-			session_start();
-			$_SESSION['username'] = $username;
-			$_SESSION['status'] = "login";
-			header("location: home.php");
-		}
+		file_put_contents('log.txt', $ip);
+		// $email = $_POST['email'];
+		// $password = md5($_POST['password']);
+		// $query = "SELECT * FROM users WHERE email = '$email' and password = '$password'";
+		// $sql = mysqli_query($link, $query);
+		// $cek = mysqli_num_rows($sql);
+		// $ip = $_SERVER['REMOTE_ADDR'];
+		// if($cek > 0){
+		// 	echo "ok";
+			// $log = "INSERT INTO log VALUES (NULL,'$email','$ip','login')";
+			// $save = mysqli_query($link, $log);
+			// if($save == true){
+			// 	session_start();
+			// 	$_SESSION['username'] = $username;
+			// 	$_SESSION['status'] = "login";
+			// 	header("location: home.php");
+			// }else{
+			// 	header("location: index.php?pesan=gagal");	
+			// }
+		// }else{
+		// 	echo mysqli_error($link);
+		// 	header("location: index.php?pesan=gagal");
+		// }
 	}
-	
-	
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -53,10 +62,10 @@
 				<form action="" class="login100-form validate-form" method="post">
 					<span class="login100-form-title">
 						Member Login
+					<p class="text-danger text-center"><?php if(isset($_GET['pesan'])){echo 'Username/Password salah';}?></p>
 					</span>
-
 					<div class="wrap-input100 validate-input">
-						<input class="input100" type="text" name="username" placeholder="Username">
+						<input class="input100" type="email" name="email" placeholder="Email">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-envelope" aria-hidden="true"></i>
@@ -78,8 +87,8 @@
 					</div>
 
 					<div class="text-center p-t-136">
-						<a class="txt2" href="register.php">
-							Create your Account
+						<a class="txt2" href="">
+							Lupa password ?
 							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
 						</a>
 					</div>
@@ -87,9 +96,6 @@
 			</div>
 		</div>
 	</div>
-	
-	
-
 	
 <!--===============================================================================================-->	
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>

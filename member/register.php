@@ -1,18 +1,20 @@
 <?php
-    include 'models/config_admin.php';
+    include 'models/config.php';
     global $link;
     if(isset($_POST['submit'])){
         $username = htmlspecialchars($_POST['username']);
         $nama = htmlspecialchars($_POST['nama']);
         $email = $_POST['email'];
-        $password = $_POST['password'];
+        $password = md5($_POST['password']);
         if(empty($email) or empty($nama) or empty($email) or empty($password) or empty($username)){
             echo "<script>alert('Silakan isi semua kolom');</script>";
         }else{
-            $query = "INSERT INTO `admin` (`id_admin`, `username`, `email`, `password`, `nama`, `level`) VALUES (NULL, '$username', '$email', '$password', '$nama', 1)";
+            $query = "INSERT INTO `users` (`id_user`, `username`, `email`, `password`, `nama`, `level`) VALUES (NULL, '$username', '$email', '$password', '$nama', 1)";
             $sql = mysqli_query($link, $query);
             if($sql == true){
                 echo "<script>alert('Berhasil');</script>";
+            }else{
+                echo mysqli_error($link);
             }
         }
     }
@@ -30,7 +32,7 @@
     <meta name="keywords" content="Colorlib Templates">
 
     <!-- Title Page-->
-    <title>Au Register Forms by Colorlib</title>
+    <title>Register Admin</title>
     <!-- Icons font CSS-->
     <link href="css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
     <link href="css/font-awesome.min.css" rel="stylesheet" media="all">

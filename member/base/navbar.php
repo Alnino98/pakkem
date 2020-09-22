@@ -83,8 +83,8 @@
                             Anggota</a>
                         <a class="collapse-item" href="404.html"><i class="fas fa-user-check"></i>&nbsp;&nbsp;Anggota
                             Aktif</a>
-                        <a class="collapse-item" href="404.html"><i class="far fa-file-pdf"></i>&nbsp;&nbsp;Generate
-                            Report</a>
+                        <a class="collapse-item" href="404.html"><i class="far fa-file-pdf"></i>&nbsp;&nbsp;Download
+                            Modul</a>
                     </div>
                 </div>
             </li>
@@ -108,6 +108,26 @@
                     </div>
                 </div>
             </li>
+            <!-- Komunikasi -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree"
+                    aria-expanded="true" aria-controls="collapseThree">
+                    <i class="fas fa-bullhorn"></i>
+                    <span>Komunikasi</span>
+                </a>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Inbox:</h6>
+                        <h6 class="collapse-header">Whatsapp:</h6>
+                        <a class="collapse-item"
+                            href="https://api.whatsapp.com/send?phone=6289619000501&text=Hallo!!, Saya mengetahui no ini dari website pakkem.org 😊. "><i
+                                class="fab fa-whatsapp"></i>&nbsp;&nbsp;Chat WA</a>
+                        <h6 class="collapse-header">Diskusi:</h6>
+                        <a class="collapse-item" href="404.html"><i class="far fa-comments"></i>&nbsp;&nbsp;Forum</a>
+                    </div>
+                </div>
+            </li>
+
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
@@ -132,20 +152,6 @@
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                         <i class="fa fa-bars"></i>
                     </button>
-
-                    <!-- Topbar Search -->
-                    <!-- <form
-                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                        <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                                aria-label="Search" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
-                                    <i class="fas fa-search fa-sm"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form> -->
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -304,7 +310,7 @@
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="templates/profil.php">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
                                 </a>
