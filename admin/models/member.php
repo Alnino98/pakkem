@@ -1,14 +1,16 @@
 <?php
-    $link = mysqli_connect('localhost', 'pakkem', 'Covid*20', 'pakkem_daftar');
+    $link = mysqli_connect('localhost', 'admin', 'japan999', 'pakkem_daftar');
     $qry = "SELECT * FROM pendaftar";
     $qry0 = "SELECT * FROM pendaftar WHERE status = 0";
     $qry1 = "SELECT * FROM pendaftar WHERE status = 1";
     $qry2 = "SELECT * FROM pendaftar WHERE status = 2";
+    $qry3 = "SELECT * FROM anggota";
     $tahun = date("Y");
     $show = mysqli_query($link,$qry);
     $show0 = mysqli_query($link,$qry0);
     $show1 = mysqli_query($link,$qry1);
     $show2 = mysqli_query($link,$qry2);
+    $showAnggota = mysqli_query($link,$qry3);
 
     if(!$_GET){
 
@@ -51,17 +53,18 @@
             }
             $sql = "INSERT INTO `anggota`(`id_pendaftar`, `nama`, `instansi`, `tempat_lahir`, 
             `tanggal_lahir`, `gender`, `nik`, `email`, `no_hp`, `bisa_wa`, `pendidikan`, 
-            `sertifikat`, `info_tambahan`) VALUES (NULL, '$nama', '$instansi', '$tempat_lahir', '$tanggal_lahir',
+            `sertifikat`, `info_tambahan`, `status`) VALUES (NULL, '$nama', '$instansi', '$tempat_lahir', '$tanggal_lahir',
             '$gender', '$nik', '$email', '$no_hp', '$bisa_wa', '$pendidikan', '$sertifikat', '$info_tambahan', 0)";
 
             $show = mysqli_query($link, $sql);
 
-            // if($show){
-            //     $qry2 = "UPDATE `pendaftar` SET `status` = '1' WHERE `id_pendaftar` = $id";
-            //     $show2 = mysqli_query($link,$qry2);
-            //     send_email($email, $msg_for);
-            //     header("location: calon_member.php");
-            // }
+            if($show){
+                $qry2 = "UPDATE `pendaftar` SET `status` = '1' WHERE `id_pendaftar` = $id";
+                $show2 = mysqli_query($link,$qry2);
+                send_email($email, $msg_for);
+                header("location: calon_member.php");
+            }
+
         }else if($v == 0){
             $msg_for = "
                 <body>
@@ -85,7 +88,8 @@
     }
     // Menampilkan data dari database
     function tampilkan($params1,$params2, $params3, $params4, $code){
-        global $link, $show, $show0, $show1, $show2;
+        global $link, $show, $show0, $show1, $show2, $showAnggota;
+
         // Menampilkan jumlah pendaftar baru, anggota aktif, pendaftar ditolak
         if($code == 0){
             $total = mysqli_num_rows($show0);
@@ -99,14 +103,17 @@
         }elseif ($code == 3) {
             $total = mysqli_num_rows($show0);
             echo "Jumlah anggota : ".$total;
+        }elseif ($code == 4) {
+            $total = mysqli_num_rows($showAnggota);
+            echo "Jumlah anggota : ".$total;
         }
 
 
     // Menampilkan data
     // echo "<form action='".persetujuan()."' method='post'>";
     $i=1;
-    if($code == 0 && $row['status'] == 0){
-        while($row = mysqli_fetch_array($show)){
+    if($code == 0){
+        while($row = mysqli_fetch_array($show0)){
             echo "<tr>";
             echo "<td>".$i++."</td>";
 
@@ -125,6 +132,8 @@
                     echo "<td>Pending</td>";
                 }else if($row_foto['status'] == 1){
                     echo "<td>OK</td>";
+                }else if($row_foto['status'] == 2){
+                    echo "<td>Ditolak</td>";
                 }
             }
 
@@ -133,6 +142,8 @@
                     echo "<td>Pending</td>";
                 }else if($row_sertifikat['status'] == 1){
                     echo "<td>OK</td>";
+                }else if($row_sertifikat['status'] == 2){
+                    echo "<td>Ditolak</td>";
                 }
             }
 
@@ -143,67 +154,77 @@
             }
             echo "</tr>";
         }
-        
-        }else if($code == 1 && $row['status'] == 1){
-            while($row = mysqli_fetch_array($show)){
-                echo "<tr>";
-                echo "<td>".$i++."</td>";
-                echo "<td>".$row[$params1]."</td>";
-                echo "<td>".$row[$params2]."</td>";
-                echo "<td>".$row[$params3]."</td>";
-                echo "<td>".$row[$params4]."</td>";
-                if($row['status'] == 1){
-                    echo "<td>Anggota</td>";
-                }
-                echo "</tr>";
+    }else if($code == 1){
+        while($row = mysqli_fetch_array($show1)){
+            echo "<tr>";
+            echo "<td>".$i++."</td>";
+            echo "<td>".$row[$params1]."</td>";
+            echo "<td>".$row[$params2]."</td>";
+            echo "<td>".$row[$params3]."</td>";
+            echo "<td>".$row[$params4]."</td>";
+            if($row['status'] == 1){
+                echo "<td>Anggota</td>";
             }
-        }else if($code == 2 && $row['status'] == 2){
-            while($row = mysqli_fetch_array($show)){
-                echo "<tr>";
-                echo "<td>".$i++."</td>";
-                echo "<td>".$row[$params1]."</td>";
-                echo "<td>".$row[$params2]."</td>";
-                echo "<td>".$row[$params3]."</td>";
-                echo "<td>".$row[$params4]."</td>";
-                if($row['status'] == 2){
-                    echo "<td>Ditolak</td>";
-                }
-                echo "</tr>";
-            }
-        }else if($code == 3 && $row['status'] == 0){
-            while($row = mysqli_fetch_array($show)){
-                echo "<tr>";
-                echo "<td>".$i++."</td>";
-                echo "<td>".$row[$params1]."</td>";
-                echo "<td>".$row[$params2]."</td>";
-                echo "<td>".$row[$params3]."</td>";
-                echo "<td>".$row[$params4]."</td>";
-                echo "</tr>";
-            }
+            echo "</tr>";
         }
+    }else if($code == 2){
+        while($row = mysqli_fetch_array($show2)){
+            echo "<tr>";
+            echo "<td>".$i++."</td>";
+            echo "<td>".$row[$params1]."</td>";
+            echo "<td>".$row[$params2]."</td>";
+            echo "<td>".$row[$params3]."</td>";
+            echo "<td>".$row[$params4]."</td>";
+            if($row['status'] == 2){
+                echo "<td>Ditolak</td>";
+            }
+            echo "</tr>";
+        }
+    }else if($code == 3){
+        while($row = mysqli_fetch_array($show0)){
+            echo "<tr>";
+            echo "<td>".$i++."</td>";
+            echo "<td>".$row[$params1]."</td>";
+            echo "<td>".$row[$params2]."</td>";
+            echo "<td>".$row[$params3]."</td>";
+            echo "<td>".$row[$params4]."</td>";
+            echo "</tr>";
+        }
+    }else if($code == 4){
+        while($row = mysqli_fetch_array($showAnggota)){
+            echo "<tr>";
+            echo "<td>".$i++."</td>";
+            echo "<td>".$row[$params1]."</td>";
+            echo "<td>".$row[$params2]."</td>";
+            echo "<td>".$row['tanggal_lahir']."</td>";
+            echo "<td>".$row[$params3]."</td>";
+            echo "<td>".$row[$params4]."</td>";
+            echo "<td>".$row['gender']."</td>";
+            echo "</tr>";
+        }
+    }
         // echo "</form>";
-    }
-
+}
     // Menampilkan jumlah
-    function jumlah($kategori){
-        global $show0, $show1, $show2;
-        switch ($kategori) {
-            case '0':
-                $total = mysqli_num_rows($show0);
-                return $total;
-                break;
-            case '1':
-                $total = mysqli_num_rows($show1);
-                return $total;
-                break;
-            case '2':
-                $total = mysqli_num_rows($show2);
-                return $total;
-                break;
-            
-            default:
-                echo "Error";
-                break;
-        }
+function jumlah($kategori){
+    global $show0, $show1, $show2;
+    switch ($kategori) {
+        case '0':
+            $total = mysqli_num_rows($show0);
+            return $total;
+            break;
+        case '1':
+            $total = mysqli_num_rows($show1);
+            return $total;
+            break;
+        case '2':
+            $total = mysqli_num_rows($show2);
+            return $total;
+            break;
+        
+        default:
+            echo "Error";
+            break;
     }
+}
 ?>

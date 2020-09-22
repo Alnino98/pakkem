@@ -33,11 +33,15 @@
                                     </th>
                                     <th>
                                         <?php if($row['status'] == 0){ ?>
-                                        <a href="verifikasi.php?foto=<?= $row['foto_upload']; ?>" class="btn btn-success">Terima Pendaftaran Foto</a>
-                                        <a href="verifikasi.php?foto=ditolak" class="btn btn-danger">Tolak</a>
+                                        <a href="verifikasi.php?foto=<?= $row['foto_upload']; ?>&id=ok" class="btn btn-success">Terima Pendaftaran Foto</a>
+                                        <a href="verifikasi.php?foto=<?= $row['foto_upload']; ?>&id=ditolak" class="btn btn-danger">Tolak</a>
                                         <?php }?>
                                         <?php if($row['status'] == 1){ ?>
-                                        <a href="verifikasi.php?foto=ditolak" class="btn btn-danger">Batalkan</a>
+                                        <a href="verifikasi.php?foto=<?= $row['foto_upload']; ?>&id=batal" class="btn btn-danger">Batalkan</a>
+                                        <?php }?>
+                                        <?php if($row['status'] == 2){ ?>
+                                        <span class="btn btn-primary">Tertolak</span>
+                                        <a href="verifikasi.php?foto=<?= $row['foto_upload']; ?>&id=batal" class="btn btn-danger">Batalkan</a>
                                         <?php }?>
                                     </th>
                                     <tr>
@@ -83,11 +87,15 @@
                                     </th>
                                     <th>
                                         <?php if($row['status'] == 0){ ?>
-                                        <a href="verifikasi.php?sertifikat=<?= $row['sertifikat_upload']; ?>" class="btn btn-success">Terima Pendaftaran Sertifikat</a>
-                                        <a href="verifikasi.php?sertifikat=ditolak" class="btn btn-danger">Tolak</a>
+                                        <a href="verifikasi.php?sertifikat=<?= $row['sertifikat_upload']; ?>&id=ok" class="btn btn-success">Terima Pendaftaran Sertifikat</a>
+                                        <a href="verifikasi.php?sertifikat=ditolak<?= $row['sertifikat_upload']; ?>&id=tolak" class="btn btn-danger">Tolak</a>
                                         <?php }?>
                                         <?php if($row['status'] == 1){ ?>
-                                        <a href="verifikasi.php?sertifikat=ditolak" class="btn btn-danger">Batalkan</a>
+                                        <a href="verifikasi.php?sertifikat=<?= $row['sertifikat_upload']; ?>&id=batal" class="btn btn-danger">Batalkan</a>
+                                        <?php }?>
+                                        <?php if($row['status'] == 2){ ?>
+                                        <span class="btn btn-danger">Tertolak</span>
+                                        <a href="verifikasi.php?sertifikat=<?= $row['sertifikat_upload']; ?>&id=batal" class="btn btn-danger">Batalkan</a>
                                         <?php }?>
                                     </th>
                                     <tr>

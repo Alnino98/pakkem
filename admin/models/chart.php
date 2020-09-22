@@ -30,6 +30,4 @@
                 echo json_encode($total);
             }
     }
-
-
 ?>

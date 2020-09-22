@@ -3,8 +3,7 @@
 
 /* Attempt to connect to MySQL database */
 
-$link = mysqli_connect("localhost", "pakkem", "Covid*20", "pakkem_daftar");
-// $link = mysqli_connect('localhost', 'admin', 'japan999', 'pakkem_daftar');
+$link = mysqli_connect('localhost', 'admin', 'japan999', 'pakkem_daftar');
 
 /* Check connection */
 

@@ -8,7 +8,7 @@ function input($data) {
 	$data = htmlspecialchars($data);
 	return $data;
 }
- if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 	$nama=input($_POST["nama"]);
 	$instansi=input($_POST["instansi"]);
@@ -62,23 +62,25 @@ function input($data) {
 		if($ukuran < 1044070 && $ukuran2< 1044070)
 		{		
 			$sql="INSERT INTO pendaftar (nama,instansi,tempat_lahir,tanggal_lahir,gender,nik,email,no_hp,bisa_wa,pendidikan,sertifikat,info_tambahan,status) values ('$nama','$instansi','$tempat_lahir','$tanggal_lahir','$gender','$nik','$email','$no_hp','$bisa_wa','$pendidikan','$sertifikat','$info_tambahan',0)";
-			$cek_email = "SELECT email FROM pendaftar";
+
+			$cek_email = "SELECT email FROM pendaftar WHERE email = '$email'";
 			$cek=mysqli_query($link,$cek_email);
 
 			$jumlah_email = mysqli_num_rows($cek);
 			
 			if($jumlah_email > 1){
 				echo "<script>alert('Mohon maaf email anda telah terdaftar .');window.location.href = 'index.php';</script>";
-			}else{
+			}else if($jumlah_email < 1){
 				move_uploaded_file($_FILES['foto_upload']['tmp_name'], 'foto/'.$name_foto);
-				mysqli_query($link, $qry_foto);
-				//		
 				move_uploaded_file($_FILES['sertifikat_upload']['tmp_name'], 'sertifikat/'.$name_sertifikat);
+						
+				mysqli_query($link, $qry_foto);
 				mysqli_query($link, $qry_sertif);
+
 				$hasil=mysqli_query($link,$sql);
 				send_email($email);
 				if ($hasil) {
-						echo "<script>alert('Selamat $email, data anda telah kami terima. Cek email Anda, untuk konfirmasi pendaftaran ini.');window.location.href = 'index.php';</script>";  
+					echo "<script>alert('Selamat $email, data anda telah kami terima. Cek email Anda, untuk konfirmasi pendaftaran ini.');window.location.href = 'index.php';</script>";
 				}
 	
 				else {
@@ -90,8 +92,6 @@ function input($data) {
 			echo "<script>alert('Ukuran max 200kb.');window.location.href = 'index.php';</script>";
 		}
 	}
-
-
 }else{
 	echo "gagal";
 }

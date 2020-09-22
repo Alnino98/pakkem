@@ -11,13 +11,13 @@
             <th>No</th>
             <th>Nama</th>
             <th>Email</th>
+            <th>Tanggal Lahir</th>
             <th>Nomor Hp</th>
             <th>Tanggal Daftar</th>
-            <th>Status</th>
+            <th>Jenis Kelamin</th>
         </tr>
-        <?= tampilkan('nama', 'email', 'no_hp', 'tgl_daftar', 1); ?>
+        <?= tampilkan('nama', 'email', 'no_hp', 'tgl_daftar', 4); ?>
     </table>
-
 </div>
 <!-- /.container-fluid -->
 <?php require "base/footer.php"; ?>

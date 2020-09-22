@@ -1,13 +1,11 @@
-<?php require "models/member.php" ?>
 <?php 
     session_start();
     if($_SESSION['status'] != "login"){
         header('location: index.php');
     }
 ?>
-<?php require "base/navbar.php" ?>
-
-<!-- Begin Page Content -->
+<?php require "models/member.php" ?>
+<?php require "base/navbar.php" ?><!-- Begin Page Content -->
 <div class="container-fluid">
 
     <!-- Page Heading -->
