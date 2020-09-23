@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Sep 21, 2020 at 11:43 AM
+-- Generation Time: Sep 23, 2020 at 06:42 PM
 -- Server version: 8.0.21-0ubuntu0.20.04.4
 -- PHP Version: 7.4.3
 
@@ -31,6 +31,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `admin` (
   `id_admin` int NOT NULL,
   `username` varchar(100) NOT NULL,
+  `email` varchar(200) NOT NULL,
   `password` varchar(100) NOT NULL,
   `nama` varchar(100) NOT NULL,
   `level` varchar(100) NOT NULL,
@@ -41,8 +42,23 @@ CREATE TABLE `admin` (
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`id_admin`, `username`, `password`, `nama`, `level`) VALUES
-(4, 'admin', 'd41d8cd98f00b204e9800998ecf8427e', 'admin', '1');
+INSERT INTO `admin` (`id_admin`, `username`, `email`, `password`, `nama`, `level`) VALUES
+(17, 'admin', 'admin@admin.com', '8f4f4aa2c27b7c39a33895142e164354', 'admin', '1');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `agenda_kegiatan`
+--
+
+CREATE TABLE `agenda_kegiatan` (
+  `id_agenda` int NOT NULL,
+  `hari_tanggal` date NOT NULL,
+  `waktu_agenda` varchar(100) NOT NULL,
+  `kegiatan` varchar(200) NOT NULL,
+  `keterangan_agenda` varchar(200) NOT NULL,
+  `waktu_upload` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -145,13 +161,18 @@ CREATE TABLE `pegawai` (
   `password` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `pegawai`
+-- Table structure for table `pembaca_agenda`
 --
 
-INSERT INTO `pegawai` (`id_pegawai`, `id_jabatan`, `nip`, `nama`, `jk`, `foto`, `agama`, `pendidikan`, `status_kep`, `alamat`, `username`, `password`) VALUES
-(10, 15, '200012052018110801001', 'Hatsune Miku', 'P', 'foto_1589668962.jpg', 'lainnya', 'SMK RPL', 'Tetap', 'Tokyo, Japan', 'miku2255', '827ccb0eea8a706c4c34a16891f84e7b'),
-(11, 17, '200007152018110801003', 'Kizuna Ai', 'P', 'foto_1589669245.jpg', 'lainnya', 'SMK Multimedia', 'Magang', 'Sapporo, Japan', 'kizunaai_', '827ccb0eea8a706c4c34a16891f84e7b');
+CREATE TABLE `pembaca_agenda` (
+  `id` int NOT NULL,
+  `pembaca` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
+  `kegiatan` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
+  `waktu_baca` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -173,13 +194,6 @@ CREATE TABLE `pendidikan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `pendidikan`
---
-
-INSERT INTO `pendidikan` (`id`, `nama_pendaftar`, `id_pendaftar`, `status_slta`, `kota`, `kecamatan`, `kode_pos`, `nama_slta`, `no_ijazah`, `tahun lulus`) VALUES
-(3, 'frans chaniago', 2, 'negeri', 'jakarta', 'cengkareng', '15589', 'SMP 2 Cengkareng', '687678578579', '2013');
-
---
 -- Indexes for dumped tables
 --
 
@@ -190,10 +204,28 @@ ALTER TABLE `admin`
   ADD PRIMARY KEY (`id_admin`);
 
 --
+-- Indexes for table `agenda_kegiatan`
+--
+ALTER TABLE `agenda_kegiatan`
+  ADD PRIMARY KEY (`id_agenda`);
+
+--
 -- Indexes for table `mst_anggota`
 --
 ALTER TABLE `mst_anggota`
   ADD PRIMARY KEY (`mst_no_pendaftaran`);
+
+--
+-- Indexes for table `pegawai`
+--
+ALTER TABLE `pegawai`
+  ADD PRIMARY KEY (`id_pegawai`);
+
+--
+-- Indexes for table `pembaca_agenda`
+--
+ALTER TABLE `pembaca_agenda`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `pendidikan`
@@ -209,13 +241,31 @@ ALTER TABLE `pendidikan`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id_admin` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_admin` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
+-- AUTO_INCREMENT for table `agenda_kegiatan`
+--
+ALTER TABLE `agenda_kegiatan`
+  MODIFY `id_agenda` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `mst_anggota`
 --
 ALTER TABLE `mst_anggota`
   MODIFY `mst_no_pendaftaran` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
+
+--
+-- AUTO_INCREMENT for table `pegawai`
+--
+ALTER TABLE `pegawai`
+  MODIFY `id_pegawai` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `pembaca_agenda`
+--
+ALTER TABLE `pembaca_agenda`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `pendidikan`
