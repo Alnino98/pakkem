@@ -10,6 +10,21 @@
     while($row = mysqli_fetch_object($sql)){
         $foto = $row->foto_upload;
     }
+
+    global $link_agenda;
+    $qry_agenda = "SELECT * FROM agenda_kegiatan";
+    $sql_agenda = mysqli_query($link_agenda, $qry_agenda);
+
+    while($row_agenda = mysqli_fetch_array($sql_agenda)){
+        $kegiatan =  $row_agenda['kegiatan'];
+        $qry_pembaca_agenda = "SELECT * FROM pembaca_agenda WHERE pembaca = '$email' AND kegiatan = '$kegiatan'";
+        $sql_pembaca_agenda = mysqli_query($link_agenda, $qry_pembaca_agenda);
+        $pembaca =  mysqli_num_rows($sql_pembaca_agenda);
+        $agenda =  mysqli_num_rows($sql_agenda);
+        $jumlah = $agenda-$pembaca;
+        $jumlah;
+    }
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -192,7 +207,7 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-bell fa-fw"></i>
                                 <!-- Counter - Alerts -->
-                                <span class="badge badge-danger badge-counter">3+</span>
+                                <span class="badge badge-danger badge-counter"><?= $jumlah; ?></span>
                             </a>
                             <!-- Dropdown - Alerts -->
                             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
