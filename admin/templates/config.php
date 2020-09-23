@@ -4,8 +4,7 @@
 /* Attempt to connect to MySQL database */
 
 /* $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME); */
-$link = mysqli_connect("localhost", "admin", "japan999", "pakkem_daftar");
-
+$link = mysqli_connect("localhost", "pakkem", "Covid*20", "pakkem_daftar");
 /* Check connection */
 
 if($link === false){
