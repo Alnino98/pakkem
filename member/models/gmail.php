@@ -56,7 +56,7 @@ require 'vendor/autoload.php';
             $mail->addAddress($email, '');
 
             //Set the subject line
-            $mail->Subject = 'Aktivasi Akun';
+            $mail->Subject = 'Lupa Password';
 
             //Read an HTML message body from an external file, convert referenced images to embedded,
             //convert HTML into a basic plain-text alternative body

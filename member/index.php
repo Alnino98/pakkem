@@ -2,29 +2,23 @@
 	include "models/config.php";
 	$pesan = $_GET['pesan'];
 	if(isset($_POST['submit'])){
-		file_put_contents('log.txt', $ip);
-		// $email = $_POST['email'];
-		// $password = md5($_POST['password']);
-		// $query = "SELECT * FROM users WHERE email = '$email' and password = '$password'";
-		// $sql = mysqli_query($link, $query);
-		// $cek = mysqli_num_rows($sql);
-		// $ip = $_SERVER['REMOTE_ADDR'];
-		// if($cek > 0){
-		// 	echo "ok";
-			// $log = "INSERT INTO log VALUES (NULL,'$email','$ip','login')";
-			// $save = mysqli_query($link, $log);
-			// if($save == true){
-			// 	session_start();
-			// 	$_SESSION['username'] = $username;
-			// 	$_SESSION['status'] = "login";
-			// 	header("location: home.php");
-			// }else{
-			// 	header("location: index.php?pesan=gagal");	
-			// }
-		// }else{
-		// 	echo mysqli_error($link);
-		// 	header("location: index.php?pesan=gagal");
-		// }
+		$email = $_POST['email'];
+		$password = md5($_POST['password']);
+		$query = "SELECT * FROM users WHERE email = '$email' and password = '$password'";
+		$sql = mysqli_query($link, $query);
+		$cek = mysqli_num_rows($sql);
+		$ip = $_SERVER['REMOTE_ADDR'];
+		if($cek > 0){
+			$log = $email.' melakukan login dengan ip '.$ip."\r\n";
+			file_put_contents('log.txt', $log, FILE_APPEND);
+			session_start();
+			$_SESSION['username'] = $username;
+			$_SESSION['status'] = "login";
+			header("location: home.php");
+		}else{
+			echo mysqli_error($link);
+			header("location: index.php?pesan=gagal");
+		}
 	}
 ?>
 <!DOCTYPE html>
@@ -87,7 +81,7 @@
 					</div>
 
 					<div class="text-center p-t-136">
-						<a class="txt2" href="">
+						<a class="txt2" href="lupa_password.php">
 							Lupa password ?
 							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
 						</a>
