@@ -8,6 +8,13 @@
         session_destroy();
         header("location: ../index.php");
     }
+    require "../models/config.php";
+    $email = $_SESSION['username'];
+    $qry = "SELECT * FROM foto WHERE email_pemilik = '$email'";
+    $sql = mysqli_query($link, $qry);
+    while($row = mysqli_fetch_object($sql)){
+        $foto = $row->foto_upload;
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -309,18 +316,18 @@
                                 <span
                                     class="mr-2 d-none d-lg-inline text-gray-600 small"><?= $_SESSION['username'];?></span>
                                 <img class="img-profile rounded-circle"
-                                    src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+                                    src="../../registrasi/foto/<?= $foto; ?>">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="templates/profil.php">
+                                <a class="dropdown-item" href="">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Profile
+                                    Profil
                                 </a>
                                 <a class="dropdown-item" href="#">
                                     <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Activity Log
+                                    Log Aktivitas
                                 </a>
                                 <div class="dropdown-divider"></div>
                                 <form action="" method="post">

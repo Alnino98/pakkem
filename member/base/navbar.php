@@ -1,8 +1,14 @@
 <?php 
-    include "models/config_admin.php";
     if(isset($_POST['logout'])){
         session_destroy();
         header("location: index.php");
+    }
+    require "models/config.php";
+    $email = $_SESSION['username'];
+    $qry = "SELECT * FROM foto WHERE email_pemilik = '$email'";
+    $sql = mysqli_query($link, $qry);
+    while($row = mysqli_fetch_object($sql)){
+        $foto = $row->foto_upload;
     }
 ?>
 <!DOCTYPE html>
@@ -305,7 +311,7 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?= $_SESSION['email'];?></span>
                                 <img class="img-profile rounded-circle"
-                                    src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+                                    src="../registrasi/foto/<?= $foto; ?>">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"

@@ -10,6 +10,14 @@
     if(!$sql1 AND !$sql2){
         echo mysqli_error($link);
     }
+
+    if(isset($_POST['submit'])){
+        $real_name =  $_FILES['foto']['name'];
+        $temp =  $_FILES['foto']['tmp_name'];   
+        $name = $_POST['name'];
+        unlink("../../registrasi/foto/".$name);
+        move_uploaded_file($temp, "../../registrasi/foto/".$name);
+    }
 ?>
 <div class="container mx-auto">
     <table class="table">
@@ -17,13 +25,16 @@
         <tr>
             <th>
                 <img src="../../registrasi/foto/<?=$row_foto['foto_upload'];?>" alt="foto" class="image">
-                <div class="container">
-                    <input type="file" name="foto">
-                    <button class="btn btn-success">Perbaharui</button>
-                </div>
+                <form action="" method="post" enctype="multipart/form-data">
+                    <div class="container">
+                        <input type="file" name="foto">
+                        <input type="hidden" name="name" value="<?=$row_foto['foto_upload'];?>">
+                        <button type="submit" name="submit" class="btn btn-success">Perbaharui</button>
+                    </div>
+                </form>
             </th>
             <th>
-                <div>
+                <div class="container">
                     <td>
                         <h5><?=$row_foto['nama_pemilik'];?></h5>
                     </td>
