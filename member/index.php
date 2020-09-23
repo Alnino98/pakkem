@@ -9,10 +9,13 @@
 		$cek = mysqli_num_rows($sql);
 		$ip = $_SERVER['REMOTE_ADDR'];
 		if($cek > 0){
-			$log = $email.' melakukan login dengan ip '.$ip."\r\n";
+			date_default_timezone_set("Asia/Bangkok");
+			$date = date("Y-m-d h:i:sa");
+			$log = 'Login '.$email.' '.$ip.' '.$date."\r\n";
 			file_put_contents('log.txt', $log, FILE_APPEND);
 			session_start();
-			$_SESSION['username'] = $username;
+			$_SESSION['username'] = $email;
+			$_SESSION['email'] = $email;
 			$_SESSION['status'] = "login";
 			header("location: home.php");
 		}else{
