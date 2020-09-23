@@ -1,5 +1,4 @@
 <?php 
-    include "models/config_admin.php";
     session_start();
     if($_SESSION['status'] != "login"){
         header('location: ../index.php');
