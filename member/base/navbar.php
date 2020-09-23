@@ -14,16 +14,19 @@
     global $link_agenda;
     $qry_agenda = "SELECT * FROM agenda_kegiatan";
     $sql_agenda = mysqli_query($link_agenda, $qry_agenda);
+    // while($row_agenda = mysqli_fetch_array($sql_agenda)){
+    //     $kegiatan =  $row_agenda['kegiatan'];
+    //     $qry_pembaca_agenda = "SELECT * FROM pembaca_agenda WHERE pembaca = '$email' AND kegiatan = '$kegiatan'";
+    //     $sql_pembaca_agenda = mysqli_query($link_agenda, $qry_pembaca_agenda);
+        
+    //     echo $pembaca =  mysqli_num_rows($sql_pembaca_agenda);
+    //     $agenda =  mysqli_num_rows($sql_agenda);
+    //     $jumlah = $agenda-$pembaca;
+    //     $jumlah;
+    // }
+    $qry_pembaca_agenda = "SELECT * FROM pembaca_agenda WHERE pembaca = '$email'";
+    $sql_pembaca_agenda = mysqli_query($link_agenda, $qry_pembaca_agenda);
 
-    while($row_agenda = mysqli_fetch_array($sql_agenda)){
-        $kegiatan =  $row_agenda['kegiatan'];
-        $qry_pembaca_agenda = "SELECT * FROM pembaca_agenda WHERE pembaca = '$email' AND kegiatan = '$kegiatan'";
-        $sql_pembaca_agenda = mysqli_query($link_agenda, $qry_pembaca_agenda);
-        $pembaca =  mysqli_num_rows($sql_pembaca_agenda);
-        $agenda =  mysqli_num_rows($sql_agenda);
-        $jumlah = $agenda-$pembaca;
-        $jumlah;
-    }
     
 ?>
 <!DOCTYPE html>
@@ -209,11 +212,11 @@
                                 <!-- Counter - Alerts -->
                                 <span class="badge badge-danger badge-counter"><?= $jumlah; ?></span>
                             </a>
-                            <!-- Dropdown - Alerts -->
+                            <!-- Dropdown - Alerts Agenda -->
                             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="alertsDropdown">
                                 <h6 class="dropdown-header">
-                                    Alerts Center
+                                    Notifikasi Agenda
                                 </h6>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="mr-3">
@@ -222,30 +225,19 @@
                                         </div>
                                     </div>
                                     <div>
-                                        <div class="small text-gray-500">December 12, 2019</div>
-                                        <span class="font-weight-bold">A new monthly report is ready to download!</span>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="mr-3">
-                                        <div class="icon-circle bg-success">
-                                            <i class="fas fa-donate text-white"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="small text-gray-500">December 7, 2019</div>
-                                        $290.29 has been deposited into your account!
-                                    </div>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="mr-3">
-                                        <div class="icon-circle bg-warning">
-                                            <i class="fas fa-exclamation-triangle text-white"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="small text-gray-500">December 2, 2019</div>
-                                        Spending Alert: We've noticed unusually high spending for your account.
+                                        <?php while ($row_agenda = mysqli_fetch_array($sql_agenda)){?>
+                                            <?php while ($row_pembaca = mysqli_fetch_array($sql_pembaca_agenda)){
+                                                $kegiatan_pembaca = $row_pembaca['kegiatan'];
+                                            }?>
+                                            <?php $kegiatan =  $row_agenda['kegiatan']; ?>
+                                            <?php if($kegiatan != $kegiatan_pembaca){?>
+                                                <div class="small text-gray-500"><?= $row_agenda['waktu_upload'];?></div>
+                                                <span class="font-weight-bold"><?= $row_agenda['kegiatan'];?></span><br>
+                                                <span class="small text-gray-1000"><?= $row_agenda['keterangan_agenda'];?></span>
+
+                                            <?php }else if($kegiatan == $kegiatan_pembaca){?>
+                                            <?php }?>
+                                        <?php }?>
                                     </div>
                                 </a>
                                 <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
