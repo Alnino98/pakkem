@@ -17,7 +17,7 @@
     </div>
 
     <!-- Content Row -->
-    <div class="row">
+    <div class="row float-center">
 
         <!-- Total Agenda -->
         <div class="col-xl-3 col-md-6 mb-4">
