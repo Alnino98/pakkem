@@ -23,33 +23,43 @@
 
                     <!-- Page Heading -->
                     <h1 class="h3 mb-4 text-gray-800">Daftar Anggota</h1>
-                    <table class="table">
+                    <table class="table small">
                         <tr>
                             <th>No</th>
+                            <th>Id Agenda</th>
                             <th>hari/tanggal</th>
                             <th>Waktu Agenda</th>
                             <th>Kegiatan</th>
                             <th>Keterangan agenda</th>
                             <th>Download File</th>
+                            <th>Aksi</th>
                         </tr>
 
             <?php 
                 include 'koneksi.php';
                 $no = 1;
-                $data = mysqli_query($koneksi,"select * from agenda_kegiatan");
+                $data = mysqli_query($koneksi,"select * from agenda_kegiatan ORDER BY waktu_upload ASC");
                 while($d = mysqli_fetch_array($data)){
                     ?>
                     <tr>
                         <td><?php echo $no++; ?></td>
+                        <td><?php echo $d['id_agenda']; ?></td>
                         <td><?php echo $d['hari_tanggal']; ?></td>
                         <td><?php echo $d['waktu_agenda']; ?></td>
                         <td><?php echo $d['kegiatan']; ?></td>
                         <td><?php echo $d['keterangan_agenda']; ?></td>
-                        <td><a class="btn btn-primary" href="download_pdf.php?filename=<?=$d['kegiatan_pdf']?>">Download</a></td>    
+                        <?php if ($d['kegiatan_pdf']==NULL): ?>
 
+                           <td><a style="font-size: 10pt" class="btn btn-primary">Download</a></td>   
 
-                        <!-- <td><a class="btn btn-primary" href="download_pdf.php?filename=$d[kegiatan_pdf]" role="button">Download</a></td>
- -->
+                        <?php else: ?>
+
+                            <td><a style="font-size: 10pt" class="btn btn-primary" href="download_pdf.php?filename=<?=$d['kegiatan_pdf']?>">Download</a></td>   
+
+                        <?php endif ?> 
+
+                        <td><button style="font-size: 10pt" type="button" class="btn btn-success">Join</button></td>
+
                         
                         
                         
