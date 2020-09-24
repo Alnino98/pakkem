@@ -30,6 +30,8 @@
       <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
       <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
       <link rel="manifest" href="assets/site.webmanifest">
+      <link rel="stylesheet" href="css/util.css">
+      <link rel="stylesheet" href="css/main3.css">
       <style>
          /* Style the button that is used to open and close the collapsible content */
          .collapsible {
@@ -64,6 +66,9 @@
          overflow: hidden;
          transition: max-height 0.2s ease-out;
          }
+         .text-success{
+            color: #32a832;
+         }
       </style>
    </head>
    <body>
@@ -73,6 +78,10 @@
                <div class="card card-1">
                   <div class="card-heading"></div>
                   <div class="card-body">
+                  <?php if(isset($_GET['pesan'])){ ?>
+                     <p class="shadow p-3 mb-5 bg-white rounded text-center text-success">Data tersimpan mohon tunggu 24 jam dan cek email anda untuk mendapatkan informasi akun anda.</p>
+                     <br>
+                  <?php }?>
                      <h2 class="title">Formulir Pendaftaran</h2>
                      <!-- Nama Lengkap -->
                      <div class="input-group">

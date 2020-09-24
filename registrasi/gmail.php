@@ -11,7 +11,7 @@ use PHPMailer\PHPMailer\SMTP;
 require 'vendor/autoload.php';
 //Import PHPMailer classes into the global namespace
 
-    function send_email($email){
+    function send_email($email,$msg_for){
 
 
             //Create a new PHPMailer instance
@@ -27,43 +27,43 @@ require 'vendor/autoload.php';
             //$mail->SMTPDebug = SMTP::DEBUG_SERVER;
 
             //Set the hostname of the mail server
-            $mail->Host = 'smtp.gmail.com';
+            $mail->Host = 'mail.pakkem.org';
             // use
             // $mail->Host = gethostbyname('smtp.gmail.com');
             // if your network does not support SMTP over IPv6
 
             //Set the SMTP port number - 587 for authenticated TLS, a.k.a. RFC4409 SMTP submission
-            $mail->Port = 587;
+            $mail->Port = 465;
 
             //Set the encryption mechanism to use - STARTTLS or SMTPS
-            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+            $mail->SMTPSecure = 'ssl';
 
             //Whether to use SMTP authentication
             $mail->SMTPAuth = true;
 
-            $mail->Username = 'moh.ramdani22@gmail.com';
+            $mail->Username = '_mainaccount@pakkem.org';
 
             //Password to use for SMTP authentication
-            $mail->Password = 'dani@ingat';
+            $mail->Password = 'Covid*20';
 
             //Set who the message is to be sent from
-            $mail->setFrom('moh.ramdani22@gmail.com', 'Send');
+            $mail->setFrom('_mainaccount@pakkem.org', 'Send');
 
             //Set an alternative reply-to address
-            $mail->addReplyTo('moh.ramdani22@gmail.com', 'Reply');
+            $mail->addReplyTo('_mainaccount@pakkem.org', 'Reply');
 
             //Set who the message is to be sent to
             $mail->addAddress($email, '');
 
             //Set the subject line
-            $mail->Subject = 'PHPMailer GMail SMTP test';
+            $mail->Subject = 'Lengkapi Akun Anda';
 
             //Read an HTML message body from an external file, convert referenced images to embedded,
             //convert HTML into a basic plain-text alternative body
             
-            $mail->msgHTML(file_get_contents('contents.html'), __DIR__);
+            $mail->msgHTML($msg_for);
             //Replace the plain text body with one created manually
-            $mail->AltBody = 'This is a plain-text message body';
+            $mail->AltBody = 'Pakkem.org';
 
             //Attach an image file
             /*$mail->addAttachment('images/phpmailer_mini.png');

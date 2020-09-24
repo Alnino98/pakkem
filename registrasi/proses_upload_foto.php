@@ -83,9 +83,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 						echo mysqli_error($link);
 					}
 					$hasil=mysqli_query($link,$sql);
-					send_email($email);
 					if ($hasil) {
-						echo "<script>alert('Selamat $email, data anda telah kami terima. Cek email Anda, untuk konfirmasi pendaftaran ini.');window.location.href = 'index.php';</script>";
+						header("location: contents.php?email=".$email."");
 					}
 		
 					else {

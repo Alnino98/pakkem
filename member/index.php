@@ -4,7 +4,7 @@
 	if(isset($_POST['submit'])){
 		$email = $_POST['email'];
 		$password = md5($_POST['password']);
-		$query = "SELECT * FROM users WHERE email = '$email' and password = '$password'";
+		$query = "SELECT * FROM users WHERE email = '$email' and password = '$password' and status = 1";
 		$sql = mysqli_query($link, $query);
 		$cek = mysqli_num_rows($sql);
 		$ip = $_SERVER['REMOTE_ADDR'];
@@ -59,8 +59,8 @@
 				<form action="" class="login100-form validate-form" method="post">
 					<span class="login100-form-title">
 						Member Login
-					<p class="text-danger text-center"><?php if(isset($_GET['pesan'])){echo 'Username/Password salah';}?></p>
 					</span>
+					<p class="text-danger text-center"><?php if(isset($_GET['pesan'])){echo 'Username/Password salah<br>atau akun belum diaktivasi.';}?></p>
 					<div class="wrap-input100 validate-input">
 						<input class="input100" type="email" name="email" placeholder="Email">
 						<span class="focus-input100"></span>

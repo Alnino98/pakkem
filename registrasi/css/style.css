@@ -1,0 +1,30 @@
+a:hover{
+    text-decoration: none;
+}
+.image{
+    width: 240px;
+    display: inline-block;
+    border: solid;
+    opacity: 100;
+    border-color: white;
+    border-radius: 30px;
+}
+.image:hover{
+    border-color: transparent;
+    border-radius: 0;
+    width: 320px;
+    opacity: 0.5;
+    text-decoration: none;
+    transition: 0.4s;
+    overflow: hidden;
+}
+.mr-10{
+    margin-left: 10px;
+}
+.cardname{
+    width: 200px;
+    margin-bottom: 3px;
+}
+.small{
+    font-size: 11px !important;
+}

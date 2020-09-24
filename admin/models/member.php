@@ -61,6 +61,8 @@
             if($show){
                 $qry2 = "UPDATE `pendaftar` SET `status` = '1' WHERE `id_pendaftar` = $id";
                 $show2 = mysqli_query($link,$qry2);
+                $qry2 = "UPDATE `users` SET `status` = '1' WHERE `email` = '$email'";
+                $show2 = mysqli_query($link,$qry2);
                 //send_email($email, $msg_for);
                 header("location: ../templates/daftar_anggota.php");
             }
