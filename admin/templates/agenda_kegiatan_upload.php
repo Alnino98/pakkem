@@ -13,6 +13,7 @@
                             <th>Kegiatan</th>
                             <th>Keterangan agenda</th>
                             <th>Waktu Upload</th>
+                            <th>Upload File</th>
                             <th>Opsi</th>
                         </tr>
 
@@ -29,11 +30,15 @@
                                     <td><?php echo $d['kegiatan']; ?></td>
                                     <td><?php echo $d['keterangan_agenda']; ?></td>
                                     <td><?php echo $d['waktu_upload']; ?></td>
-                            
+                                    <td><?php echo $d['kegiatan_pdf']; ?></td>
+                                    
                                     <td>
                                         <a href="edit.php?id_agenda=<?php echo $d['id_agenda']; ?>" type="button" class="btn btn-success">EDIT</a>
-                                        <a href="hapus.php?id_agenda=<?php echo $d['id_agenda']; ?>" type="button" class="btn btn-danger">HAPUS</a>
+                                        <a href="hapus.php?id_agenda=<?php echo $d['id_agenda']; ?>&file='<?= $d['kegiatan_pdf'] ?>'" type="button" class="btn btn-danger">HAPUS</a>
+                                    </= $d['kegiatan_pdf']
                                     </td>
+                                    
+
                                 </tr>
                                 <?php 
                             }
@@ -46,3 +51,5 @@
 
          
 <?php require "base/footer.php" ?>
+
+

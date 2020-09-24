@@ -4,14 +4,14 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Daftar Anggota</h1>
+                    <h1 class="h3 mb-4 text-gray-800">Edit</h1>
                   <?php
 					include 'koneksi.php';
 					$id_agenda = $_GET['id_agenda'];
 					$data = mysqli_query($koneksi,"select * from agenda_kegiatan where id_agenda='$id_agenda'");
 					while($d = mysqli_fetch_array($data)){
 						?>
-						<form method="post" action="update.php">
+						<form enctype="multipart/form-data" method="post" action="update.php">
 							<table class="table">
 								<tr>			
 									<td>Nama</td>
@@ -31,6 +31,13 @@
 								<tr>
 									<td>keterangan agenda</td>
 									<td><input type="text" name="keterangan_agenda" value="<?php echo $d['keterangan_agenda']; ?>"></td>
+								</tr>
+								<tr>
+									<td>Upload file</td>
+                                	<td>
+                                	<input type="file" name="fupload">><br>
+	                                </td>
+
 								</tr>
 								<tr>
 									<td></td>

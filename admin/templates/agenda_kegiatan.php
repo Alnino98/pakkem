@@ -30,6 +30,7 @@
                             <th>Waktu Agenda</th>
                             <th>Kegiatan</th>
                             <th>Keterangan agenda</th>
+                            <th>Upload File</th>
                         </tr>
 
             <?php 
@@ -44,11 +45,15 @@
                         <td><?php echo $d['waktu_agenda']; ?></td>
                         <td><?php echo $d['kegiatan']; ?></td>
                         <td><?php echo $d['keterangan_agenda']; ?></td>
-                
-<!--                         <td>
-                            <a href="edit.php?id_agenda=<?php echo $d['id_agenda']; ?>">EDIT</a>
-                            <a href="hapus.php?id_agenda=<?php echo $d['id_agenda']; ?>">HAPUS</a>
-                        </td> -->
+                        <td><a class="btn btn-primary" href="download_pdf.php?filename=<?=$d['kegiatan_pdf']?>">Download</a></td>    
+
+
+                        <!-- <td><a class="btn btn-primary" href="download_pdf.php?filename=$d[kegiatan_pdf]" role="button">Download</a></td>
+ -->
+                        
+                        
+                        
+                        
                     </tr>
                     <?php 
                 }

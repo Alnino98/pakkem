@@ -3,7 +3,7 @@
 
                     <!-- Page Heading -->
                     <h1 class="h3 mb-4 text-gray-800">Daftar Anggota</h1>
-                    <form method="post" action="tambah_aksi.php">
+                    <form enctype="multipart/form-data" method="post" action="tambah_aksi.php">
                         <table class="table">
 
                             <tr>            
@@ -24,8 +24,16 @@
                             </tr>
 
                             <tr>
+                                <td>Upload file</td>
+                                <td>
+                                <input type="file" name="fupload"><br>
+                                </td>
+
+                            </tr>
+
+                            <tr>
                                 <td></td>
-                                <td><input type="submit" value="SIMPAN"></td>
+                                <td><input type="submit" name="SIMPAN"></td>
                             </tr>       
                         </table>
                     </form>
