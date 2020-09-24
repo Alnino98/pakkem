@@ -14,6 +14,8 @@
                     <th>No</th>
                     <th>Nama</th>
                     <th>Email</th>
+                    <th>Foto</th>
+                    <th>Sertifikat</th>
                     <th>Admin</th>
                 </tr>
                 <?= tampilkan('nama', 'email', '', '', 3); ?>

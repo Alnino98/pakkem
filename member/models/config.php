@@ -5,7 +5,7 @@
 
 /* $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME); */
 $link = mysqli_connect("localhost", "pakkem", "Covid*20", "pakkem_daftar");
-$link_agenda = mysqli_connect("localhost", "pakkem", "Covid*20", "pakkem_agenda");
+$link_agenda = mysqli_connect("localhost", "pakkem", "Covid*20", "pakkem_pakkem");
 
 /* Check connection */
 

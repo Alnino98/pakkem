@@ -30,3 +30,4 @@
 [22-Sep-2020 14:55:50 Asia/Jakarta] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpWfFGIc' to 'sertifikat/' in /home/pakkem/public_html/registrasi/proses_upload_foto.php on line 77
 [22-Sep-2020 14:57:05 Asia/Jakarta] PHP Warning:  move_uploaded_file(): The second argument to copy() function cannot be a directory in /home/pakkem/public_html/registrasi/proses_upload_foto.php on line 77
 [22-Sep-2020 14:57:05 Asia/Jakarta] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/php3ULucB' to 'sertifikat/' in /home/pakkem/public_html/registrasi/proses_upload_foto.php on line 77
+[24-Sep-2020 12:23:06 Asia/Jakarta] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/pakkem/public_html/registrasi/lengkapi_akun.php on line 27

@@ -88,6 +88,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 					}
 		
 					else {
+						echo mysqli_error($link);
 						echo "<div class='alert alert-danger'> Pendaftaraan Gagal.</div>";
 					}
 				}else {

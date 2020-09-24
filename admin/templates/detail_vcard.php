@@ -1,3 +1,4 @@
+<?php include 'base/navbar.php' ?>
 <?php
     require "../models/config.php";
     $foto = $_GET['foto'];
@@ -7,7 +8,7 @@
     $code = $_GET['id'];
 ?>
 <!-- Manampilkan detail pendaftar -->
-<?php include 'base/navbar.php' ?>
+
 <div class="row">
     <div class="ml-7 container-fluid col-lg-7 py-2">
         <!-- Area Chart -->

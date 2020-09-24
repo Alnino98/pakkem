@@ -79,7 +79,7 @@
                   <div class="card-heading"></div>
                   <div class="card-body">
                   <?php if(isset($_GET['pesan'])){ ?>
-                     <p class="shadow p-3 mb-5 bg-white rounded text-center text-success">Data tersimpan mohon tunggu 24 jam dan cek email anda untuk mendapatkan informasi akun anda.</p>
+                     <p class="shadow p-3 mb-5 bg-white rounded text-center text-success">Data tersimpan silakan cek email anda dan mohon tunggu selam 24 jam untuk mendapatkan informasi mengenai aktivasi akun anda.</p>
                      <br>
                   <?php }?>
                      <h2 class="title">Formulir Pendaftaran</h2>
@@ -119,7 +119,7 @@
                      </div>
                      <!-- NIK -->                        
                      <div class="input-group">
-                        <input class="input--style-1" type="text" placeholder="NIK" name="nik">
+                        <input class="input--style-1" type="text" min="16" max="16" placeholder="NIK" name="nik">
                      </div>
                      <!-- Email -->
                      <div class="input-group">
