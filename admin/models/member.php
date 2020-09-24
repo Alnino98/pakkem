@@ -180,7 +180,7 @@
             echo "<td>".$row[$params3]."</td>";
             echo "<td>".$row[$params4]."</td>";
             if($row['status'] == 2){
-                echo "<td>Tunda</td>";
+                echo "<td>Ditolak</td>";
             }
             echo "</tr>";
         }
@@ -193,6 +193,7 @@
             if($row['status'] == 0){
                 echo "<td><a href='../models/member.php?id=".$row['id_pendaftar']."&email=".$row[$params2]."&v=1'>Terpilih</a></td>";
             }
+            echo "<td><a href='../models/member.php?id=".$row['id_pendaftar']."&email=".$row[$params2]."&v=0'>Tolak</a></td>";
             echo "</tr>";
         }
     }else if($code == 4){
