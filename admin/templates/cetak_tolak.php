@@ -27,8 +27,6 @@
             <th>Nama</th>
             <th>Email</th>
             <th>Nomor Hp</th>
-            <th>Tanggal Daftar</th>
-            <th>Status</th>
         </tr>
         <?= tampilkan('nama', 'email', 'no_hp', 'tgl_daftar', 2); ?>
     </table>

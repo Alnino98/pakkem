@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 24 Sep 2020 pada 16.05
+-- Waktu pembuatan: 24 Sep 2020 pada 17.31
 -- Versi server: 10.1.37-MariaDB
 -- Versi PHP: 7.3.0
 
@@ -52,14 +52,29 @@ INSERT INTO `admin` (`id_admin`, `username`, `email`, `password`, `nama`, `level
 --
 
 CREATE TABLE `agenda_kegiatan` (
-  `id_agenda` int(11) NOT NULL,
+  `id_agenda` varchar(100) NOT NULL,
   `hari_tanggal` date NOT NULL,
   `waktu_agenda` varchar(100) NOT NULL,
   `kegiatan` varchar(200) NOT NULL,
   `keterangan_agenda` varchar(200) NOT NULL,
-  `kegiatan_pdf` varchar(200) NOT NULL,
+  `kegiatan_pdf` varchar(200) DEFAULT NULL,
   `waktu_upload` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `agenda_kegiatan`
+--
+
+INSERT INTO `agenda_kegiatan` (`id_agenda`, `hari_tanggal`, `waktu_agenda`, `kegiatan`, `keterangan_agenda`, `kegiatan_pdf`, `waktu_upload`) VALUES
+('1177635635', '2020-09-14', '22:10WIB', 'aadaaa', 'asawww', 'aadaaa.', '2020-09-24 14:28:35'),
+('1570870079', '2020-09-17', '22:90WIB', 'beneran', 'beneran', 'beneran.pdf', '2020-09-24 14:45:48'),
+('1664178249', '2020-09-16', '22:90WIB', 'aada1111', 'dgfg', 'aada1111.pdf', '2020-09-24 14:41:58'),
+('1807422064', '2020-09-17', '22:10WIB', 'aada', 'coba', 'aada.pdf', '2020-09-24 14:35:39'),
+('1809181239', '2020-09-01', '12:00WIB', 'fgh', 'cbv', 'fgh.jpg', '2020-09-24 14:36:02'),
+('1859313623', '2020-09-06', '12:00WIB', '2', '2', '2.pdf', '2020-09-24 14:51:15'),
+('377586216', '2020-09-03', '12:00WIB', 'ngaji lagi', 'asawww', NULL, '2020-09-24 15:00:41'),
+('597066298', '2020-09-10', '12:00WIB', 'ngajiQQQQQ', 'dgfg', NULL, '2020-09-24 14:34:58'),
+('77686795', '2020-09-11', '12:00WIB', '1', '1', '1.pdf', '2020-09-24 14:51:00');
 
 -- --------------------------------------------------------
 
@@ -243,12 +258,6 @@ ALTER TABLE `pendidikan`
 --
 ALTER TABLE `admin`
   MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
-
---
--- AUTO_INCREMENT untuk tabel `agenda_kegiatan`
---
-ALTER TABLE `agenda_kegiatan`
-  MODIFY `id_agenda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT untuk tabel `mst_anggota`
