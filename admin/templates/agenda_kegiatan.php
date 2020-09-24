@@ -30,7 +30,7 @@
                             <th>Waktu Agenda</th>
                             <th>Kegiatan</th>
                             <th>Keterangan agenda</th>
-                            <th>Upload File</th>
+                            <th>Download File</th>
                         </tr>
 
             <?php 
