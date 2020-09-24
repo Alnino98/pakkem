@@ -69,7 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 			$jumlah_email = mysqli_num_rows($cek);
 			
-			if($jumlah_email > 1){
+			if($jumlah_email > 0){
 				echo "<script>alert('Mohon maaf email anda telah terdaftar .');window.location.href = 'index.php';</script>";
 			}else if($jumlah_email < 1){
 			    global $link;
@@ -84,7 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 					}
 					$hasil=mysqli_query($link,$sql);
 					if ($hasil) {
-						header("location: contents.php?email=".$email."");
+						echo "<script>alert('Selamat $email, data anda telah kami terima. Cek email Anda, untuk konfirmasi pendaftaran ini.');window.location.href = 'contents.php?email=".$email."';</script>";
 					}
 		
 					else {
