@@ -27,7 +27,7 @@ xmlhttp.onreadystatechange = function () {
         });
     }
 }
-xmlhttp.open("GET", "http://pakkem.org/admin/models/chart.php?kategori=1", true);
+xmlhttp.open("GET", "models/chart.php?kategori=1", true);
 xmlhttp.send();
 
 //doughnut

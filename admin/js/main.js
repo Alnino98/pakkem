@@ -27,6 +27,6 @@ function chart() {
             });
         }
     }
-    xmlhttp.open("GET", "http://pakkem.org/admin/models/chart.php?kategori=3", true);
+    xmlhttp.open("GET", "../models/chart.php?kategori=3", true);
     xmlhttp.send();
 }

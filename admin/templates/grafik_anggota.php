@@ -44,7 +44,7 @@
                             <td><p>Pada pinggir kiri grafik menunjukkan nilai jumlah.</p></td>
                         </tr>
                     </table>
-                    <button class="btn btn-danger">Print Grafik</button>
+                    <a href="print_grafik_anggota.php" add target="_blank" class="btn btn-danger">Print Grafik</a>
                 </div>
                 <hr>
             </div>
