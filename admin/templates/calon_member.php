@@ -5,18 +5,21 @@
 
     <!-- Manampilkan data dari database beserta status dan aksi -->
     <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800">Pendaftar Masuk    </h1>
-    <table class="small table">
-        <tr>
-            <th>No</th>
-            <th>Nama</th>
-            <th>Email</th>
-            <th>Nomor Hp</th>
-            <th>Tanggal Daftar</th>
-        </tr>
-        <?= tampilkan('nama', 'email', 'no_hp', 'tgl_daftar', 3); ?>
-    </table>
-
+    <h1 class="h3 mb-4 text-gray-800">Pendaftar Masuk</h1>
+    <div class="row">
+        <div class="col-sm">
+            <table class="small table">
+                <tr>
+                <h4>Calon anggota</h4>
+                    <th>No</th>
+                    <th>Nama</th>
+                    <th>Email</th>
+                    <th>Admin</th>
+                </tr>
+                <?= tampilkan('nama', 'email', '', '', 3); ?>
+            </table>
+        </div>
+    </div>
 </div>
 <!-- /.container-fluid -->
 <?php require "base/footer.php"; ?>

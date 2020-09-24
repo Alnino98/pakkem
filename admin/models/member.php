@@ -1,7 +1,7 @@
 <?php
     $link = mysqli_connect("localhost", "pakkem", "Covid*20", "pakkem_daftar");
     $qry = "SELECT * FROM pendaftar";
-    $qry0 = "SELECT * FROM pendaftar WHERE status = 0";
+    $qry0 = "SELECT * FROM pendaftar WHERE status = 0 ORDER BY id_pendaftar ASC";
     $qry1 = "SELECT * FROM pendaftar WHERE status = 1";
     $qry2 = "SELECT * FROM pendaftar WHERE status = 2";
     $qry3 = "SELECT * FROM anggota";
@@ -60,9 +60,12 @@
 
             if($show){
                 $qry2 = "UPDATE `pendaftar` SET `status` = '1' WHERE `id_pendaftar` = $id";
-                $show2 = mysqli_query($link,$qry2);
-                $qry2 = "UPDATE `users` SET `status` = '1' WHERE `email` = '$email'";
-                $show2 = mysqli_query($link,$qry2);
+                $sql2 = mysqli_query($link,$qry2);
+                $qry_user = "INSERT INTO `users` VALUES(NULL, '$nama', '725b637db3aa178a338f5f99321163cf', '$email', '$nama', 1, 1, CURRENT_TIMESTAMP)";
+                $sql_user = mysqli_query($link,$qry_user);
+                if($sql_user){
+                    echo mysqli_error();
+                }
                 //send_email($email, $msg_for);
                 header("location: ../templates/daftar_anggota.php");
             }
@@ -103,8 +106,7 @@
             $total = mysqli_num_rows($show2);
             echo "Jumlah anggota : ".$total;
         }elseif ($code == 3) {
-            $total = mysqli_num_rows($show0);
-            echo "Jumlah anggota : ".$total;
+            
         }elseif ($code == 4) {
             $total = mysqli_num_rows($showAnggota);
             echo "Jumlah anggota : ".$total;
@@ -188,20 +190,42 @@
             echo "<td>".$i++."</td>";
             echo "<td>".$row[$params1]."</td>";
             echo "<td>".$row[$params2]."</td>";
-            echo "<td>".$row[$params3]."</td>";
-            echo "<td>".$row[$params4]."</td>";
+            if($row['status'] == 0){
+                echo "<td><a href='../models/member.php?id=".$row['id_pendaftar']."&email=".$row[$params2]."&v=1'>Terpilih</a></td>";
+            }
             echo "</tr>";
         }
     }else if($code == 4){
         while($row = mysqli_fetch_array($showAnggota)){
+            $foto = "SELECT * FROM foto WHERE email_pemilik = '$row[$params2]'";
+            $cek_foto = mysqli_query($link, $foto);
+
+            $sertifikat = "SELECT * FROM sertifikat WHERE email_pemilik = '$row[$params2]'";
+            $cek_sertifikat = mysqli_query($link, $sertifikat);
             echo "<tr>";
             echo "<td>".$i++."</td>";
             echo "<td>".$row[$params1]."</td>";
             echo "<td>".$row[$params2]."</td>";
-            echo "<td>".$row['tanggal_lahir']."</td>";
             echo "<td>".$row[$params3]."</td>";
-            echo "<td>".$row[$params4]."</td>";
-            echo "<td>".$row['gender']."</td>";
+            while($row_foto = mysqli_fetch_array($cek_foto)){
+                if($row_foto['status'] == 0){
+                    echo "<td>Pending</td>";
+                }else if($row_foto['status'] == 1){
+                    echo "<td>OK</td>";
+                }else if($row_foto['status'] == 2){
+                    echo "<td>Ditolak</td>";
+                }
+            }
+
+            while($row_sertifikat = mysqli_fetch_array($cek_sertifikat)){
+                if($row_sertifikat['status'] == 0){
+                    echo "<td>Pending</td>";
+                }else if($row_sertifikat['status'] == 1){
+                    echo "<td>OK</td>";
+                }else if($row_sertifikat['status'] == 2){
+                    echo "<td>Ditolak</td>";
+                }
+            }
             echo "</tr>";
         }
     }

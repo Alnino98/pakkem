@@ -33,7 +33,7 @@
                                     </th>
                                     <th>
                                         <?php if($row['status'] == 0){ ?>
-                                        <a href="verifikasi.php?foto=<?= $row['foto_upload']; ?>&id=ok" class="btn btn-success">Terima Pendaftaran Foto</a>
+                                        <a href="verifikasi.php?foto=<?= $row['foto_upload']; ?>&id=ok" class="btn btn-success">Terpilih</a>
                                         <a href="verifikasi.php?foto=<?= $row['foto_upload']; ?>&id=ditolak" class="btn btn-danger">Tolak</a>
                                         <?php }?>
                                         <?php if($row['status'] == 1){ ?>
@@ -87,7 +87,7 @@
                                     </th>
                                     <th>
                                         <?php if($row['status'] == 0){ ?>
-                                        <a href="verifikasi.php?sertifikat=<?= $row['sertifikat_upload']; ?>&id=ok" class="btn btn-success">Terima Pendaftaran Sertifikat</a>
+                                        <a href="verifikasi.php?sertifikat=<?= $row['sertifikat_upload']; ?>&id=ok" class="btn btn-success">Terpilih</a>
                                         <a href="verifikasi.php?sertifikat=ditolak<?= $row['sertifikat_upload']; ?>&id=tolak" class="btn btn-danger">Tolak</a>
                                         <?php }?>
                                         <?php if($row['status'] == 1){ ?>

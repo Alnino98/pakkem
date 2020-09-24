@@ -11,12 +11,11 @@
             <th>No</th>
             <th>Nama</th>
             <th>Email</th>
-            <th>Tanggal Lahir</th>
             <th>Nomor Hp</th>
-            <th>Tanggal Daftar</th>
-            <th>Jenis Kelamin</th>
+            <th>Foto</th>
+            <th>Sertifikat</th>
         </tr>
-        <?= tampilkan('nama', 'email', 'no_hp', 'tgl_daftar', 4); ?>
+        <?= tampilkan('nama', 'email', 'no_hp', '', 4); ?>
     </table>
 </div>
 <!-- /.container-fluid -->
