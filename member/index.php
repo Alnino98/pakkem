@@ -1,6 +1,6 @@
 <?php
 	include "models/config.php";
-	$pesan = $_GET['pesan'];
+	// $pesan = $_GET['pesan'];
 	if(isset($_POST['submit'])){
 		$email = $_POST['email'];
 		$password = md5($_POST['password']);
