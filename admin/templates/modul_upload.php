@@ -34,7 +34,7 @@
                                     
                                     <td>
                                         <a style="font-size: 10pt" href="edit.php?id_agenda=<?php echo $d['id_agenda']; ?>" type="button" class="btn btn-success">EDIT</a>
-                                        <a style="font-size: 10pt" href="hapus.php?id_agenda=<?php echo $d['id_agenda']; ?>&file='<?= $d['kegiatan_pdf'] ?>'" type="button" class="btn btn-danger">HAPUS</a>
+                                        <a style="font-size: 10pt" href="hapus_modul.php?id_modul=<?php echo $d['id_modul']; ?>&file='<?= $d['modul_pdf'] ?>'" type="button" class="btn btn-danger">HAPUS</a>
                                     </= $d['kegiatan_pdf']
                                     </td>
                                     

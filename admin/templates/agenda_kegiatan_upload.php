@@ -21,11 +21,11 @@
         </tr>
 
         <?php 
-                            include 'koneksi.php';
-                            $no = 1;
-                            $data = mysqli_query($koneksi,"select * from agenda_kegiatan ORDER BY waktu_upload ASC");
-                            while($d = mysqli_fetch_array($data)){
-                                ?>
+        include 'koneksi.php';
+        $no = 1;
+        $data = mysqli_query($koneksi,"select * from agenda_kegiatan ORDER BY waktu_upload ASC");
+        while($d = mysqli_fetch_array($data)){
+            ?>
         <tr>
             <td><?php echo $no++; ?></td>
             <td><?php echo $d['id_agenda']; ?></td>
