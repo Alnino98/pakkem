@@ -29,5 +29,11 @@
                 $total = mysqli_num_rows($sql);
                 echo json_encode($total);
             }
+    }else if($kategori == 4){
+        global $link;
+        $query = "SELECT * FROM anggota";
+        $sql = mysqli_query($link, $query);
+        $total = mysqli_num_rows($sql);
+        echo json_encode($total);
     }
 ?>

@@ -158,9 +158,7 @@
                                 <canvas id="doughnutChart" style="width:100% !important;"></canvas>
                             </div>
                             <hr>
-                            Info detail member bisa dilihat di
-                            <code>tabel-anggota/anggota-terdaftar/anggota-aktif</code> di fitur kelola
-                            Admin.
+                            Info detail member bisa dilihat di <a href="templates/daftar_anggota.php">tabel anggota-aktif</a>  di fitur kelola Admin.
                         </div>
                     </div>
                 </div>
