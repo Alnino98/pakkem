@@ -200,14 +200,12 @@
                 </a>
                 <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-
                         <h6 class="collapse-header">Informations:</h6>
-
-                        <a class="collapse-item" href="templates/agenda_kegiatan_upload.php"><i
-                                class="fas fa-upload"></i>&nbsp;&nbsp;Admin Upload</a>
+                        <a class="collapse-item" href="modul_upload.php"><i class="fas fa-upload"></i>&nbsp;&nbsp;Admin
+                            Upload</a>
                         <h6 class="collapse-header">Kegiatan:</h6>
-                        <a class="collapse-item" href="templates/agenda_kegiatan.php"><i
-                                class="fas fa-tasks"></i>&nbsp;&nbsp;Agenda Kegiatan</a>
+                        <a class="collapse-item" href="templates/agenda_kegiatan_upload.php"><i class="fas fa-tasks"></i>&nbsp;&nbsp;Agenda Kegiatan</a>
+                        <a class="collapse-item" href="templates/modul.php"><i class="fas fa-tasks"></i>&nbsp;&nbsp;untuk dimember</a>
                     </div>
                 </div>
             </li>
