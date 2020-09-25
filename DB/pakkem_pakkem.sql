@@ -172,7 +172,7 @@ CREATE TABLE `pembaca_agenda` (
   `id` int NOT NULL,
   `pembaca` varchar(100) NOT NULL,
   `notifikasi` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
