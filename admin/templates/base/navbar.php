@@ -207,8 +207,8 @@
                         <a class="collapse-item" href="modul_upload.php"><i class="fas fa-upload"></i>&nbsp;&nbsp;Admin
                             Upload</a>
                         <h6 class="collapse-header">Kegiatan:</h6>
-                        <a class="collapse-item" href="agenda_kegiatan_upload.php"><i class="fas fa-tasks"></i>&nbsp;&nbsp;Agenda
-                            Kegiatan</a>
+                        <a class="collapse-item" href="agenda_kegiatan_upload.php"><i class="fas fa-tasks"></i>&nbsp;&nbsp;Agenda Kegiatan</a>
+                        <a class="collapse-item" href="modul.php"><i class="fas fa-tasks"></i>&nbsp;&nbsp;untuk dimember</a>
                     </div>
                 </div>
             </li>

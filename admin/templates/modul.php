@@ -9,12 +9,12 @@
                     <table class="table small">
                         <tr>
                             <th>No</th>
-                            <th>ID Modul</th>
+                            
                             <th>Nama Modul</th>
                             <th>Keterangan</th>
-                            <th>Upload File</th>
-                            <th>Waktu Upload</th>
-                            <th>Opsi</th>
+                            <th>Nama File</th>
+                            
+                            <th>Download</th>
 
                         </tr>
 
@@ -26,17 +26,20 @@
                                 ?>
                                 <tr>
                                     <td><?php echo $no++; ?></td>
-                                    <td><?php echo $d['id_modul']; ?></td>
                                     <td><?php echo $d['nama_modul']; ?></td>
                                     <td><?php echo $d['keterangan_modul']; ?></td>
                                     <td><?php echo $d['modul_pdf']; ?></td>
-                                    <td><?php echo $d['waktu_upload_modul']; ?></td>
+                                    <?php if ($d['modul_pdf']==NULL): ?>
+
+                                    <td><a style="font-size: 10pt" class="btn btn-primary">Download</a></td>   
+
+                                    <?php else: ?>
+
+                                    <td><a style="font-size: 10pt" class="btn btn-primary" href="download_modul_pdf.php?filename=<?=$d['modul_pdf']?>">Download</a></td>   
+
+                                     <?php endif ?> 
                                     
-                                    <td>
-                                        <a style="font-size: 10pt" href="edit_modul.php?id_modul=<?php echo $d['id_modul']; ?>" type="button" class="btn btn-success">EDIT</a>
-                                        <a style="font-size: 10pt" href="hapus_modul.php?id_modul=<?php echo $d['id_modul']; ?>&file='<?= $d['modul_pdf'] ?>'" type="button" class="btn btn-danger">HAPUS</a>
-                                    </= $d['kegiatan_pdf']
-                                    </td>
+
                                     
 
                                 </tr>
