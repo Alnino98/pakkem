@@ -29,12 +29,9 @@ if ($nama_file==NULL) {
 					$email = $row['pembaca'];
 					$update = "UPDATE `pembaca_agenda` SET notifikasi = notifikasi+1 WHERE pembaca = '$email'";
 					$ok = mysqli_query($koneksi, $update);
-					if(!$ok){
-						echo mysqli_error();
-					}else{
-						header("location:agenda_kegiatan_upload.php");
-					}
+					header("location:agenda_kegiatan_upload.php");
 				}
+				header("location:agenda_kegiatan_upload.php");
 			}
 			else{
 				echo mysqli_error();
