@@ -4,8 +4,7 @@
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800">Modul <a style="font-size: 10pt" href="tambah_modul.php" type="button"
-            class="float-right btn btn-primary btn-lg">+ Upload Modul</a></h1>
+    <h1 class="h3 mb-4 text-gray-800">Modul</h1>
 
     <table class="table small">
         <tr>
@@ -20,11 +19,11 @@
         </tr>
 
         <?php 
-                            include 'koneksi.php';
-                            $no = 1;
-                            $data = mysqli_query($koneksi,"select * from modul ORDER BY waktu_upload_modul ASC");
-                            while($d = mysqli_fetch_array($data)){
-                                ?>
+            include 'koneksi.php';
+            $no = 1;
+            $data = mysqli_query($koneksi,"select * from modul ORDER BY waktu_upload_modul ASC");
+            while($d = mysqli_fetch_array($data)){
+        ?>
         <tr>
             <td><?php echo $no++; ?></td>
             <td><?php echo $d['nama_modul']; ?></td>
@@ -45,9 +44,7 @@
 
 
         </tr>
-        <?php 
-                            }
-                            ?>
+        <?php }?>
     </table>
 
 

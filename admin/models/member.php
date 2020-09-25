@@ -266,7 +266,7 @@
 }
     // Menampilkan jumlah
 function jumlah($kategori){
-    global $show0, $show1, $show2;
+    global $show0, $show1, $show5;
     switch ($kategori) {
         case '0':
             $total = mysqli_num_rows($show0);
@@ -277,7 +277,7 @@ function jumlah($kategori){
             return $total;
             break;
         case '2':
-            $total = mysqli_num_rows($show2);
+            $total = mysqli_num_rows($show5);
             return $total;
             break;
         

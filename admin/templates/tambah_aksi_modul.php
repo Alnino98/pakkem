@@ -1,4 +1,3 @@
-
 <?php 
 // koneksi database
 include 'koneksi.php';
@@ -8,7 +7,7 @@ $nama_modul = $_POST['nama_modul'];
 $keterangan_modul = $_POST['keterangan_modul'];
 $lokasi_file = $_FILES['fupload1']['tmp_name'];
 $nama_file   = $_FILES['fupload1']['name'];
-$folder = "files modul/";
+$folder = "files_modul/";
 $ext = pathinfo($nama_file, PATHINFO_EXTENSION);
 $filename = $nama_modul.".".$ext;
 move_uploaded_file($lokasi_file,$folder.$filename);

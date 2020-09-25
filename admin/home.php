@@ -1,13 +1,23 @@
 <?php require "models/member.php" ?>
 <?php require "base/navbar.php" ?>
-
+<?php
+    session_start();
+    if($_SESSION['status'] != "login" or $_SESSION['level'] !=1){
+        session_destroy();
+        header('location: index.php');
+    }
+    if(isset($_POST['logout'])){
+        session_destroy();
+        header("location: index.php");
+    }
+?>
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+        <a href="templates/generate_report.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                 class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
     </div>
 
@@ -72,7 +82,7 @@
                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?= jumlah(1); ?></div>
                         </div>
                         <div class="col-auto">
-                            <i class="fa fa-thumbs-down fa-2x text-gray-300"></i>
+                            <i class="fa fa-thumbs-up fa-2x text-gray-300"></i>
                         </div>
                     </div>
                 </div>
