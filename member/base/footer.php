@@ -40,6 +40,7 @@
 </div>
 
 <!-- Bootstrap core JavaScript-->
+<script src="notif.js"></script>
 <script src="vendor/jquery/jquery.min.js"></script>
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
@@ -51,8 +52,6 @@
 
 <!-- Page level plugins -->
 <script src="vendor/chart.js/Chart.min.js"></script>
-<script src="js/Chart.js"></script>
-<script src="js/main.js"></script>
 
 <!-- Page level custom scripts -->
 <script src="js/demo/chart-area-demo.js"></script>

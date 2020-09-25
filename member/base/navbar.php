@@ -10,24 +10,6 @@
     while($row = mysqli_fetch_object($sql)){
         $foto = $row->foto_upload;
     }
-
-    global $link_agenda;
-    $qry_agenda = "SELECT * FROM agenda_kegiatan";
-    $sql_agenda = mysqli_query($link_agenda, $qry_agenda);
-    // while($row_agenda = mysqli_fetch_array($sql_agenda)){
-    //     $kegiatan =  $row_agenda['kegiatan'];
-    //     $qry_pembaca_agenda = "SELECT * FROM pembaca_agenda WHERE pembaca = '$email' AND kegiatan = '$kegiatan'";
-    //     $sql_pembaca_agenda = mysqli_query($link_agenda, $qry_pembaca_agenda);
-        
-    //     echo $pembaca =  mysqli_num_rows($sql_pembaca_agenda);
-    //     $agenda =  mysqli_num_rows($sql_agenda);
-    //     $jumlah = $agenda-$pembaca;
-    //     $jumlah;
-    // }
-    $qry_pembaca_agenda = "SELECT * FROM pembaca_agenda WHERE pembaca = '$email'";
-    $sql_pembaca_agenda = mysqli_query($link_agenda, $qry_pembaca_agenda);
-
-    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -59,6 +41,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
     <link rel="manifest" href="assets/site.webmanifest">
+    <script src="notif.js"></script>
 </head>
 
 <body id="page-top">
@@ -96,17 +79,11 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                     aria-expanded="true" aria-controls="collapsePages">
                     <i class="fas fa-tasks"></i>
-                    <span>Tabel Anggota</span>
+                    <span>Download</span>
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Anggota Terdaftar:</h6>
-                        <a class="collapse-item" href="templates/daftar_anggota.php"><i
-                                class="far fa-clipboard"></i>&nbsp;&nbsp;Lists Anggota</a>
-                        <a class="collapse-item" href="templates/grafik_anggota.php"><i class="fas fa-chart-line"></i>&nbsp;&nbsp;Grafik
-                            Anggota</a>
-                        <a class="collapse-item" href="404.html"><i class="fas fa-user-check"></i>&nbsp;&nbsp;Anggota
-                            Aktif</a>
+                        <h6 class="collapse-header">Modul:</h6>
                         <a class="collapse-item" href="404.html"><i class="far fa-file-pdf"></i>&nbsp;&nbsp;Download
                             Modul</a>
                     </div>
@@ -117,17 +94,12 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFour"
                     aria-expanded="true" aria-controls="collapseFour">
                     <i class="fas fa-archive"></i>
-                    <span>Modul</span>
+                    <span>Agenda</span>
                 </a>
                 <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-
                         <h6 class="collapse-header">Informations:</h6>
-
-                        <a class="collapse-item" href="templates/agenda Kegiatan/agenda_kegiatan_upload.php"><i
-                                class="fas fa-upload"></i>&nbsp;&nbsp;Admin Upload</a>
-                        <h6 class="collapse-header">Kegiatan:</h6>
-                        <a class="collapse-item" href="templates/agenda Kegiatan/agenda_kegiatan.php"><i
+                        <a class="collapse-item" href="templates/agenda_kegiatan.php"><i
                                 class="fas fa-tasks"></i>&nbsp;&nbsp;Agenda Kegiatan</a>
                     </div>
                 </div>
@@ -207,10 +179,11 @@
                         <!-- Nav Item - Alerts -->
                         <li class="nav-item dropdown no-arrow mx-1">
                             <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onclick="done('<?= $_SESSION['username'];?>')">
                                 <i class="fas fa-bell fa-fw"></i>
                                 <!-- Counter - Alerts -->
-                                <span class="badge badge-danger badge-counter"><?= $jumlah; ?></span>
+                                <span id="notifikasi" class="badge badge-danger badge-counter"  >
+                                </span>
                             </a>
                             <!-- Dropdown - Alerts Agenda -->
                             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -224,23 +197,10 @@
                                             <i class="fas fa-file-alt text-white"></i>
                                         </div>
                                     </div>
-                                    <div>
-                                        <?php while ($row_agenda = mysqli_fetch_array($sql_agenda)){?>
-                                            <?php while ($row_pembaca = mysqli_fetch_array($sql_pembaca_agenda)){
-                                                $kegiatan_pembaca = $row_pembaca['kegiatan'];
-                                            }?>
-                                            <?php $kegiatan =  $row_agenda['kegiatan']; ?>
-                                            <?php if($kegiatan != $kegiatan_pembaca){?>
-                                                <div class="small text-gray-500"><?= $row_agenda['waktu_upload'];?></div>
-                                                <span class="font-weight-bold"><?= $row_agenda['kegiatan'];?></span><br>
-                                                <span class="small text-gray-1000"><?= $row_agenda['keterangan_agenda'];?></span>
-
-                                            <?php }else if($kegiatan == $kegiatan_pembaca){?>
-                                            <?php }?>
-                                        <?php }?>
+                                    <div id="keterangan">
                                     </div>
                                 </a>
-                                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                                <a class="dropdown-item text-center small text-gray-500" href="templates/agenda_kegiatan.php">Tampilkan semua</a>
                             </div>
                         </li>
 

@@ -4,6 +4,9 @@
 include 'koneksi.php';
 global $koneksi;
 
+$all = mysqli_query($koneksi, "SELECT * FROM pembaca_agenda");
+
+
 $hari_tanggal = $_POST['hari_tanggal'];
 $waktu_agenda = $_POST['waktu_agenda'];
 $kegiatan = $_POST['kegiatan'];
@@ -22,7 +25,16 @@ if ($nama_file==NULL) {
 	// mengalihkan halaman kembali ke index.php
 			$sql = mysqli_query($koneksi, $query);
 			if($sql){
-				header("location:agenda_kegiatan_upload.php");
+				while ($row = mysqli_fetch_array($all)) {
+					$email = $row['pembaca'];
+					$update = "UPDATE `pembaca_agenda` SET notifikasi = notifikasi+1 WHERE pembaca = '$email'";
+					$ok = mysqli_query($koneksi, $update);
+					if(!$ok){
+						echo mysqli_error();
+					}else{
+						header("location:agenda_kegiatan_upload.php");
+					}
+				}
 			}
 			else{
 				echo mysqli_error();
@@ -35,12 +47,21 @@ if ($nama_file==NULL) {
 
 				// mengalihkan halaman kembali ke index.php
 			$sql = mysqli_query($koneksi, $query);
-				if($sql){
-					header("location:agenda_kegiatan_upload.php");
+			if($sql){
+				while ($row = mysqli_fetch_array($all)) {
+					$email = $row['pembaca'];
+					$update = "UPDATE `pembaca_agenda` SET notifikasi = notifikasi+1 WHERE pembaca = '$email'";
+					$ok = mysqli_query($koneksi, $update);
+					if(!$ok){
+						echo mysqli_error();
+					}else{
+						header("location:agenda_kegiatan_upload.php");
+					}
 				}
-				else{
-					echo mysqli_error();
-				}
+			}
+			else{
+				echo mysqli_error();
+			}
 	}
 
 

@@ -33,7 +33,7 @@
 
                             <tr>
                                 <td></td>
-                                <td><input type="submit" name="SIMPAN"></td>
+                                <td><button type="submit" class="btn btn-primary">Simpan</button></td>
                             </tr>       
                         </table>
                     </form>

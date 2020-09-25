@@ -14,6 +14,7 @@
     while($row = mysqli_fetch_object($sql)){
         $foto = $row->foto_upload;
     }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -47,7 +48,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
     <link rel="manifest" href="../assets/site.webmanifest">
-    <script src="../js/main.js"></script>
+    <script src="../js/notif.js"></script>
 
 </head>
 
@@ -86,19 +87,12 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                     aria-expanded="true" aria-controls="collapsePages">
                     <i class="fas fa-tasks"></i>
-                    <span>Tabel Anggota</span>
+                    <span>Download</span>
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Anggota Terdaftar:</h6>
-                        <a class="collapse-item" href="templates/daftar_anggota.php"><i
-                                class="far fa-clipboard"></i>&nbsp;&nbsp;Lists Anggota</a>
-                        <a class="collapse-item" href="templates/grafik_anggota.php"><i
-                                class="fas fa-chart-line"></i>&nbsp;&nbsp;Grafik
-                            Anggota</a>
-                        <a class="collapse-item" href="404.html"><i class="fas fa-user-check"></i>&nbsp;&nbsp;Anggota
-                            Aktif</a>
-                        <a class="collapse-item" href=""><i class="far fa-file-pdf"></i>&nbsp;&nbsp;Download
+                        <h6 class="collapse-header">Modul:</h6>
+                        <a class="collapse-item" href="404.html"><i class="far fa-file-pdf"></i>&nbsp;&nbsp;Download
                             Modul</a>
                     </div>
                 </div>
@@ -108,21 +102,36 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFour"
                     aria-expanded="true" aria-controls="collapseFour">
                     <i class="fas fa-archive"></i>
-                    <span>Modul</span>
+                    <span>Agenda</span>
                 </a>
                 <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-
                         <h6 class="collapse-header">Informations:</h6>
-
-                        <a class="collapse-item" href="templates/agenda Kegiatan/agenda_kegiatan_upload.php"><i
-                                class="fas fa-upload"></i>&nbsp;&nbsp;Admin Upload</a>
-                        <h6 class="collapse-header">Kegiatan:</h6>
-                        <a class="collapse-item" href="templates/agenda Kegiatan/agenda_kegiatan.php"><i
+                        <a class="collapse-item" href="agenda_kegiatan.php"><i
                                 class="fas fa-tasks"></i>&nbsp;&nbsp;Agenda Kegiatan</a>
                     </div>
                 </div>
             </li>
+            <!-- Komunikasi -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree"
+                    aria-expanded="true" aria-controls="collapseThree">
+                    <i class="fas fa-bullhorn"></i>
+                    <span>Komunikasi</span>
+                </a>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Inbox:</h6>
+                        <h6 class="collapse-header">Whatsapp:</h6>
+                        <a class="collapse-item"
+                            href="https://api.whatsapp.com/send?phone=6289619000501&text=Hallo!!, Saya mengetahui no ini dari website pakkem.org 😊. "><i
+                                class="fab fa-whatsapp"></i>&nbsp;&nbsp;Chat WA</a>
+                        <h6 class="collapse-header">Diskusi:</h6>
+                        <a class="collapse-item" href="404.html"><i class="far fa-comments"></i>&nbsp;&nbsp;Forum</a>
+                    </div>
+                </div>
+            </li>
+
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
@@ -147,20 +156,6 @@
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                         <i class="fa fa-bars"></i>
                     </button>
-
-                    <!-- Topbar Search -->
-                    <!-- <form
-                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                        <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                                aria-label="Search" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
-                                    <i class="fas fa-search fa-sm"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form> -->
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -188,20 +183,20 @@
                                 </form>
                             </div>
                         </li>
-
-                        <!-- Nav Item - Alerts -->
+                        <!-- Notif -->
                         <li class="nav-item dropdown no-arrow mx-1">
                             <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onclick="done('<?= $_SESSION['username'];?>')">
                                 <i class="fas fa-bell fa-fw"></i>
                                 <!-- Counter - Alerts -->
-                                <span class="badge badge-danger badge-counter">3+</span>
+                                <span id="notifikasi" class="badge badge-danger badge-counter"  >
+                                </span>
                             </a>
-                            <!-- Dropdown - Alerts -->
+                            <!-- Dropdown - Alerts Agenda -->
                             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="alertsDropdown">
                                 <h6 class="dropdown-header">
-                                    Alerts Center
+                                    Notifikasi Agenda
                                 </h6>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="mr-3">
@@ -209,36 +204,13 @@
                                             <i class="fas fa-file-alt text-white"></i>
                                         </div>
                                     </div>
-                                    <div>
-                                        <div class="small text-gray-500">December 12, 2019</div>
-                                        <span class="font-weight-bold">A new monthly report is ready to download!</span>
+                                    <div id="keterangan">
                                     </div>
                                 </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="mr-3">
-                                        <div class="icon-circle bg-success">
-                                            <i class="fas fa-donate text-white"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="small text-gray-500">December 7, 2019</div>
-                                        $290.29 has been deposited into your account!
-                                    </div>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="mr-3">
-                                        <div class="icon-circle bg-warning">
-                                            <i class="fas fa-exclamation-triangle text-white"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="small text-gray-500">December 2, 2019</div>
-                                        Spending Alert: We've noticed unusually high spending for your account.
-                                    </div>
-                                </a>
-                                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                                <a class="dropdown-item text-center small text-gray-500" href="agenda_kegiatan.php">Tampilkan semua</a>
                             </div>
                         </li>
+
 
                         <!-- Nav Item - Messages -->
                         <li class="nav-item dropdown no-arrow mx-1">

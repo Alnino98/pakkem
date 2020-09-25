@@ -1,5 +1,6 @@
 <?php
     $link = mysqli_connect("localhost", "pakkem", "Covid*20", "pakkem_daftar");
+    $link_admin = mysqli_connect("localhost", "pakkem", "Covid*20", "pakkem_pakkem");
     $qry = "SELECT * FROM pendaftar";
     $qry0 = "SELECT * FROM pendaftar WHERE status = 0 ORDER BY id_pendaftar ASC";
     $qry1 = "SELECT * FROM pendaftar WHERE status = 1";
@@ -56,6 +57,10 @@
                 
                 $qry_user = "UPDATE `users` SET `status` = '1' WHERE `email` = '$email'";
                 $sql_user = mysqli_query($link,$qry_user);
+                
+                $qry_notif = "INSERT INTO pembaca_agenda VALUES (NULL, '$email', 0)";
+                $sql_notif = mysqli_query($link_admin,$qry_notif);
+
                 if(!$sql_user){
                     echo mysqli_error();
                 }
