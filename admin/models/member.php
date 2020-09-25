@@ -55,7 +55,7 @@
                 $qry2 = "UPDATE `pendaftar` SET `status` = '1' WHERE `id_pendaftar` = $id";
                 $sql2 = mysqli_query($link,$qry2);
                 
-                $qry_user = "UPDATE `users` SET `status` = '1' WHERE `email` = '$email'";
+                $qry_user = "UPDATE `users` SET `status` = '2' WHERE `email` = '$email'";
                 $sql_user = mysqli_query($link,$qry_user);
                 
                 $qry_notif = "INSERT INTO pembaca_agenda VALUES (NULL, '$email', 0)";

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 4.9.5deb2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Waktu pembuatan: 24 Sep 2020 pada 17.30
--- Versi server: 10.1.37-MariaDB
--- Versi PHP: 7.3.0
+-- Host: localhost:3306
+-- Generation Time: Sep 25, 2020 at 03:13 PM
+-- Server version: 8.0.21-0ubuntu0.20.04.4
+-- PHP Version: 7.4.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,11 +25,11 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `anggota`
+-- Table structure for table `anggota`
 --
 
 CREATE TABLE `anggota` (
-  `id_pendaftar` int(11) NOT NULL,
+  `id_pendaftar` int NOT NULL,
   `nama` varchar(100) NOT NULL,
   `instansi` varchar(100) NOT NULL,
   `tempat_lahir` varchar(100) NOT NULL,
@@ -42,33 +42,33 @@ CREATE TABLE `anggota` (
   `pendidikan` varchar(255) NOT NULL,
   `sertifikat` varchar(255) NOT NULL,
   `info_tambahan` varchar(255) NOT NULL,
-  `status` int(11) NOT NULL,
+  `status` int NOT NULL,
   `tgl_daftar` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `foto`
+-- Table structure for table `foto`
 --
 
 CREATE TABLE `foto` (
-  `id` int(11) NOT NULL,
+  `id` int NOT NULL,
   `foto_upload` varchar(200) DEFAULT NULL,
   `nama_pemilik` varchar(100) NOT NULL,
   `email_pemilik` varchar(200) NOT NULL,
-  `status` int(11) NOT NULL,
+  `status` int NOT NULL,
   `waktu` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pendaftar`
+-- Table structure for table `pendaftar`
 --
 
 CREATE TABLE `pendaftar` (
-  `id_pendaftar` int(11) NOT NULL,
+  `id_pendaftar` int NOT NULL,
   `nama` varchar(100) NOT NULL,
   `instansi` varchar(100) NOT NULL,
   `tempat_lahir` varchar(100) NOT NULL,
@@ -82,115 +82,109 @@ CREATE TABLE `pendaftar` (
   `sertifikat` varchar(255) NOT NULL,
   `info_tambahan` varchar(255) NOT NULL,
   `tgl_daftar` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `status` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data untuk tabel `pendaftar`
---
-
-INSERT INTO `pendaftar` (`id_pendaftar`, `nama`, `instansi`, `tempat_lahir`, `tanggal_lahir`, `gender`, `nik`, `email`, `no_hp`, `bisa_wa`, `pendidikan`, `sertifikat`, `info_tambahan`, `tgl_daftar`, `status`) VALUES
-(1, 'Jono', 'Baghdad', 'Dubai', '2020-09-10', 'laki-laki', '567586987987', 'apaajadah@iya.com', '67687678686', 'ya', 'S4', 'ya', 'ya', '2020-09-24 15:23:51', 2);
+  `status` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `sertifikat`
+-- Table structure for table `sertifikat`
 --
 
 CREATE TABLE `sertifikat` (
-  `id` int(11) NOT NULL,
+  `id` int NOT NULL,
   `sertifikat_upload` varchar(200) DEFAULT NULL,
   `nama_pemilik` varchar(100) NOT NULL,
   `email_pemilik` varchar(200) NOT NULL,
   `keterangan` varchar(100) NOT NULL,
-  `status` int(11) NOT NULL,
+  `status` int NOT NULL,
   `waktu` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
-  `id_user` int(11) NOT NULL,
+  `id_user` int NOT NULL,
   `username` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
   `email` varchar(50) NOT NULL,
   `nama` varchar(100) NOT NULL,
   `level` varchar(50) NOT NULL,
+  `status` int NOT NULL,
   `log` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `anggota`
+-- Indexes for table `anggota`
 --
 ALTER TABLE `anggota`
   ADD PRIMARY KEY (`id_pendaftar`);
 
 --
--- Indeks untuk tabel `foto`
+-- Indexes for table `foto`
 --
 ALTER TABLE `foto`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `pendaftar`
+-- Indexes for table `pendaftar`
 --
 ALTER TABLE `pendaftar`
   ADD PRIMARY KEY (`id_pendaftar`);
 
 --
--- Indeks untuk tabel `sertifikat`
+-- Indexes for table `sertifikat`
 --
 ALTER TABLE `sertifikat`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id_user`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `anggota`
+-- AUTO_INCREMENT for table `anggota`
 --
 ALTER TABLE `anggota`
-  MODIFY `id_pendaftar` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pendaftar` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT untuk tabel `foto`
+-- AUTO_INCREMENT for table `foto`
 --
 ALTER TABLE `foto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT untuk tabel `pendaftar`
+-- AUTO_INCREMENT for table `pendaftar`
 --
 ALTER TABLE `pendaftar`
-  MODIFY `id_pendaftar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_pendaftar` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT untuk tabel `sertifikat`
+-- AUTO_INCREMENT for table `sertifikat`
 --
 ALTER TABLE `sertifikat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT untuk tabel `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_user` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

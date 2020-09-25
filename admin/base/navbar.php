@@ -3,6 +3,11 @@
         session_destroy();
         header("location: index.php");
     }
+    session_start();
+    if($_SESSION['status'] != "login" or $_SESSION['level'] !=1){
+        session_destroy();
+        header('location: index.php');
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">

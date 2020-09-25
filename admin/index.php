@@ -4,7 +4,7 @@
 		$username = $_POST['username'];
 		$password = $_POST['password'];
 		$password = md5($password);
-		$query = "SELECT * FROM admin WHERE username = '$username' and password = '$password'";
+		$query = "SELECT * FROM admin WHERE username = '$username' and password = '$password' and level = 1";
 		$sql = mysqli_query($link, $query);
 		$cek = mysqli_num_rows($sql);
 
@@ -12,6 +12,7 @@
 			session_start();
 			$_SESSION['username'] = $username;
 			$_SESSION['status'] = "login";
+			$_SESSION['level'] = 1;
 			header("location: home.php");
 		}
 	}

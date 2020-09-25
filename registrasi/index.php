@@ -119,7 +119,7 @@
                      </div>
                      <!-- NIK -->                        
                      <div class="input-group">
-                        <input class="input--style-1" type="text" min="16" max="16" placeholder="NIK" name="nik">
+                        <input class="input--style-1" type="text" placeholder="NIK" name="nik">
                      </div>
                      <!-- Email -->
                      <div class="input-group">

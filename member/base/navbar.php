@@ -3,6 +3,10 @@
         session_destroy();
         header("location: index.php");
     }
+    session_start();
+    if($_SESSION['status'] != "login" or $_SESSION['level'] != 2){
+        header('location: index.php');
+    }
     require "models/config.php";
     $email = $_SESSION['username'];
     $qry = "SELECT * FROM foto WHERE email_pemilik = '$email'";

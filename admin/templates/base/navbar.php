@@ -1,6 +1,6 @@
 <?php 
     session_start();
-    if($_SESSION['status'] != "login"){
+    if($_SESSION['status'] != "login" or $_SESSION['level'] != 1){
         header('location: ../index.php');
     }
     if(isset($_POST['logout'])){

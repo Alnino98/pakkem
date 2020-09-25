@@ -4,7 +4,7 @@
 	if(isset($_POST['submit'])){
 		$email = $_POST['email'];
 		$password = md5($_POST['password']);
-		$query = "SELECT * FROM users WHERE email = '$email' and password = '$password' and status = 1";
+		$query = "SELECT * FROM users WHERE email = '$email' and password = '$password' and status = 2";
 		$sql = mysqli_query($link, $query);
 		$cek = mysqli_num_rows($sql);
 		$ip = $_SERVER['REMOTE_ADDR'];
@@ -17,6 +17,7 @@
 			$_SESSION['username'] = $email;
 			$_SESSION['email'] = $email;
 			$_SESSION['status'] = "login";
+			$_SESSION['level'] = 2;
 			header("location: home.php");
 		}else{
 			echo mysqli_error($link);
