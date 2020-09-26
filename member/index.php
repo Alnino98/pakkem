@@ -2,10 +2,12 @@
 	include "models/config.php";
 	// $pesan = $_GET['pesan'];
 	if(isset($_POST['submit'])){
+		
 		$email = $_POST['email'];
 		$password = md5($_POST['password']);
-		$query = "SELECT * FROM users WHERE email = '$email' and password = '$password' and status = 2";
+		$query = "SELECT * FROM users WHERE email = '$email' and password = '$password' and status = 1 and level = 2";
 		$sql = mysqli_query($link, $query);
+
 		$cek = mysqli_num_rows($sql);
 		$ip = $_SERVER['REMOTE_ADDR'];
 		if($cek > 0){
@@ -13,6 +15,10 @@
 			$date = date("Y-m-d h:i:sa");
 			$log = 'Login '.$email.' '.$ip.' '.$date."\r\n";
 			file_put_contents('log.txt', $log, FILE_APPEND);
+
+			$db_log = "UPDATE log SET kegiatan = 1, timestamp = CURRENT_TIMESTAMP WHERE email = '$email'";
+			$record = mysqli_query($link, $db_log);
+
 			session_start();
 			$_SESSION['username'] = $email;
 			$_SESSION['email'] = $email;
@@ -28,7 +34,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Member Admin | Pakkem.org</title>
+	<title>Member Login | Pakkem.org</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	

@@ -9,6 +9,15 @@
     }
 
     $admin = $_SESSION['username'];
+    require '../models/config_admin.php';
+
+    $query = "SELECT * FROM admin WHERE username = '$admin' and level = 1";
+    $sql = mysqli_query($link_admin, $query);
+    $cek = mysqli_num_rows($sql);
+    while ($row = mysqli_fetch_array($sql)) {
+        $foto = $row['foto'];
+    }
+    $foto;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -341,12 +350,12 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?= $admin; ?></span>
                                 <img class="img-profile rounded-circle"
-                                    src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+                                    src="profil/<?= $foto; ?>">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="profil.php">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
                                 </a>

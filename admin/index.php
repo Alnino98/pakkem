@@ -5,14 +5,18 @@
 		$password = $_POST['password'];
 		$password = md5($password);
 		$query = "SELECT * FROM admin WHERE username = '$username' and password = '$password' and level = 1";
-		$sql = mysqli_query($link, $query);
+		$sql = mysqli_query($link_admin, $query);
 		$cek = mysqli_num_rows($sql);
+		while ($row = mysqli_fetch_array($sql)) {
+			$foto = $row['foto'];
+		}
 
 		if($cek > 0){
 			session_start();
 			$_SESSION['username'] = $username;
 			$_SESSION['status'] = "login";
 			$_SESSION['level'] = 1;
+			$_SESSION['foto'] = $foto;
 			header("location: home.php");
 		}
 	}

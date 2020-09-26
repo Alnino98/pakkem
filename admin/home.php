@@ -150,7 +150,7 @@
                     <div class="card shadow mb-2">
                         <!-- Card Header - Dropdown -->
                         <div class="card-header py-1">
-                            <h6 class="m-2 font-weight-bold text-primary">Rasio Member (%)</h6>
+                            <h6 class="m-2 font-weight-bold text-primary">Rasio Member <?= $tahun; ?></h6>
                         </div>
                         <!-- Card Body -->
                         <div class="card-body">

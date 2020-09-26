@@ -88,7 +88,7 @@
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Modul:</h6>
-                        <a class="collapse-item" href="templates/modul.php"><i class="fas fa-tasks"></i>&nbsp;&nbsp;Download Modul</a>
+                        <a class="collapse-item" href="templates/modul.php"><i class="fas fa-file"></i>&nbsp;&nbsp;Download Modul</a>
                     </div>
                 </div>
             </li>
@@ -96,7 +96,7 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFour"
                     aria-expanded="true" aria-controls="collapseFour">
-                    <i class="fas fa-archive"></i>
+                    <i class="fa fa-calendar"></i>
                     <span>Agenda</span>
                 </a>
                 <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionSidebar">

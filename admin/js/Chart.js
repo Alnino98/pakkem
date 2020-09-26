@@ -5,6 +5,7 @@ xmlhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
         var response1;
         response1 = this.responseText;
+        console.log(response1);
         var ctxL = document.getElementById("lineChart").getContext('2d');
         var myLineChart = new Chart(ctxL, {
             type: 'line',
@@ -45,7 +46,7 @@ xmlhttp_rasio.onreadystatechange = function () {
             data: {
                 labels: ["Pasif", "Aktif", "Total anggota"],
                 datasets: [{
-                    data: [2, 50, response2],
+                    data: response2,
                     backgroundColor: ["#F7464A", "#46BFBD", "#FDB45C"],
                     hoverBackgroundColor: ["#FF5A5E", "#5AD3D1", "#FFC870"]
                 }]

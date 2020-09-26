@@ -36,7 +36,7 @@
             <?php else: ?>
 
             <td><a style="font-size: 10pt" class="btn btn-primary"
-                    href="download_modul_pdf.php?filename=<?=$d['modul_pdf']?>">Download</a></td>
+                    href="download_modul_pdf.php?filename=<?=$d['modul_pdf']?>&email=<?= $_SESSION['username']?>">Download</a></td>
 
             <?php endif ?>
 

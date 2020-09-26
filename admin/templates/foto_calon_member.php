@@ -3,6 +3,10 @@
 <?php global $link;
     $query = "SELECT * FROM foto";
     $sql = mysqli_query($link, $query);
+
+    if(!$sql){
+        echo mysqli_error($link);
+    }
 ?>
 
 <!-- Begin Page Content -->

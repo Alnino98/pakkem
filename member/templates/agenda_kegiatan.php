@@ -1,4 +1,20 @@
 <?php require "base/navbar.php" ?>
+<?php
+    $email = $_SESSION['username'];
+    $agenda_diikuti = "SELECT * FROM agenda_diikuti WHERE email = '$email'";
+    $sql = mysqli_query($link, $agenda_diikuti);
+
+    if (isset($_POST['submit'])) {
+        $id_agenda = $_POST['id_agenda'];
+        $kegiatan = $_POST['kegiatan'];
+        $hari_tanggal = $_POST['hari_tanggal'];
+        $agenda = "INSERT INTO agenda_diikuti VALUES(NULL, '$id_agenda', '$email', '$kegiatan', '$hari_tanggal')";
+        $simpan = mysqli_query($link, $agenda);
+        if($simpan){
+            echo "<script>window.location.href='agenda_kegiatan.php'</script>";
+        }
+    }
+?>
 
     <link href="../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
@@ -35,11 +51,11 @@
                             <th>Aksi</th>
                         </tr>
 
-            <?php 
-                include 'koneksi.php';
-                $no = 1;
-                $data = mysqli_query($koneksi,"select * from agenda_kegiatan ORDER BY waktu_upload ASC");
-                while($d = mysqli_fetch_array($data)){
+                    <?php 
+                        include 'koneksi.php';
+                        $no = 1;
+                        $data = mysqli_query($koneksi,"select * from agenda_kegiatan ORDER BY waktu_upload ASC");
+                        while($d = mysqli_fetch_array($data)){
                     ?>
                     <tr>
                         <td><?php echo $no++; ?></td>
@@ -49,25 +65,28 @@
                         <td><?php echo $d['kegiatan']; ?></td>
                         <td><?php echo $d['keterangan_agenda']; ?></td>
                         <?php if ($d['kegiatan_pdf']==NULL): ?>
-
                            <td><a style="font-size: 10pt" class="btn btn-primary">Download</a></td>   
-
                         <?php else: ?>
-
-                            <td><a style="font-size: 10pt" class="btn btn-primary" href="download_pdf.php?filename=<?=$d['kegiatan_pdf']?>">Download</a></td>   
-
-                        <?php endif ?> 
-
-                        <td><button style="font-size: 10pt" type="button" class="btn btn-success">Join</button></td>
-
-                        
-                        
-                        
-                        
+                            <td>
+                                <a style="font-size: 10pt" class="btn btn-primary" href="download_pdf.php?filename=<?=$d['kegiatan_pdf']?>">Download</a>
+                            </td>
+                        <?php endif ?>
+                        <?php while ($row_diikuti = mysqli_fetch_array($sql)) {?>
+                            <?php if ($row_diikuti['id_agenda'] == $d['id_agenda']){ ?>
+                                <td><button style="font-size: 10pt" class="btn btn-secondary">Diikuti</button></td>
+                                <td><i class="fas fa-times"></i></td>
+                            <?php } ?>
+                        <?php } ?>
+                        <form action="" method="post">
+                            <td>
+                                <input type="hidden" name="id_agenda" value="<?= $d['id_agenda']; ?>">
+                                <input type="hidden" name="kegiatan" value="<?= $d['kegiatan']; ?>">
+                                <input type="hidden" name="hari_tanggal" value="<?= $d['hari_tanggal']; ?>">
+                                <button style="font-size: 10pt" type="submit" name="submit" class="btn btn-success">Join</button>
+                            </td>
+                        </form>
                     </tr>
-                    <?php 
-                }
-                ?>
+                    <?php }?>
                     </table>
                     <!--  <a href="tambah.php" type="button" class="btn btn-primary btn-lg">+ Upload Agenda</a> -->
 

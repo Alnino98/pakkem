@@ -31,9 +31,20 @@
             }
     }else if($kategori == 4){
         global $link;
-        $query = "SELECT * FROM anggota";
-        $sql = mysqli_query($link, $query);
-        $total = mysqli_num_rows($sql);
-        echo json_encode($total);
+        $anggota = "SELECT * FROM anggota";
+        $month = date('m');
+        $year = date('Y');
+        $aktif = "SELECT * FROM `log` WHERE MONTH(timestamp) = '$month' AND YEAR(timestamp) = '$year'";
+        $pasif = "SELECT * FROM `log` WHERE MONTH(timestamp) < '$month' OR YEAR(timestamp) < '$year'";
+
+        $anggota_total = mysqli_query($link, $anggota);
+        $anggota_aktif = mysqli_query($link, $aktif);
+        $anggota_pasif = mysqli_query($link, $pasif);
+
+        $total_anggota = mysqli_num_rows($anggota_total);
+        $total_aktif = mysqli_num_rows($anggota_aktif);
+        $total_pasif = mysqli_num_rows($anggota_pasif);
+
+        echo $total_pasif,$total_aktif,$total_anggota;
     }
 ?>
