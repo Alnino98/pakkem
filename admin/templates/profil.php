@@ -3,9 +3,9 @@
 <?php
     $username = $_SESSION['username'];
     $qry1 = "SELECT * FROM admin WHERE username = '$username' AND level = 1";
-    $sql1 = mysqli_query($link, $qry1);
+    $sql1 = mysqli_query($link_admin, $qry1);
     if(!$sql1){
-        echo mysqli_error($link);
+        echo mysqli_error($link_admin);
     }
 
     if(isset($_POST['submit'])){
@@ -13,11 +13,11 @@
         $name =  $_FILES['foto']['name'];
         $name = rand().$name;
         $qry1 = "UPDATE admin SET foto = '$name' WHERE username = '$username' AND level = 1";
-        $sql1 = mysqli_query($link, $qry1);
+        $sql1 = mysqli_query($link_admin, $qry1);
         if(!$sql1){
-            echo mysqli_error($link);
+            echo mysqli_error($link_admin);
         }else{
-            unlink("profil/".$name);
+           
             move_uploaded_file($temp, "profil/".$name);
             echo "<script>window.location.href='profil.php';</script>";
         }
