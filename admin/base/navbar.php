@@ -148,7 +148,7 @@
                                 class="far fa-clipboard"></i>&nbsp;&nbsp;Lists Anggota</a>
                         <a class="collapse-item" href="templates/grafik_anggota.php"><i class="fas fa-chart-line"></i>&nbsp;&nbsp;Grafik
                             Anggota</a>
-                        <a class="collapse-item" href="404.html"><i class="fas fa-user-check"></i>&nbsp;&nbsp;Anggota
+                        <a class="collapse-item" href="templates/anggota_aktif.php"><i class="fas fa-user-check"></i>&nbsp;&nbsp;Anggota
                             Aktif</a>
                         <a class="collapse-item" href="templates/generate_report.php"><i class="far fa-file-pdf"></i>&nbsp;&nbsp;Generate
                             Report</a>
