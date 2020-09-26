@@ -73,8 +73,8 @@
                         <?php endif ?>
                         <?php while ($row_diikuti = mysqli_fetch_array($sql)) {?>
                             <?php if ($row_diikuti['id_agenda'] == $d['id_agenda']){ ?>
-                                <td><button style="font-size: 10pt" class="btn btn-secondary">Diikuti</button></td>
-                                <td><i class="fas fa-times"></i></td>
+                               <!--  <td><button style="font-size: 10pt" class="btn btn-secondary">Diikuti</button></td>
+                                <td><i class="fas fa-times"></i></td> -->
                             <?php } ?>
                         <?php } ?>
                         <form action="" method="post">

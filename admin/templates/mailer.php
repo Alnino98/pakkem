@@ -8,15 +8,13 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 
-require 'vendor/autoload.php';
+require '../models/vendor/autoload.php';
+
 //Import PHPMailer classes into the global namespace
-
-    function send_email($email,$msg_for){
-
-
+    function send_email($email,$subjek,$pesan){
+    
             //Create a new PHPMailer instance
             $mail = new PHPMailer;
-
             //Tell PHPMailer to use SMTP
             $mail->isSMTP();
 
@@ -24,7 +22,7 @@ require 'vendor/autoload.php';
             // SMTP::DEBUG_OFF = off (for production use)
             // SMTP::DEBUG_CLIENT = client messages
             // SMTP::DEBUG_SERVER = client and server messages
-            //$mail->SMTPDebug = SMTP::DEBUG_SERVER;
+            // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
 
             //Set the hostname of the mail server
             $mail->Host = 'smtp.gmail.com';
@@ -41,31 +39,38 @@ require 'vendor/autoload.php';
             //Whether to use SMTP authentication
             $mail->SMTPAuth = true;
 
-            $mail->Username = 'moh.ramdani22@gmail.com';
+            $mail->Username = 'habibiealnino98@gmail.com';
 
             //Password to use for SMTP authentication
-            $mail->Password = 'dani@ingat';
+            $mail->Password = 'Jakarta`12';
 
             //Set who the message is to be sent from
-            $mail->setFrom('moh.ramdani22@gmail.com', 'Send');
+            $mail->setFrom('habibiealnino98@gamil.com', 'Admin Ganteng');
 
             //Set an alternative reply-to address
-            $mail->addReplyTo('moh.ramdani22@gmail.com', 'Reply');
+            $mail->addReplyTo('habibiealnino98@gmail.com', 'Reply');
 
             //Set who the message is to be sent to
-            $mail->addAddress($email, '');
+            // $mail->addAddress($email, '');
+            $mail->addAddress($email);
 
-            //Set the subject line
-            $mail->Subject = 'Aktivasi Akun';
+            $mail->Subject = $subjek; 
 
             //Read an HTML message body from an external file, convert referenced images to embedded,
             //convert HTML into a basic plain-text alternative body
-            
-            $mail->msgHTML($msg_for);
+            // $mail->Body = $_POST["message"]; 
+            // $mail->msgHTML($message);
+            $mail->Body = $pesan;
+
+
+    //Attachments
+            // $mail->addAttachment($file_name);         // Add attachments
+            // $mail->addAttachment($file_name, 'new.jpg');    // Optional name
+
+            $mail->isHTML(true);
+            // $mail->msgHTML(file_get_contents('contents.html'), __DIR__);
             //Replace the plain text body with one created manually
             $mail->AltBody = 'This is a plain-text message body';
-
-            $mail->Body = $pesan;
 
             //Attach an image file
             /*$mail->addAttachment('images/phpmailer_mini.png');
@@ -101,5 +106,7 @@ require 'vendor/autoload.php';
                 /*return $result;*/
             }
 
-    }
-    //Username to use for SMTP authentication - use full email address for gmail
+         }
+
+
+?>

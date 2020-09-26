@@ -178,7 +178,7 @@
                         <h6 class="collapse-header">Inbox:</h6>
                         <a class="collapse-item" href="404.html"><i class="fas fa-share"></i>&nbsp;&nbsp;Balas Email</a>
                         <h6 class="collapse-header">Sebar Email:</h6>
-                        <a class="collapse-item" href="404.html"><i class="far fa-paper-plane"></i>&nbsp;&nbsp;Kirim
+                        <a class="collapse-item" href="form.php"><i class="far fa-paper-plane"></i>&nbsp;&nbsp;Kirim
                             Email</a>
                         <h6 class="collapse-header">Whatsapp:</h6>
                         <a class="collapse-item" target="_blank"
