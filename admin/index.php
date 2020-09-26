@@ -12,6 +12,12 @@
 		}
 
 		if($cek > 0){
+	        
+	        date_default_timezone_set("Asia/Bangkok");
+	        $date = date("Y-m-d h:i:sa");
+	        $log = 'Login '.$username.' '.$ip.' '.$date."\r\n";
+	        file_put_contents('log.txt', $log, FILE_APPEND);
+
 			session_start();
 			$_SESSION['username'] = $username;
 			$_SESSION['status'] = "login";

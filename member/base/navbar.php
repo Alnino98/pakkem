@@ -1,5 +1,12 @@
 <?php 
     if(isset($_POST['logout'])){
+        $email = $_SESSION['email'];
+        
+        date_default_timezone_set("Asia/Bangkok");
+        $date = date("Y-m-d h:i:sa");
+        $log = 'Logout '.$email.' '.$ip.' '.$date."\r\n";
+        file_put_contents('log.txt', $log, FILE_APPEND);
+
         session_destroy();
         header("location: index.php");
     }
