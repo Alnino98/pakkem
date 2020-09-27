@@ -11,15 +11,17 @@
         $anggota_aktif = mysqli_query($link, $aktif);
         $total_aktif = mysqli_num_rows($anggota_aktif);
      ?>
-
-     <table class="table">
-     	<tr class="thead-dark">
+      <table id="dtBasicExample" class="table small">
+        <thead>
+     	<tr>
      		<th>Nomor</th>
      		<th>Email</th>
      		<th>Nama</th>
      		<th>Nomor Hp</th>
      		<th>Terakhir Login</th>
      	</tr>
+
+     	<tr>
      		<?php $i=1; ?>
 		     <?php while ($row = mysqli_fetch_array($anggota_aktif)) {?>
 		     	<?php $email = $row['email']; ?>
@@ -44,6 +46,7 @@
 
      		</tr>
 		     <?php } ?>
+     	</tr>
      </table>
 
     

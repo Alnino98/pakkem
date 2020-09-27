@@ -10,21 +10,21 @@
             $query_sertifikat = "UPDATE sertifikat SET status = 1 WHERE sertifikat_upload = '$sertifikat'";
             $verifikasi_sertifikat = mysqli_query($link, $query_sertifikat);
             if($verifikasi_sertifikat){
-                header("location: daftar_anggota.php");
+                header("location: calon_member.php");
             }
         }elseif ($id == "batal") {
             global $link;
             $query_sertifikat = "UPDATE sertifikat SET status = 0 WHERE sertifikat_upload = '$sertifikat'";
             $verifikasi_sertifikat = mysqli_query($link, $query_sertifikat);
             if($verifikasi_sertifikat){
-                header("location: daftar_anggota.php");
+                header("location: calon_member.php");
             }
         }elseif ($id == "ditolak") {
             global $link;
             $query_sertifikat = "UPDATE sertifikat SET status = 2 WHERE sertifikat_upload = '$sertifikat'";
             $verifikasi_sertifikat = mysqli_query($link, $query_sertifikat);
             if($verifikasi_sertifikat){
-                header("location: daftar_anggota.php");
+                header("location: calon_member.php");
             }
         }
     }else if($foto !=NULL){
@@ -33,21 +33,21 @@
             $query_foto = "UPDATE foto SET status = 1 WHERE foto_upload = '$foto'";
             $verifikasi_foto = mysqli_query($link, $query_foto);
             if($verifikasi_foto){
-                header("location: daftar_anggota.php");
+                header("location: calon_member.php");
             }
         }elseif ($id == "batal") {
             global $link;
             $query_foto = "UPDATE foto SET status = 0 WHERE foto_upload = '$foto'";
             $verifikasi_foto = mysqli_query($link, $query_foto);
             if($verifikasi_foto){
-                header("location: daftar_anggota.php");
+                header("location: calon_member.php");
             }
         }elseif ($id == "ditolak") {
             global $link;
             $query_foto = "UPDATE foto SET status = 2 WHERE foto_upload = '$foto'";
             $verifikasi_foto = mysqli_query($link, $query_foto);
             if($verifikasi_foto){
-                header("location: daftar_anggota.php");
+                header("location: calon_member.php");
             }
         }
     }

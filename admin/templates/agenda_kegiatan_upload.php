@@ -4,7 +4,7 @@
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800">Agenda Kegiatan </h1>
+   <!--  <h1 class="h3 mb-4 text-gray-800">Agenda Kegiatan </h1> -->
 
     <table id="dtBasicExample" class="table small " cellspacing="0" width="100%">
         <a style="font-size: 10pt" href="tambah.php" type="button"
