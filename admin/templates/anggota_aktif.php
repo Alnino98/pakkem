@@ -20,6 +20,7 @@
      		<th>Nomor Hp</th>
      		<th>Terakhir Login</th>
      	</tr>
+     	<!-- </thead> iyeu te jalan-->
  		<?php $i=1; ?>
 	     <?php while ($row = mysqli_fetch_array($anggota_aktif)) {?>
 	     	<?php $email = $row['email']; ?>
