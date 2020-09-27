@@ -30,7 +30,7 @@
             <th>
                 <?php if($row['foto']==NULL){?>
                     <h5>Foto tidak ditemukan</h5>
-                    <form class="float-right" action="" method="post" enctype="multipart/form-data">
+                    <form action="" method="post" enctype="multipart/form-data">
                         <div class="container">
                             <p class="text-primary">Upload foto untuk menambahkan</p>
                             <input type="file" name="foto">
@@ -40,7 +40,7 @@
                 <?php }?>
                 <?php if($row['foto']!=NULL) {?>
                    <img src="profil/<?=$row['foto'];?>" alt="foto" class="image">
-                   <form class="float-right" action="" method="post" enctype="multipart/form-data">
+                   <form action="" method="post" enctype="multipart/form-data">
                        <div class="container">
                            <input type="file" name="foto">
                            <button type="submit" name="submit" class="btn btn-success">Perbaharui</button>
