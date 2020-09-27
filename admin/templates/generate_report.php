@@ -12,7 +12,7 @@
 
                      <a style="font-size: 10pt" href="cetak_agenda.php" type="button" target="_blank" class="btn btn-primary btn-lg btn-block">Cetak Laporan Agenda Kegiatan</a>
 
-                     <a style="font-size: 10pt" href="" type="button" target="_blank" class="btn btn-primary btn-lg btn-block">Cetak Laporan Anggota Aktif</a>
+                     <a style="font-size: 10pt" href="cetak _anggota_aktif.php" type="button" target="_blank" class="btn btn-primary btn-lg btn-block">Cetak Laporan Anggota Aktif</a>
 
                      <a style="font-size: 10pt" href="print_grafik_anggota.php" type="button" target="_blank" class="btn btn-primary btn-lg btn-block">Cetak Laporan Grafik</a>
 
