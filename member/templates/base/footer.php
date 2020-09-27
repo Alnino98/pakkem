@@ -58,6 +58,24 @@
 <script src="../js/demo/chart-area-demo.js"></script>
 <script src="../js/demo/chart-pie-demo.js"></script>
 
+  <script type="text/javascript"></script>
+  <!-- MDBootstrap Datatables  -->
+    <script type="text/javascript" src="../js/addons/datatables.min.js"></script>
+    <script>
+      
+      $(document).ready(function () {
+      $('#dtBasicExample').DataTable();
+      $('.dataTables_length').addClass('bs-select');
+    });
+    </script>
+        <script>
+      
+      $(document).ready(function () {
+      $('#dtBasicExample1').DataTable();
+      $('.dataTables_length').addClass('bs-select');
+    });
+    </script>
+
 </body>
 <!-- This templates was made by Mongtuh: Automation Solutions (https://mongtuh.com) -->
 

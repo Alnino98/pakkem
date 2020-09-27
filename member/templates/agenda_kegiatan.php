@@ -39,7 +39,8 @@
 
                     <!-- Page Heading -->
                     <h1 class="h3 mb-4 text-gray-800">Daftar Anggota</h1>
-                    <table class="table small">
+                    <table id="dtBasicExample" class="table small " cellspacing="0" width="100%">
+                        <thead>
                         <tr>
                             <th>No</th>
                             <th>Id Agenda</th>
@@ -50,6 +51,7 @@
                             <th>Download File</th>
                             <th>Aksi</th>
                         </tr>
+                        </thead>
 
                     <?php 
                         include 'koneksi.php';

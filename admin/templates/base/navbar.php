@@ -41,7 +41,8 @@
 
     <!-- Custom styles for this template-->
     <link href="../css/sb-admin-2.min.css" rel="stylesheet">
-
+    
+    <!-- Data Tabel -->
     <link href="../css/addons/datatables.min.css" rel="stylesheet">
     
     <!-- Favicon-->

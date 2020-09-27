@@ -6,17 +6,17 @@
     <!-- Page Heading -->
     <h1 class="h3 mb-4 text-gray-800">Modul</h1>
 
-    <table class="table small">
+    <table id="dtBasicExample" class="table small " cellspacing="0" width="100%">
+        <thead>
         <tr>
             <th>No</th>
-
             <th>Nama Modul</th>
             <th>Keterangan</th>
             <th>Nama File</th>
-
             <th>Download</th>
 
         </tr>
+        </thead>
 
         <?php 
             include 'koneksi.php';

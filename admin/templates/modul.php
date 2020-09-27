@@ -14,17 +14,16 @@
             <th>Nama Modul</th>
             <th>Keterangan</th>
             <th>Nama File</th>
-
             <th>Download</th>
 
         </tr>
 
-        <?php 
-                            include 'koneksi.php';
-                            $no = 1;
-                            $data = mysqli_query($koneksi,"select * from modul ORDER BY waktu_upload_modul ASC");
-                            while($d = mysqli_fetch_array($data)){
-                                ?>
+                <?php 
+                include 'koneksi.php';
+                $no = 1;
+                $data = mysqli_query($koneksi,"select * from modul ORDER BY waktu_upload_modul ASC");
+                while($d = mysqli_fetch_array($data)){
+                    ?>
         <tr>
             <td><?php echo $no++; ?></td>
             <td><?php echo $d['nama_modul']; ?></td>
