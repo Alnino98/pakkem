@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.5deb2
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Sep 28, 2020 at 01:36 AM
--- Server version: 8.0.21-0ubuntu0.20.04.4
--- PHP Version: 7.4.3
+-- Host: 127.0.0.1
+-- Waktu pembuatan: 27 Sep 2020 pada 21.16
+-- Versi server: 10.1.37-MariaDB
+-- Versi PHP: 7.3.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,31 +25,31 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
+-- Struktur dari tabel `admin`
 --
 
 CREATE TABLE `admin` (
-  `id_admin` int NOT NULL,
+  `id_admin` int(11) NOT NULL,
   `username` varchar(100) NOT NULL,
   `email` varchar(200) NOT NULL,
   `password` varchar(100) NOT NULL,
   `nama` varchar(100) NOT NULL,
-  `level` varchar(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
+  `level` varchar(100) NOT NULL,
   `log` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `foto` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `admin`
+-- Dumping data untuk tabel `admin`
 --
 
-INSERT INTO `admin` (`id_admin`, `username`, `email`, `password`, `nama`, `level`, `foto`) VALUES
-(17, 'admin', 'admin@admin.com', '8f4f4aa2c27b7c39a33895142e164354', 'admin', '1', '17911097432.jpg');
+INSERT INTO `admin` (`id_admin`, `username`, `email`, `password`, `nama`, `level`, `log`, `foto`) VALUES
+(17, 'admin', 'admin@admin.com', '8f4f4aa2c27b7c39a33895142e164354', 'admin', '1', '2020-09-27 16:20:16', '17911097432.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `agenda_kegiatan`
+-- Struktur dari tabel `agenda_kegiatan`
 --
 
 CREATE TABLE `agenda_kegiatan` (
@@ -62,22 +62,17 @@ CREATE TABLE `agenda_kegiatan` (
   `waktu_upload` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
-
 --
--- Table structure for table `email`
+-- Dumping data untuk tabel `agenda_kegiatan`
 --
 
-CREATE TABLE `email` (
-  `id` int NOT NULL,
-  `id_email` varchar(200) NOT NULL,
-  `status` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+INSERT INTO `agenda_kegiatan` (`id_agenda`, `hari_tanggal`, `waktu_agenda`, `kegiatan`, `keterangan_agenda`, `kegiatan_pdf`, `waktu_upload`) VALUES
+('250805755', '2020-10-08', '09:00 WIB', 'Rapat', 'Rapat', 'Rapat.pdf', '2020-09-27 16:20:16');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `modul`
+-- Struktur dari tabel `modul`
 --
 
 CREATE TABLE `modul` (
@@ -88,20 +83,27 @@ CREATE TABLE `modul` (
   `waktu_upload_modul` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data untuk tabel `modul`
+--
+
+INSERT INTO `modul` (`id_modul`, `nama_modul`, `keterangan_modul`, `modul_pdf`, `waktu_upload_modul`) VALUES
+('1576295450', 'Peraturan', 'peraturan masuk', 'Peraturan.pdf', '2020-09-27 16:20:16');
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mst_anggota`
+-- Struktur dari tabel `mst_anggota`
 --
 
 CREATE TABLE `mst_anggota` (
-  `mst_no_pendaftaran` int NOT NULL,
+  `mst_no_pendaftaran` int(11) NOT NULL,
   `mst_nama` varchar(128) NOT NULL,
   `mst_jenis_kelamin` varchar(50) DEFAULT NULL,
   `kantor` varchar(100) NOT NULL,
   `mst_tempat_lahir` varchar(64) NOT NULL,
   `mst_tanggal_lahir` date NOT NULL,
-  `mst_nik` int DEFAULT NULL,
+  `mst_nik` int(11) DEFAULT NULL,
   `email` varchar(100) NOT NULL,
   `keterangan` text NOT NULL,
   `mst_hp` char(16) DEFAULT NULL,
@@ -112,7 +114,7 @@ CREATE TABLE `mst_anggota` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `mst_anggota`
+-- Dumping data untuk tabel `mst_anggota`
 --
 
 INSERT INTO `mst_anggota` (`mst_no_pendaftaran`, `mst_nama`, `mst_jenis_kelamin`, `kantor`, `mst_tempat_lahir`, `mst_tanggal_lahir`, `mst_nik`, `email`, `keterangan`, `mst_hp`, `mst_wa`, `mst_pendidikan`, `mst_sertifikat`, `namafoto`) VALUES
@@ -171,12 +173,12 @@ INSERT INTO `mst_anggota` (`mst_no_pendaftaran`, `mst_nama`, `mst_jenis_kelamin`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pegawai`
+-- Struktur dari tabel `pegawai`
 --
 
 CREATE TABLE `pegawai` (
-  `id_pegawai` int NOT NULL,
-  `id_jabatan` int NOT NULL,
+  `id_pegawai` int(11) NOT NULL,
+  `id_jabatan` int(11) NOT NULL,
   `nip` varchar(100) NOT NULL,
   `nama` varchar(100) NOT NULL,
   `jk` varchar(100) NOT NULL,
@@ -192,25 +194,34 @@ CREATE TABLE `pegawai` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pembaca_agenda`
+-- Struktur dari tabel `pembaca_agenda`
 --
 
 CREATE TABLE `pembaca_agenda` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL,
   `pembaca` varchar(100) NOT NULL,
-  `notifikasi` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `notifikasi` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `pembaca_agenda`
+--
+
+INSERT INTO `pembaca_agenda` (`id`, `pembaca`, `notifikasi`) VALUES
+(10, 'yoggaajipratama99@gmail.com', 0),
+(11, 'moh.ramdani22@gmail.com', 0),
+(12, 'infokeun@gmail.com', 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pendidikan`
+-- Struktur dari tabel `pendidikan`
 --
 
 CREATE TABLE `pendidikan` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL,
   `nama_pendaftar` varchar(100) NOT NULL,
-  `id_pendaftar` int NOT NULL,
+  `id_pendaftar` int(11) NOT NULL,
   `status_slta` varchar(100) NOT NULL,
   `kota` varchar(100) NOT NULL,
   `kecamatan` varchar(100) NOT NULL,
@@ -220,97 +231,123 @@ CREATE TABLE `pendidikan` (
   `tahun lulus` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `umum`
+--
+
+CREATE TABLE `umum` (
+  `id_umum` int(11) NOT NULL,
+  `nama` varchar(100) NOT NULL,
+  `no_hp` int(20) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `pesan` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `umum`
+--
+
+INSERT INTO `umum` (`id_umum`, `nama`, `no_hp`, `email`, `pesan`) VALUES
+(1, 'abhy', 98766, 'alnino@gmail.com', 'coba'),
+(2, '', 897979, 'abhyelnino13@gmail.com', 'pesan'),
+(3, '', 9776676, 'andai@gmail.com', 'pesan'),
+(4, '', 2367626, 'sad', 'pesan'),
+(5, 'dede', 8768768, 'abhye@gmail.com', 'pesan'),
+(6, 'habibi lagi', 875788, 'abuj@gmail.com', 'jgan lupa tidur');
+
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `admin`
+-- Indeks untuk tabel `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id_admin`);
 
 --
--- Indexes for table `agenda_kegiatan`
+-- Indeks untuk tabel `agenda_kegiatan`
 --
 ALTER TABLE `agenda_kegiatan`
   ADD PRIMARY KEY (`id_agenda`);
 
 --
--- Indexes for table `email`
---
-ALTER TABLE `email`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `modul`
+-- Indeks untuk tabel `modul`
 --
 ALTER TABLE `modul`
   ADD PRIMARY KEY (`id_modul`);
 
 --
--- Indexes for table `mst_anggota`
+-- Indeks untuk tabel `mst_anggota`
 --
 ALTER TABLE `mst_anggota`
   ADD PRIMARY KEY (`mst_no_pendaftaran`);
 
 --
--- Indexes for table `pegawai`
+-- Indeks untuk tabel `pegawai`
 --
 ALTER TABLE `pegawai`
   ADD PRIMARY KEY (`id_pegawai`);
 
 --
--- Indexes for table `pembaca_agenda`
+-- Indeks untuk tabel `pembaca_agenda`
 --
 ALTER TABLE `pembaca_agenda`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `pendidikan`
+-- Indeks untuk tabel `pendidikan`
 --
 ALTER TABLE `pendidikan`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- Indeks untuk tabel `umum`
+--
+ALTER TABLE `umum`
+  ADD PRIMARY KEY (`id_umum`);
+
+--
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `admin`
+-- AUTO_INCREMENT untuk tabel `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id_admin` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT for table `email`
---
-ALTER TABLE `email`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=212;
-
---
--- AUTO_INCREMENT for table `mst_anggota`
+-- AUTO_INCREMENT untuk tabel `mst_anggota`
 --
 ALTER TABLE `mst_anggota`
-  MODIFY `mst_no_pendaftaran` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
+  MODIFY `mst_no_pendaftaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
 
 --
--- AUTO_INCREMENT for table `pegawai`
+-- AUTO_INCREMENT untuk tabel `pegawai`
 --
 ALTER TABLE `pegawai`
-  MODIFY `id_pegawai` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pegawai` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `pembaca_agenda`
+-- AUTO_INCREMENT untuk tabel `pembaca_agenda`
 --
 ALTER TABLE `pembaca_agenda`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT for table `pendidikan`
+-- AUTO_INCREMENT untuk tabel `pendidikan`
 --
 ALTER TABLE `pendidikan`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT untuk tabel `umum`
+--
+ALTER TABLE `umum`
+  MODIFY `id_umum` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
