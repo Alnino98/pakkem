@@ -5,7 +5,7 @@
 
     <!-- Page Heading -->
     <!-- <h1 class="text-gray-800">Modul </h1> -->
-
+   <!--  <h1 class="h3 mb-4 text-gray-800">Modul </h1> -->
 
         <table id="dtBasicExample" class="table small " cellspacing="0" width="100%">
         <a style="font-size: 10pt" href="tambah_modul.php" type="button"

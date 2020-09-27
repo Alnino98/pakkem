@@ -67,6 +67,13 @@
       $('.dataTables_length').addClass('bs-select');
     });
     </script>
+        <script>
+      
+      $(document).ready(function () {
+      $('#dtBasicExample1').DataTable();
+      $('.dataTables_length').addClass('bs-select');
+    });
+    </script>
 
 </body>
 <!-- This templates was made by Mongtuh: Automation Solutions (https://mongtuh.com) -->

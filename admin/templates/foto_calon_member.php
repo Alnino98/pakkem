@@ -14,14 +14,18 @@
 
     <!-- Manampilkan data dari database beserta status dan aksi -->
     <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800">Foto Calon Anggota Baru</h1>
-    <p>Klik foto untuk melihat detail</p>
-    <table class="table">
-        <tr>
-            <th>Foto</th>
-            <th>Nama</th>
-            <th>Email</th>
-        </tr>
+
+  
+     <table id="dtBasicExample" class="table small " cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <h4 class="mb-4 text-gray-800">Foto Calon Anggota Baru</h4>
+                <p>Klik foto untuk melihat detail</p>
+                <th>Foto</th>
+                <th>Nama</th>
+                <th>Email</th>
+            </tr>
+        </thead>
         <?php while($row = mysqli_fetch_array($sql)){ ?>
         <?php if($row['status'] == 0){ ?>
         <tr>

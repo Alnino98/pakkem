@@ -10,13 +10,16 @@
 
     <!-- Manampilkan data dari database beserta status dan aksi -->
     <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800">Sertifikat Calon Anggota Baru</h1>
-    <table class="table">
-        <tr>
-            <th>Foto</th>
-            <th>Nama</th>
-            <th>Email</th>
-        </tr>
+<!--     <h1 class="h3 mb-4 text-gray-800">Sertifikat Calon Anggota Baru</h1> -->
+    <table id="dtBasicExample" class="table small " cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <h4 class="mb-4 text-gray-800">Pendaftar Masuk</h4>
+                <th>Foto</th>
+                <th>Nama</th>
+                <th>Email</th>
+            </tr>
+        </thead>
         <?php while($row = mysqli_fetch_array($sql)){ ?>
         <?php if($row['status'] == 0){ ?>
         <tr>

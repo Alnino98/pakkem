@@ -5,9 +5,11 @@
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800">Daftar Anggota</h1>
-    <table class="small table">
+   <!--  <h1 class="h3 mb-4 text-gray-800">Daftar Anggota</h1> -->
+      <table id="dtBasicExample" class="table small">
+        <thead >
         <tr>
+            <h4 class="mb-4 text-gray-800">Daftar Anggota</h4>
             <th>No</th>
             <th>Nama</th>
             <th>Email</th>
@@ -15,6 +17,7 @@
             <th>Foto</th>
             <th>Sertifikat</th>
         </tr>
+        </thead>
         <?= tampilkan('nama', 'email', 'no_hp', '', 4); ?>
     </table>
 </div>

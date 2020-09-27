@@ -7,27 +7,35 @@
 <?php $qry5 = "SELECT * FROM pendaftar WHERE status = 3"; ?>
 <?php $show5 = mysqli_query($link,$qry5); ?>
     <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800">Daftar Anggota Ditolak</h1>
+<!--     <h1 class="h3 mb-4 text-gray-800">Daftar Anggota Ditolak</h1> -->
     <div class="row">
         <div class="col-sm">
-            <table class="table small">
-                <tr>
-                    <th>No</th>
-                    <th>Nama</th>
-                    <th>Email</th>
-                    <th>Status</th>
-                </tr>
+            <table id="dtBasicExample" class="table small table-bordered">
+                <thead>
+                    <tr>
+                        <h4 class="mb-4 text-gray-800">Ditolak</h4>
+                        <th>No</th>
+                        <th>Nama</th>
+                        <th>Email</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
                 <?= tampilkan('nama', 'email', '', '', 2); ?>
             </table>
         </div>
+
         <div class="col-sm">
-            <table class="table small">
-                <tr>
-                    <th>No</th>
-                    <th>Nama</th>
-                    <th>Email</th>
-                    <th>Status</th>
-                </tr>
+            <table id="dtBasicExample1" class="table small table-bordered">
+                <thead>
+                    <tr>
+                        <h4 class="mb-4 text-gray-800">Ditunda</h4>
+                        <th>No</th>
+                        <th>Nama</th>
+                        <th>Email</th>
+                        <th>Status</th>
+                        <th>Opsi</th>
+                    </tr>
+                </thead>
                 <?= "Jumlah anggota di tunda: ".mysqli_num_rows($show5); ?>
                 <?php 
                     $i=1;

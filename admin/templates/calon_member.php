@@ -5,19 +5,26 @@
 
     <!-- Manampilkan data dari database beserta status dan aksi -->
     <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800">Pendaftar Masuk</h1>
     <div class="row">
         <div class="col-sm">
-            <table class="small table">
-                <tr>
-                <h4>Calon anggota</h4>
-                    <th>No</th>
-                    <th>Nama</th>
-                    <th>Email</th>
-                    <th>Foto</th>
-                    <th>Sertifikat</th>
-                    <th>Admin</th>
-                </tr>
+            <table id="dtBasicExample" class="table small " cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                    <h4 class="mb-4 text-gray-800">Pendaftar Masuk</h4>
+
+  
+                        <th>No</th>
+                        <th>Nama</th>
+                        <th>Email</th>
+                        <th>Status Foto</th>
+                        <th>Status Sertifikat</th>
+                        <th>Opsi 1</th>
+                        <th>Opsi 2</th>
+                        <th>Opsi 3</th>
+
+
+                    </tr>
+                </thead>
                 <?= tampilkan('nama', 'email', '', '', 3); ?>
             </table>
         </div>
