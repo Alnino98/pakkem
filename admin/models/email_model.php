@@ -27,20 +27,35 @@
     
             // $message =  imap_qprint(imap_body($mbox, $message_id));
             $message = imap_fetchbody($mbox,$message_id,2);
-    
-            echo "<div class='container'>";
-            echo "<h1>Pesan masuk</h1>";
-            echo "<hr>";
-            echo "<b>Dari : ".$from."</b><br>";
-            echo "Subject : ".$subject."<br>";
-            echo "To : ".$to."<br>";
-            echo "Date : ".$emaildate."<br>";
-            echo "Message : <br>";
-            echo "<div class='border border-dark bg-white p-3'>".$message."</div>";
-            echo "<br>";
+
+            $status = imap_status($mbox, "{mail.pakkem.org}INBOX", SA_ALL);
+            // echo "Recent:     " . $status->recent      . "<br />\n";
+            // echo "Unseen:     " . $status->unseen      . "<br />\n";
+            // echo "UIDnext:    " . $status->uidnext     . "<br />\n";
+            // echo "UIDvalidity:" . $status->uidvalidity . "<br />\n";
+
+            $emails = imap_search($inbox,$email_read);
+
+            $ids = array();
+            foreach($emails as $key => $mail) {
+                $ids [] = $mail;
+            }
+            var_dump($mail);
+
+            
+            echo "Messages:   " . $status->messages    . "<br />\n";
             
         }
-
+        // echo "<div class='container'>";
+        // echo "<hr>";
+        // echo "<b>Dari : ".$from."</b><br>";
+        // echo "Subject : ".$subject."<br>";
+        // echo "To : ".$to."<br>";
+        // echo "Date : ".$emaildate."<br>";
+        // echo "Message : <br>";
+        // echo "<div class='border border-dark bg-white p-3'>".$message."</div>";
+        // echo "<br>";
+        
         echo "</div>";
         imap_close($mbox);
     }

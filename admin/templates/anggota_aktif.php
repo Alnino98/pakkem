@@ -20,7 +20,6 @@
      		<th>Nomor Hp</th>
      		<th>Terakhir Login</th>
      	</tr>
-     	<tr>
      		<?php $i=1; ?>
 		     <?php while ($row = mysqli_fetch_array($anggota_aktif)) {?>
 		     	<?php $email = $row['email']; ?>
@@ -29,9 +28,10 @@
 		     	<?php $detail = mysqli_query($link, $anggota); ?>
 		     	
 		     	<?php if (!$detail) {
-		     		echo mysqli_error($link);
-		     	} ?>
+					 echo mysqli_error($link);
+					} ?>
 
+			<tr>
 		     	<td><?= $i++; ?></td>
 		     	<td><?= $row['email']; ?></td>
 
@@ -42,8 +42,8 @@
 
 		     	<td><?= $row['timestamp']; ?></td>
 
+     		</tr>
 		     <?php } ?>
-     	</tr>
      </table>
 
     

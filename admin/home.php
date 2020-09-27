@@ -10,6 +10,11 @@
         session_destroy();
         header("location: index.php");
     }
+    $month = date('m');
+    $year = date('Y');
+    $aktif = "SELECT * FROM `log` WHERE MONTH(timestamp) = '$month' AND YEAR(timestamp) = '$year'";
+    $anggota_aktif = mysqli_query($link, $aktif);
+    $total_aktif = mysqli_num_rows($anggota_aktif);
 ?>
 <!-- Begin Page Content -->
 <div class="container-fluid">
@@ -54,7 +59,9 @@
                                 Aktif</div>
                             <div class="row no-gutters align-items-center">
                                 <div class="col-auto">
-                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">~</div>
+                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
+                                        <?= $total_aktif; ?>
+                                    </div>
                                 </div>
                                 <div class="col">
                                     <div class="progress progress-sm mr-2">
