@@ -4,10 +4,13 @@
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800">Modul <a style="font-size: 10pt" href="tambah_modul.php" type="button"
-            class="float-right btn btn-primary btn-lg">+ Upload Modul</a></h1>
+    <!-- <h1 class="text-gray-800">Modul </h1> -->
 
-    <table class="table small">
+
+        <table id="dtBasicExample" class="table small " cellspacing="0" width="100%">
+        <a style="font-size: 10pt" href="tambah_modul.php" type="button"
+            class="float-right btn btn-primary btn-lg">+ Upload Modul</a>
+        <thead>
         <tr>
             <th>No</th>
             <th>ID Modul</th>
@@ -16,8 +19,8 @@
             <th>Upload File</th>
             <th>Waktu Upload</th>
             <th>Opsi</th>
-
         </tr>
+        </thead>
 
         <?php
 include 'koneksi.php';
@@ -26,6 +29,7 @@ $data = mysqli_query($koneksi, "select * from modul ORDER BY waktu_upload_modul 
 while ($d = mysqli_fetch_array($data))
 {
 ?>
+
         <tr>
             <td><?php echo $no++; ?></td>
             <td><?php echo $d['id_modul']; ?></td>

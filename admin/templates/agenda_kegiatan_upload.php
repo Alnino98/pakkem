@@ -4,21 +4,24 @@
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800">Agenda Kegiatan <a style="font-size: 10pt" href="tambah.php" type="button"
-            class="float-right btn btn-primary btn-lg">+ Upload Agenda</a></h1>
+    <h1 class="h3 mb-4 text-gray-800">Agenda Kegiatan </h1>
 
-    <table class="table small">
-        <tr>
-            <th>No</th>
-            <th>ID Agenda</th>
-            <th>hari/tanggal</th>
-            <th>Waktu Agenda</th>
-            <th>Kegiatan</th>
-            <th>Keterangan agenda</th>
-            <th>Waktu Upload</th>
-            <th>Upload File</th>
-            <th>Opsi</th>
-        </tr>
+    <table id="dtBasicExample" class="table small " cellspacing="0" width="100%">
+        <a style="font-size: 10pt" href="tambah.php" type="button"
+            class="float-right btn btn-primary btn-lg">+ Upload Agenda</a>
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>ID Agenda</th>
+                <th>hari/tanggal</th>
+                <th>Waktu Agenda</th>
+                <th>Kegiatan</th>
+                <th>Keterangan agenda</th>
+                <th>Waktu Upload</th>
+                <th>Upload File</th>
+                <th>Opsi</th>
+            </tr>
+        </thead>
 
         <?php 
         include 'koneksi.php';

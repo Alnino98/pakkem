@@ -58,6 +58,14 @@
 <script src="js/demo/chart-area-demo.js"></script>
 <script src="js/demo/chart-pie-demo.js"></script>
 
+<script src=”//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js”></script>
+
+<script src=”//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js”></script>
+
+<script src=”//cdnjs.cloudflare.com/ajax/libs/datatables/1.9.4/jquery.dataTables.min.js”></script>
+
+<script src=”js/datatables/datatables.js”></script>
+
 </body>
 <!-- This templates was made by Mongtuh: Automation Solutions (https://mongtuh.com) -->
 
