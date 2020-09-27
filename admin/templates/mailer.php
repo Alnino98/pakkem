@@ -45,7 +45,7 @@ require '../models/vendor/autoload.php';
             $mail->Password = 'Jakarta`12';
 
             //Set who the message is to be sent from
-            $mail->setFrom('habibiealnino98@gamil.com', 'Admin Ganteng');
+            $mail->setFrom('habibiealnino98@gamil.com', 'Pakkem.org');
 
             //Set an alternative reply-to address
             $mail->addReplyTo('habibiealnino98@gmail.com', 'Reply');
