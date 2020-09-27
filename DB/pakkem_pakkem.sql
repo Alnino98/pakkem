@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Sep 26, 2020 at 10:35 AM
+-- Generation Time: Sep 28, 2020 at 01:36 AM
 -- Server version: 8.0.21-0ubuntu0.20.04.4
 -- PHP Version: 7.4.3
 
@@ -34,7 +34,7 @@ CREATE TABLE `admin` (
   `email` varchar(200) NOT NULL,
   `password` varchar(100) NOT NULL,
   `nama` varchar(100) NOT NULL,
-  `level` varchar(100) NOT NULL,
+  `level` varchar(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
   `log` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `foto` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -62,12 +62,17 @@ CREATE TABLE `agenda_kegiatan` (
   `waktu_upload` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `agenda_kegiatan`
+-- Table structure for table `email`
 --
 
-INSERT INTO `agenda_kegiatan` (`id_agenda`, `hari_tanggal`, `waktu_agenda`, `kegiatan`, `keterangan_agenda`, `kegiatan_pdf`) VALUES
-('250805755', '2020-10-08', '09:00 WIB', 'Rapat', 'Rapat', 'Rapat.pdf');
+CREATE TABLE `email` (
+  `id` int NOT NULL,
+  `id_email` varchar(200) NOT NULL,
+  `status` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -82,13 +87,6 @@ CREATE TABLE `modul` (
   `modul_pdf` varchar(200) NOT NULL,
   `waktu_upload_modul` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `modul`
---
-
-INSERT INTO `modul` (`id_modul`, `nama_modul`, `keterangan_modul`, `modul_pdf`) VALUES
-('1576295450', 'Peraturan', 'peraturan masuk', 'Peraturan.pdf');
 
 -- --------------------------------------------------------
 
@@ -201,14 +199,7 @@ CREATE TABLE `pembaca_agenda` (
   `id` int NOT NULL,
   `pembaca` varchar(100) NOT NULL,
   `notifikasi` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `pembaca_agenda`
---
-
-INSERT INTO `pembaca_agenda` (`id`, `pembaca`, `notifikasi`) VALUES
-(10, 'yoggaajipratama99@gmail.com', 0);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -244,6 +235,12 @@ ALTER TABLE `admin`
 --
 ALTER TABLE `agenda_kegiatan`
   ADD PRIMARY KEY (`id_agenda`);
+
+--
+-- Indexes for table `email`
+--
+ALTER TABLE `email`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `modul`
@@ -283,7 +280,13 @@ ALTER TABLE `pendidikan`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id_admin` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_admin` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
+-- AUTO_INCREMENT for table `email`
+--
+ALTER TABLE `email`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=212;
 
 --
 -- AUTO_INCREMENT for table `mst_anggota`

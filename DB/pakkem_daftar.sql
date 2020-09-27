@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Sep 26, 2020 at 10:35 AM
+-- Generation Time: Sep 28, 2020 at 01:36 AM
 -- Server version: 8.0.21-0ubuntu0.20.04.4
 -- PHP Version: 7.4.3
 
@@ -34,7 +34,7 @@ CREATE TABLE `agenda_diikuti` (
   `email` varchar(100) NOT NULL,
   `kegiatan` varchar(100) NOT NULL,
   `waktu_agenda` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -58,14 +58,7 @@ CREATE TABLE `anggota` (
   `info_tambahan` varchar(255) NOT NULL,
   `status` int NOT NULL,
   `tgl_daftar` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `anggota`
---
-
-INSERT INTO `anggota` (`id_pendaftar`, `nama`, `instansi`, `tempat_lahir`, `tanggal_lahir`, `gender`, `nik`, `email`, `no_hp`, `bisa_wa`, `pendidikan`, `sertifikat`, `info_tambahan`, `status`) VALUES
-(10, 'yogga', 'yogga', 'Bandung', '2020-12-31', 'Laki-laki', '3964273687', 'yoggaajipratama99@gmail.com', '2323523', 'Ya', 'S2', 'Ya, ada', 'no', 0);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -80,14 +73,7 @@ CREATE TABLE `foto` (
   `email_pemilik` varchar(200) NOT NULL,
   `status` int NOT NULL,
   `waktu` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `foto`
---
-
-INSERT INTO `foto` (`id`, `foto_upload`, `nama_pemilik`, `email_pemilik`, `status`) VALUES
-(6, '2022737743_yoggaajipratama99@gmail.com.jpg', 'yogga', 'yoggaajipratama99@gmail.com', 1);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -100,14 +86,7 @@ CREATE TABLE `log` (
   `email` varchar(100) NOT NULL,
   `kegiatan` int NOT NULL,
   `timestamp` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `log`
---
-
-INSERT INTO `log` (`id`, `email`, `kegiatan`, `timestamp`) VALUES
-(9, 'yoggaajipratama99@gmail.com', 1, '2020-09-26 10:00:57');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -131,14 +110,7 @@ CREATE TABLE `pendaftar` (
   `info_tambahan` varchar(255) NOT NULL,
   `tgl_daftar` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `pendaftar`
---
-
-INSERT INTO `pendaftar` (`id_pendaftar`, `nama`, `instansi`, `tempat_lahir`, `tanggal_lahir`, `gender`, `nik`, `email`, `no_hp`, `bisa_wa`, `pendidikan`, `sertifikat`, `info_tambahan`, `status`) VALUES
-(6, 'yogga', 'yogga', 'Bandung', '2020-12-31', 'Laki-laki', '3964273687', 'yoggaajipratama99@gmail.com', '2323523', 'Ya', 'S2', 'Ya, ada', 'no', 1);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -154,14 +126,7 @@ CREATE TABLE `sertifikat` (
   `keterangan` varchar(100) NOT NULL,
   `status` int NOT NULL,
   `waktu` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `sertifikat`
---
-
-INSERT INTO `sertifikat` (`id`, `sertifikat_upload`, `nama_pemilik`, `email_pemilik`, `keterangan`, `status`) VALUES
-(6, '2022737743_yoggaajipratama99@gmail.com.png', 'yogga', 'yoggaajipratama99@gmail.com', 'ok', 1);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -178,14 +143,7 @@ CREATE TABLE `users` (
   `level` varchar(50) NOT NULL,
   `status` int NOT NULL,
   `log` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`id_user`, `username`, `password`, `email`, `nama`, `level`, `status`) VALUES
-(5, 'yogga', '8f4f4aa2c27b7c39a33895142e164354', 'yoggaajipratama99@gmail.com', 'yogga', '2', 1);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Indexes for dumped tables
@@ -241,7 +199,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `agenda_diikuti`
 --
 ALTER TABLE `agenda_diikuti`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `anggota`
@@ -253,7 +211,7 @@ ALTER TABLE `anggota`
 -- AUTO_INCREMENT for table `foto`
 --
 ALTER TABLE `foto`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `log`
@@ -265,13 +223,13 @@ ALTER TABLE `log`
 -- AUTO_INCREMENT for table `pendaftar`
 --
 ALTER TABLE `pendaftar`
-  MODIFY `id_pendaftar` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_pendaftar` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `sertifikat`
 --
 ALTER TABLE `sertifikat`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `users`

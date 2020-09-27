@@ -9,10 +9,20 @@
         if(empty($email) or empty($nama) or empty($email) or empty($password) or empty($username)){
             echo "<script>alert('Silakan isi semua kolom');</script>";
         }else{
-            $query = "INSERT INTO `admin` (`id_admin`, `username`, `email`, `password`, `nama`, `level`) VALUES (NULL, '$username', '$email', '$password', '$nama', 2)";
-            $sql = mysqli_query($link, $query);
+            $query = "INSERT INTO `admin` (`id_admin`, `username`, `email`, `password`, `nama`, `level`) VALUES (NULL, '$username', '$email', '$password', '$nama', 0)";
+            $sql = mysqli_query($link_admin, $query);
+            // require 'models/gmail.php';
+            // $real_email = $email;
+            // $email = md5($email);
+            // $msg_for = "
+            //     <h4>Lengkapi akun anda</h4>
+            //     <p>Untuk dapat mengakses akun admin silakan untuk mengisi password di link berikut <a href='http://pakkem.org/admin/lengkapi_akun.php?code=".$email."'>ini</a>.</p>
+            //     <p>Terima kasih</p>
+            //     </body>;
+            // ";
+            // send_email($real_email, $msg_for);
             if($sql == true){
-                echo "<script>alert('Berhasil');</script>";
+                echo "<script>alert('Berhasil');window.location.href='register.php?pesan=berhasil'</script>";
             }
         }
     }
@@ -41,6 +51,7 @@
     <!-- Vendor CSS-->
     <link href="css/select2.min.css" rel="stylesheet" media="all">
     <link href="css/daterangepicker.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- Main CSS-->
     <link href="css/main2.css" rel="stylesheet" media="all">
@@ -51,6 +62,11 @@
                 <div class="card-heading">
                     <h2 class="title">Registrasi admin</h2>
                 </div>
+                <?php 
+                    if(isset($_GET['pesan'])){
+                        echo "<h4 class='mt-3 text-success text-center'>Data tersimpan harap menunggu persetujuan dari super admin</h4>";
+                    }
+                ?>
                 <div class="card-body">
                     <form method="POST" action="">
                         <div class="form-row m-b-55">

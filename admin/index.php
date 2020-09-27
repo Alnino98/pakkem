@@ -24,6 +24,8 @@
 			$_SESSION['level'] = 1;
 			$_SESSION['foto'] = $foto;
 			header("location: home.php");
+		}else{
+			echo "<script>window.location.href='index.php?pesan=gagal'</script>";
 		}
 	}
 	
@@ -65,6 +67,11 @@
 					<span class="login100-form-title">
 						Admin Login
 					</span>
+					<?php 
+						if(isset($_GET['pesan'])){
+							echo "<p class='mt-3 text-danger text-center'>Username atau password tidak cocok<br>atau akun anda belum diaktivasi<br>super admin</p>";
+						}
+					?>
 
 					<div class="wrap-input100 validate-input">
 						<input class="input100" type="text" name="username" placeholder="Username">
