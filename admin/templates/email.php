@@ -29,16 +29,35 @@
 		$message = imap_fetchbody($mbox,$message_id,2);
 
 		echo "<div class='container'>";
-		echo "<h1>Pesan masuk</h1>";
+		echo "<h3>Email masuk</h3>";
 		echo "<hr>";
-		echo "<b>Dari : ".$from."</b><br>";
-		echo "Subject : ".$subject."<br>";
-		echo "To : ".$to."<br>";
-		echo "Date : ".$emaildate."<br>";
-		echo "Message : <br>";
-		echo "<div class='border border-dark bg-white p-3'>".$message."</div>";
-		echo "<br>";
 
+		echo "<table class='table small table-dark'>";
+		
+		echo "<tr>";
+		echo "<th>Dari</th>";
+		echo "<th>Subyek</th>";
+		echo "<th>Kepada</th>";
+		echo "<th>Tanggal</th>";
+		echo "<th>Pesan</th>";
+		echo "<th>Aksi</th>";
+		echo "</tr>";
+
+		echo "<tr>";
+		echo "<td>".$from."</td>";
+		echo "<td>".$subject."</td>";
+		echo "<td>".$to."</td>";
+		echo "<td>".$emaildate."</td>";
+		echo "<td>".$message."</td>";
+		echo "<td>".
+				"<a href='' class='text-light'>
+					<i class='fas fa-square'></i>
+					Tandai dibaca
+				</a>".
+			"</td>";
+		echo "</tr>";
+
+		echo "</table>";
 		echo "</div>";
 
 	}

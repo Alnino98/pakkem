@@ -35,28 +35,59 @@
             // echo "UIDvalidity:" . $status->uidvalidity . "<br />\n";
 
             $emails = imap_search($inbox,$email_read);
+            $check = imap_mailboxmsginfo($mbox);
 
-            $ids = array();
-            foreach($emails as $key => $mail) {
-                $ids [] = $mail;
+            if ($check) {
+                echo "Date: "     . $check->Date    . "<br />\n" ;
+                echo "Driver: "   . $check->Driver  . "<br />\n" ;
+                echo "Mailbox: "  . $check->Mailbox . "<br />\n" ;
+                echo "Messages: " . $check->Nmsgs   . "<br />\n" ;
+                echo "Recent: "   . $check->Recent  . "<br />\n" ;
+                echo "Unread: "   . $check->Unread  . "<br />\n" ;
+                echo "Deleted: "  . $check->Deleted . "<br />\n" ;
+                echo "Size: "     . $check->Size    . "<br />\n" ;
             }
-            var_dump($mail);
 
-            
-            echo "Messages:   " . $status->messages    . "<br />\n";
+            // $ids = array();
+            // foreach($emails as $key => $mail) {
+            //     $ids [] = $mail;
+            // }
+            // var_dump($mail);
             
         }
-        // echo "<div class='container'>";
-        // echo "<hr>";
-        // echo "<b>Dari : ".$from."</b><br>";
-        // echo "Subject : ".$subject."<br>";
-        // echo "To : ".$to."<br>";
-        // echo "Date : ".$emaildate."<br>";
-        // echo "Message : <br>";
-        // echo "<div class='border border-dark bg-white p-3'>".$message."</div>";
-        // echo "<br>";
-        
-        echo "</div>";
+        echo "<div class='container'>";
+        echo "<hr>";
+        echo "<b>Dari : ".$from."</b><br>";
+        echo "Subject : ".$subject."<br>";
+        echo "To : ".$to."<br>";
+        echo "Date : ".$emaildate."<br>";
+        echo "Message : <br>";
+        echo "<div class='border border-dark bg-white p-3'>".$message."</div>";
+        echo "<br>";
+        imap_close($mbox);
+    }
+    else if($_GET['id']==2){
+        foreach($result as $overview) {
+            $message_id = $overview->msgno;
+    
+            $msg_id = imap_uid($mbox,$message_id);
+    
+            $subject = $overview->subject;
+    
+            $header = imap_header($mbox,$message_id);
+    
+    
+            $from = $header->from[0]->mailbox."@".$header->from[0]->host;
+            $to = $header->to[0]->mailbox."@".$header->to[0]->host;
+    
+            $emaildate1 = strtotime($header->date);
+            $emaildate = date("Y-m-d H:i:s",$emaildate1);
+            $message = imap_fetchbody($mbox,$message_id,2);
+
+            $status = imap_status($mbox, "{mail.pakkem.org}INBOX", SA_ALL);
+            echo $status->messages;
+            
+        }
         imap_close($mbox);
     }
    

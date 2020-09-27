@@ -27,6 +27,16 @@
 
         if($v == 1){
         // Mengubah nilai status aktivasi di tabel database
+            $msg_for = "
+                    <body>
+                    <div style='width: 640px; font-family: Arial, Helvetica, sans-serif; font-size: 11px;'>
+                    <h1>Aktivasi akun telah disetujui</h1>
+                    <p>Selamat datang di PAKKEM akun anda disetujui, anda dapat menggunakan telah dapat menggunakannya.</p>
+                    <p>Terima Kasih.</p>
+                    </div>
+                    </body>
+                    </html>
+                ";
             // $qry = "UPDATE `pendaftar` SET `status` = '1' WHERE `id_pendaftar` = $id";
             $qry = "SELECT * FROM pendaftar WHERE `id_pendaftar` = $id";
             $show = mysqli_query($link,$qry);
@@ -63,6 +73,7 @@
 
                 $qry_log = "INSERT INTO log VALUES (NULL, '$email', 0, CURRENT_TIMESTAMP)";
                 $sql_log = mysqli_query($link,$qry_log);
+                send_email($email, $msg_for);
 
                 if(!$sql_user){
                     echo mysqli_error();

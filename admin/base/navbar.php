@@ -277,7 +277,7 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-envelope fa-fw"></i>
                                 <!-- Counter - Messages -->
-                                <span class="badge badge-danger badge-counter">0</span>
+                                <span class="badge badge-danger badge-counter" id="total_email"></span>
                             </a>
                             <!-- Dropdown - Messages -->
                             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -286,6 +286,8 @@
                                     <span id="wait"></span>
                                 </h6>
                                 <span id="email"></span>
+                                <a class="dropdown-item text-center small text-gray-500" href="templates/email.php">
+                                Klik untuk melihat pesan lainnya</a>
                             </div>
                         </li>
 
