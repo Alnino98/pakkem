@@ -20,33 +20,30 @@
      		<th>Nomor Hp</th>
      		<th>Terakhir Login</th>
      	</tr>
+ 		<?php $i=1; ?>
+	     <?php while ($row = mysqli_fetch_array($anggota_aktif)) {?>
+	     	<?php $email = $row['email']; ?>
+	     	
+	     	<?php $anggota = "SELECT * FROM anggota WHERE email = '$email'"; ?>
+	     	<?php $detail = mysqli_query($link, $anggota); ?>
+	     	
+	     	<?php if (!$detail) {
+				 echo mysqli_error($link);
+				} ?>
 
-     	<tr>
-     		<?php $i=1; ?>
-		     <?php while ($row = mysqli_fetch_array($anggota_aktif)) {?>
-		     	<?php $email = $row['email']; ?>
-		     	
-		     	<?php $anggota = "SELECT * FROM anggota WHERE email = '$email'"; ?>
-		     	<?php $detail = mysqli_query($link, $anggota); ?>
-		     	
-		     	<?php if (!$detail) {
-					 echo mysqli_error($link);
-					} ?>
+		<tr>
+	     	<td><?= $i++; ?></td>
+	     	<td><?= $row['email']; ?></td>
 
-			<tr>
-		     	<td><?= $i++; ?></td>
-		     	<td><?= $row['email']; ?></td>
+	     	<?php while ($row_detail = mysqli_fetch_array($detail)) {?>
+		     	<td><?= $row_detail['nama']; ?></td>
+		     	<td><?= $row_detail['no_hp']; ?></td>
+	     	<?php } ?>
 
-		     	<?php while ($row_detail = mysqli_fetch_array($detail)) {?>
-			     	<td><?= $row_detail['nama']; ?></td>
-			     	<td><?= $row_detail['no_hp']; ?></td>
-		     	<?php } ?>
+	     	<td><?= $row['timestamp']; ?></td>
 
-		     	<td><?= $row['timestamp']; ?></td>
-
-     		</tr>
-		     <?php } ?>
-     	</tr>
+ 		</tr>
+	     <?php } ?>
      </table>
 
     
