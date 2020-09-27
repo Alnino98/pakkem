@@ -1,10 +1,6 @@
 <?php include 'base/navbar.php' ?>
 <?php
     require "../models/config.php";
-    $foto = $_GET['foto'];
-
-    $sertifikat = $_GET['sertifikat'];
-
     $code = $_GET['id'];
 ?>
 <!-- Manampilkan detail pendaftar -->
@@ -23,6 +19,7 @@
                     <table class=" p-3">
                         <tr>
                             <?php if($code == 1){ ?>
+                                <?php $foto = $_GET['foto'];?>
                                 <?php $query_foto = "SELECT * FROM foto WHERE foto_upload = '$foto'";?>
                                 <?php $sql_foto = mysqli_query($link, $query_foto); ?>
                                 <?php while($row = mysqli_fetch_array($sql_foto)){ ?>
@@ -77,6 +74,7 @@
                             <?php } ?>
                             
                             <?php if($code == 2){ ?>
+                                <?php $sertifikat = $_GET['sertifikat'];?>
                                 <?php $query_sertifikat = "SELECT * FROM sertifikat WHERE sertifikat_upload = '$sertifikat'";?>
                                 <?php $sql_sertifikat = mysqli_query($link, $query_sertifikat); ?>
                                 <?php while($row = mysqli_fetch_array($sql_sertifikat)){ ?>

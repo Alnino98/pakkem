@@ -5,7 +5,6 @@ xmlhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
         var response1;
         response1 = this.responseText;
-        console.log(response1);
         var ctxL = document.getElementById("lineChart").getContext('2d');
         var myLineChart = new Chart(ctxL, {
             type: 'line',
@@ -38,7 +37,6 @@ xmlhttp_rasio.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
         var response2;
         response2 = this.responseText;
-        console.log(response2);
 
         var ctxD = document.getElementById("doughnutChart").getContext('2d');
         var myLineChart = new Chart(ctxD, {

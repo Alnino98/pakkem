@@ -49,6 +49,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
     <link rel="manifest" href="assets/site.webmanifest">
+    <script src="js/email.js"></script>
 </head>
 
 <body id="page-top">
@@ -282,8 +283,9 @@
                             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="messagesDropdown">
                                 <h6 class="dropdown-header">
-                                    Message Center
+                                    Email masuk
                                 </h6>
+                                <span id="email"></span>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
                                         <img class="rounded-circle" src="https://source.unsplash.com/fn_BT9fwg_E/60x60"
@@ -296,7 +298,7 @@
                                         <div class="small text-gray-500">Emily Fowler · 58m</div>
                                     </div>
                                 </a>
-                                <a class="dropdown-item text-center small text-gray-500" href="templates/email.php">Read More Messages</a>
+                                <a class="dropdown-item text-center small text-gray-500" href="templates/email.php">Tampilkan semua pesan</a>
                             </div>
                         </li>
 
