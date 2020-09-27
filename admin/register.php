@@ -9,7 +9,7 @@
         if(empty($email) or empty($nama) or empty($email) or empty($password) or empty($username)){
             echo "<script>alert('Silakan isi semua kolom');</script>";
         }else{
-            $query = "INSERT INTO `admin` (`id_admin`, `username`, `email`, `password`, `nama`, `level`) VALUES (NULL, '$username', '$email', '$password', '$nama', 1)";
+            $query = "INSERT INTO `admin` (`id_admin`, `username`, `email`, `password`, `nama`, `level`) VALUES (NULL, '$username', '$email', '$password', '$nama', 2)";
             $sql = mysqli_query($link, $query);
             if($sql == true){
                 echo "<script>alert('Berhasil');</script>";

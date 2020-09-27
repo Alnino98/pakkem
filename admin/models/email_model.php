@@ -29,31 +29,6 @@
             $message = imap_fetchbody($mbox,$message_id,2);
 
             $status = imap_status($mbox, "{mail.pakkem.org}INBOX", SA_ALL);
-            // echo "Recent:     " . $status->recent      . "<br />\n";
-            // echo "Unseen:     " . $status->unseen      . "<br />\n";
-            // echo "UIDnext:    " . $status->uidnext     . "<br />\n";
-            // echo "UIDvalidity:" . $status->uidvalidity . "<br />\n";
-
-            $emails = imap_search($inbox,$email_read);
-            $check = imap_mailboxmsginfo($mbox);
-
-            if ($check) {
-                echo "Date: "     . $check->Date    . "<br />\n" ;
-                echo "Driver: "   . $check->Driver  . "<br />\n" ;
-                echo "Mailbox: "  . $check->Mailbox . "<br />\n" ;
-                echo "Messages: " . $check->Nmsgs   . "<br />\n" ;
-                echo "Recent: "   . $check->Recent  . "<br />\n" ;
-                echo "Unread: "   . $check->Unread  . "<br />\n" ;
-                echo "Deleted: "  . $check->Deleted . "<br />\n" ;
-                echo "Size: "     . $check->Size    . "<br />\n" ;
-            }
-
-            // $ids = array();
-            // foreach($emails as $key => $mail) {
-            //     $ids [] = $mail;
-            // }
-            // var_dump($mail);
-            
         }
         echo "<div class='container'>";
         echo "<hr>";
@@ -85,9 +60,12 @@
             $message = imap_fetchbody($mbox,$message_id,2);
 
             $status = imap_status($mbox, "{mail.pakkem.org}INBOX", SA_ALL);
-            echo $status->messages;
+            $result = imap_search($mbox, "SEEN", SA_ALL);
             
+            // print_r ($result);
         }
+        echo $status->messages;
+        // echo "<i class='fas fa-bell'></i>";
         imap_close($mbox);
     }
    
